@@ -1,0 +1,111 @@
+*{
+    margin:0px;
+    padding:0px;
+}
+.grid{
+    display: grid;
+    grid-template-columns: 1fr 20% 20% 20% 1fr;
+    grid-template-areas:
+    ". header header header ."
+    ". . . menubar ."
+    ". content content content ."
+    ". footer footer footer .";
+}
+#header{
+    background-color: blue;
+    grid-area: header;
+    min-height: 5em;
+}
+#menubar{
+    background-color: red;
+    grid-area: menubar;
+    min-height: 5em;
+}
+#content{
+    background-color: green;
+    grid-area: content;
+    min-height: 40em;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+    "other registation";
+}
+#footer{
+    background-color: lightblue;
+    grid-area:footer;
+    min-height: 10em;
+}
+#button-loc{
+    width: 16em;
+    margin: 0 auto;
+    margin-top:1em;
+    line-height: 30px;
+}
+.menu-btn{
+    display: inline-block;
+    text-decoration: none;
+    color: black;
+    text-align: center;
+    margin-top: auto;
+    width:75px;
+    height: 35px;
+    background-color: white;
+    border-style: solid;
+    border-color: black;
+}
+.current-page{
+    background-color: grey;
+}
+#registation{
+    grid-area:registation;
+    width: 25em;
+    margin: 0 auto;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+#other{
+    grid-area: other;
+    text-align: center;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+@media only screen and (max-width: 1263px){
+    .grid{
+        display: grid;
+        grid-template-columns: 1fr 25% 25% 25% 1fr;
+        grid-template-areas:
+        ". header header header ."
+        ". . . menubar ."
+        ". content content content ."
+        ". footer footer footer .";
+    }
+}
+@media only screen and (max-width:950px){
+    .grid{
+        display: grid;
+        grid-template-columns: 1fr 25% 25% 25% 1fr;
+        grid-template-areas:
+        "header header header header header"
+        "menubar menubar menubar menubar menubar"
+        "content content content content content"
+        "footer footer footer footer footer";
+    }
+}
+@media only screen and (max-width:740px){
+
+    #other{
+        margin-bottom: auto;
+        margin-top: auto;
+    }
+    #content{
+        background-color: green;
+        grid-area: content;
+        min-height: 40em;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-areas:
+        "other"
+        "registation";
+    }
+}
+
