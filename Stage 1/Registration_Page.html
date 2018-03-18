@@ -5,6 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>User Registration Page</title>
         <link href="css/Registration_Page_Styles.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     </head>
     <body>
         <div class="grid">
@@ -14,11 +15,13 @@
                     <h1>Wi-Finder</h1>
                 </div>
             </div>
+            <div id="header-fill-left"></div>
+            <div id="header-fill-right"></div>
             <div id="menubar">
                 <div id="button-loc">
-                    <a href="" class="menu-btn">Search</a>
-                    <a href="" class="menu-btn current-page">Sign-Up</a>
-                    <a href="" class="menu-btn">Login</a>
+                    <a href="" id="search-btn" class="menu-btn">Search</a>
+                    <a href="" id="sign-up-btn"class="menu-btn current-page">Sign-Up</a>
+                    <a href="" id="login-btn" class="menu-btn">Login</a>
                 </div>
             </div>
             <div id="content">
@@ -29,6 +32,9 @@
                     <div id="registation">
                         <form id="create-account">
                             <fieldset>
+                                <legend>
+                                    <Strong>Sign Up</Strong>
+                                </legend>
                                 <p><strong>Name:</strong></p>
                                 <input type="text" id="FirstName" placeholder="First Name" required="required">
                                 <input type="text" id="LastName" placeholder="Last Name" required="required">
@@ -57,14 +63,25 @@
                                 <input type="number" max="31" placeholder="Month" required="required">
                                 <input type="number" min="1900" max="2018" required="required" placeholder="Year">
                                 <p></p>
-                                <button type="Submit" value="Sign up">Create your account</button>
+                                <button id="sign-up-btn" type="Submit" value="Sign up">Sign Up</button>
                             </fieldset>
                         </form>     
                 </div>
             </div>
             <div id="footer">
-                <p>this is a footer</p>
+                <div id="Our-Mission-Text">
+                    <h2>Our Mission</h2>
+                    <p>WiFinder mission is to conntect the citizens of Brisbane with location data on where the closest Free Wifi-Location. To ensure they stay connected to the internet</p>
+                </div>
+                <div id="connect-with-us">
+                    <h2>Connect With Us On:</h2>
+                    <a href="" style="Color:White"><i class="fa fa-facebook-square fa-3x"></i></a>
+                    <a href="" style="Color:White"><i class="fa fa-instagram fa-3x"></i></a>
+                    <a href="" style="Color:White"><i class="fa fa-twitter-square fa-3x"></i></a>
+                </div>
             </div>
+            <div id="footer-fill-left"></div>
+            <div id="footer-fill-right"></div>
         </div>
     </body>
 </html>
