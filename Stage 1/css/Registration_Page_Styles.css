@@ -6,19 +6,20 @@
     display: grid;
     grid-template-columns: 1fr 20% 20% 20% 1fr;
     grid-template-areas:
-    ". header header header ."
-    ". . . menubar ."
+    ". header header menubar ."
     ". content content content ."
     ". footer footer footer .";
 }
 #header{
     background-color: blue;
     grid-area: header;
+    display: grid;
     min-height: 5em;
 }
 #menubar{
     background-color: red;
     grid-area: menubar;
+    display:grid;
     min-height: 5em;
 }
 #content{
@@ -38,7 +39,8 @@
 #button-loc{
     width: 16em;
     margin: 0 auto;
-    margin-top:1em;
+    margin-top: auto;
+    margin-bottom: auto;
     line-height: 30px;
 }
 .menu-btn{
@@ -69,13 +71,17 @@
     margin-top: auto;
     margin-bottom: auto;
 }
+#logo-elements{
+    align-content: center;
+    margin-top: auto;
+    margin-bottom: auto;
+}
 @media only screen and (max-width: 1263px){
     .grid{
         display: grid;
         grid-template-columns: 1fr 25% 25% 25% 1fr;
         grid-template-areas:
-        ". header header header ."
-        ". . . menubar ."
+        ". header header menubar ."
         ". content content content ."
         ". footer footer footer .";
     }
@@ -85,13 +91,22 @@
         display: grid;
         grid-template-columns: 1fr 25% 25% 25% 1fr;
         grid-template-areas:
-        "header header header header header"
-        "menubar menubar menubar menubar menubar"
+        "header header header menubar menubar"
         "content content content content content"
         "footer footer footer footer footer";
     }
 }
 @media only screen and (max-width:740px){
+
+    .grid{
+        display: grid;
+        grid-template-columns: 1fr 25% 25% 25% 1fr;
+        grid-template-areas:
+        "header header header header header"
+        "menubar menubar menubar menubar menubar"
+        "content content content content content"
+        "footer footer footer footer footer";
+    }
 
     #other{
         margin-bottom: auto;
