@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Search Page</title>
+  <link href="css/search_page_style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+  <div class="grid">
+      <div id="header">
+        <p>Search</p>
+      </div>
+      <div id="header-left"></div>
+      <div id="header-right"></div>
+      <div id="menubar">
+
+      </div>
+      <div id="content">
+        <div class="search_boxes">
+          <div class="individual_boxes">
+            <div class="input_address">
+              <input type="text" placeholder="Search addresses">
+              <div class="search_button">
+                <a href="">Search</a>
+              </div>
+            </div>
+          </div>
+  
+          <div class="individual_boxes">
+            <div class="input_suburb">
+              <input type="text" placeholder="Search suburbs">
+              <div class="search_button">
+                <a href="">Search</a>
+              </div>
+            </div>
+          </div>
+          <div class="individual_boxes">
+            <div class="input_type">
+              <input type="text" placeholder="Search types">
+              <div class="search_button">
+                <a href="">Search</a>
+              </div>
+            </div>
+          </div>
+        </div>
+  
+        <div class="map_area">
+          <div class="map"> </div>
+          <div class="search_button">
+            <div class="map_search">
+              <a href="">Search</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div id="footer">
+        <p>Top of page</p>
+      </div>
+
+    </div>
+
+  <script>
+    function initMap() {
+      var uluru = { lat: -25.363, lng: 131.044 };
+      var map = new google.maps.Map(document.getElementById('map'), {
+        zoom: 4,
+        center: uluru
+      });
+      var marker = new google.maps.Marker({
+        position: uluru,
+        map: map
+      });
+    }
+  </script>
+  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyABNLftPMkQVqLWU5ycUeIYPqbyRIAz-gE&callback=initMap">
+  </script>
+
+</body>
+
+</html>

@@ -1,0 +1,237 @@
+*{
+    margin:0px;
+    padding:0px;
+}
+.grid{
+    display: grid;
+    grid-template-columns: 1fr 20% 20% 20% 1fr;
+    grid-template-areas:
+    "header-left header header header header-right"
+    ". content content content ."
+    ". footer footer footer .";
+}
+#header{
+    background-color: #38737F;
+    grid-area: header;
+    display: grid;
+    min-height: 5em;
+}
+#header-left{
+    background-color: #38737F;
+    grid-area: header-left;
+    display: grid;
+    min-height: 5em;
+}
+#header-right{
+    background-color: #38737F;
+    grid-area: header-right;
+    display: grid;
+    min-height: 5em;
+}
+#menubar{
+    background-color: red;
+    grid-area: menubar;
+    display:grid;
+    min-height: 5em;
+}
+#content{
+    background-color: #BDF3FF;
+    grid-area: content;
+    min-height: 40em;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+    "other registation";
+}
+#footer{
+    background-color: #5F7A7F;
+    grid-area:footer;
+    min-height: 10em;
+}
+#button-loc{
+    width: 16em;
+    margin: 0 auto;
+    margin-top: auto;
+    margin-bottom: auto;
+    line-height: 30px;
+}
+.menu-btn{
+    display: inline-block;
+    text-decoration: none;
+    color: black;
+    text-align: center;
+    margin-top: auto;
+    width:75px;
+    height: 35px;
+    background-color: white;
+    border-style: solid;
+    border-color: black;
+}
+.current-page{
+    background-color: grey;
+}
+#registation{
+    grid-area:registation;
+    width: 25em;
+    margin: 0 auto;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+#other{
+    grid-area: other;
+    text-align: center;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+@media only screen and (max-width: 1263px){
+    .grid{
+        display: grid;
+        grid-template-columns: 1fr 25% 25% 25% 1fr;
+        grid-template-areas:
+        ". header header menubar ."
+        ". content content content ."
+        ". footer footer footer .";
+    }
+}
+@media only screen and (max-width:950px){
+    .grid{
+        display: grid;
+        grid-template-columns: 1fr 25% 25% 25% 1fr;
+        grid-template-areas:
+        "header header header menubar menubar"
+        "content content content content content"
+        "footer footer footer footer footer";
+    }
+}
+@media only screen and (max-width:740px){
+
+    .grid{
+        display: grid;
+        grid-template-columns: 1fr 25% 25% 25% 1fr;
+        grid-template-areas:
+        "header header header header header"
+        "menubar menubar menubar menubar menubar"
+        "content content content content content"
+        "footer footer footer footer footer";
+    }
+
+    #other{
+        margin-bottom: auto;
+        margin-top: auto;
+    }
+    #content{
+        background-color: green;
+        grid-area: content;
+        min-height: 40em;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-areas:
+        "other"
+        "registation";
+    }
+}
+
+
+
+/*.header{
+height: 6%;
+width: 100%;
+background-color: tomato;
+text-align: center;
+font-size: 40pt;
+grid-column: 1 / 5;
+grid-row: 1;
+}
+
+.footer {
+height: 5%;
+width: 100%;
+background-color: red;
+float: bottom;
+color: white;
+text-align: center;
+margin-top: 80%;
+grid-column: 1/5;
+grid-row: 5;
+
+
+}
+
+div.wrapper{
+width: 800px;
+margin-left: auto;
+margin-right: auto;
+text-align: left;
+box-shadow: 10000px 100000px 50000px #888888;
+}
+
+
+/*Seach boxes
+div.search_boxes{
+width: 10%;
+height: 100%;
+margin-left: 70%;
+margin-right: 5%;
+padding: 10%;
+position: absolute;
+background-color: grey;
+grid-column: 1/5;
+grid-row: 5;
+}
+	
+div.individual_boxes input[type=text]{
+width: 80%;
+height: 7%;
+margin-top:10%;
+margin-bottom: 10%;
+margin-left: 5%;
+margin-right: 6%;
+background-color: white;
+font-size: 15pt;
+grid-column: 1/5;
+grid-row: 5;
+
+}
+
+div.search_button a{
+text-align: center;
+font-size: 12pt;
+background-color: yellow;
+grid-column: 1/5;
+grid-row: 5;
+}
+
+div.search_button a:hover{
+background-color: blue;
+
+}
+
+/*Map
+div.map_area {
+width: 50%;
+height: 100%;
+margin: 5%;
+position: absolute;
+grid-column: 1/5;
+grid-row: 5;
+
+
+}
+
+div.map {
+width: 80%;
+height: 70%;	
+margin-top: 10%;
+margin-right: 60%;
+margin-left: 10%;
+margin-bottom: 10%;
+padding: 10%;
+background-color: grey;
+grid-column: 1/5;
+grid-row: 5;
+}
+
+div.map_search
+/*@media screen and (max-width: 600px){.search_boxes,
+.individual_boxes input[type=text]{}*/
