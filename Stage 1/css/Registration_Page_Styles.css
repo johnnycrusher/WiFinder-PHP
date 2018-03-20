@@ -32,7 +32,6 @@ body{
     background-color:lightblue;
     grid-area: header-fill-right;
 }
-
 #menubar{
     background-color:lightblue;
     grid-area: menubar;
@@ -110,7 +109,6 @@ body{
     margin-bottom: auto;
 }
 .center-items{
-    align-content:center;
     margin-top: auto;
     margin-bottom: auto;
 }
@@ -119,6 +117,7 @@ body{
 }
 #header-text{
     grid-area: header-text;
+    margin: auto;
 }
 #Our-Mission-Text{
     width: 215px;

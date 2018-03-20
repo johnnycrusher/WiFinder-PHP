@@ -18,6 +18,9 @@ body{
     grid-area: header;
     display: grid;
     min-height: 5em;
+    grid-column: 1fr 1fr;
+    grid-template-areas:
+    "logo header-text"
 }
 #header-fill-left{
     display:grid;
@@ -123,6 +126,17 @@ body{
     width: 650px;
     margin-top: 10px;
     margin-bottom: 10px;
+}
+.center-items{
+    margin-top: auto;
+    margin-bottom: auto;
+}
+#logo-elements{
+    grid-area:logo;
+}
+#header-text{
+    grid-area: header-text;
+    margin: auto;
 }
 #Our-Mission-Text{
     width: 215px;

@@ -6,13 +6,17 @@
         <title>User Registration Page</title>
         <link href="css/Indvidual_Result_Page.css" rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <script src="js/Individual_Results_Scripts.js"></script>
     </head>
     <body>
         <div class="grid">
             <div id="header">
-                <div id="logo-elements">
+                <div id="logo-elements" class="center-items">
                     <img src="img/logo46.svg" width="100px" height="100px">
                     <h1>Wi-Finder</h1>
+                </div>
+                <div id="header-text" class="center-items">
+                    <h1>WiFi Location</h1>
                 </div>
             </div>
             <div id="header-fill-left"></div>
@@ -38,11 +42,11 @@
                 <div id="write-review-box" class="white-boxes">
                     <h2>Write your reivew:</h2>
                     <div>
-                        <i class="fa fa-star-o"></i>
-                        <i class="fa fa-star-o"></i>
-                        <i class="fa fa-star-o"></i>
-                        <i class="fa fa-star-o"></i>
-                        <i class="fa fa-star-o"></i>
+                        <span onmouseover="ratingHover(this)" onmouseout="ratingHoverOut(this)"><i id="one-star" class="fa fa-star-o"></i></span>
+                        <span onmouseover="ratingHover(this)" onmouseout="ratingHoverOut(this)"><i id="two-star" class="fa fa-star-o"></i></span>
+                        <span onmouseover="ratingHover(this)" onmouseout="ratingHoverOut(this)"><i id="three-star" class="fa fa-star-o"></i></span>
+                        <span onmouseover="ratingHover(this)" onmouseout="ratingHoverOut(this)"><i id="four-star" class="fa fa-star-o"></i></span>
+                        <span onmouseover="ratingHover(this)" onmouseout="ratingHoverOut(this)"><i id="five-star" class="fa fa-star-o"></i></span>
                     </div>
                     <textarea rows="6" cols="85"></textarea>
                     <br>
