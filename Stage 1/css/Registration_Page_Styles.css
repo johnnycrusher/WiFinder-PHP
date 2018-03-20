@@ -14,24 +14,27 @@ body{
     "footer-fill-left footer footer footer footer-fill-right";
 }
 #header{
-    background-color:#e9f0e9;
+    background-color:lightblue;
     grid-area: header;
     display: grid;
     min-height: 5em;
+    grid-column: 1fr 1fr;
+    grid-template-areas:
+    "logo header-text"
 }
 #header-fill-left{
     display:grid;
-    background-color:#e9f0e9;
+    background-color:lightblue;
     grid-area: header-fill-left;
 }
 #header-fill-right{
     display:grid;
-    background-color:#e9f0e9;
+    background-color:lightblue;
     grid-area: header-fill-right;
 }
 
 #menubar{
-    background-color:#e9f0e9;
+    background-color:lightblue;
     grid-area: menubar;
     display:grid;
     min-height: 5em;
@@ -42,7 +45,7 @@ body{
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-areas:
-    "";
+    "other registation";
 }
 #footer{
     background-color: #363535;
@@ -84,6 +87,7 @@ body{
 }
 .current-page{
     background-color: grey;
+    pointer-events: none;
 }
 #registation{
     grid-area:registation;
@@ -105,10 +109,16 @@ body{
     margin-top: auto;
     margin-bottom: auto;
 }
-#logo-elements{
-    align-content: center;
+.center-items{
+    align-content:center;
     margin-top: auto;
     margin-bottom: auto;
+}
+#logo-elements{
+    grid-area:logo;
+}
+#header-text{
+    grid-area: header-text;
 }
 #Our-Mission-Text{
     width: 215px;

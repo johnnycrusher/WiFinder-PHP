@@ -40,7 +40,7 @@ body{
     grid-area: content;
     min-height: 40em;
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns:1fr;
     grid-template-areas:
     "Wifi-location-info"
     "write-review"
@@ -86,6 +86,7 @@ body{
 }
 .current-page{
     background-color: grey;
+    pointer-events: none;
 }
 #WiFi-location-info-box{
     grid-area:Wifi-location-info;
@@ -93,15 +94,16 @@ body{
 }
 #write-review-box{
     grid-area:write-review;
-}
-.white-boxes{
     margin-top: 10px;
     margin-bottom: 10px;
+}
+.white-boxes{
     border-style: solid;
     border-width: thin;
     background-color: white;
     min-width: 5em;
     min-height: 20em;
+    margin: 0 auto;
 }
 #publish-btn-container{
     display: grid;
@@ -118,6 +120,9 @@ body{
 }
 #review-box{
     grid-area:review;
+    width: 650px;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 #Our-Mission-Text{
     width: 215px;
