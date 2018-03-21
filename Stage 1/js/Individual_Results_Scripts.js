@@ -30,7 +30,7 @@ function ratingHoverOut(item){
 
     var stars = [oneStar,twoStar,threeStar,fourStar,fiveStar];
 
-    for(var i = 0; i<stars.legnth; i++){
+    for(var i = 0; i<5; i++){
         stars[i].classList.remove("fa-star");
         stars[i].classList.add("fa-star-o");
     }
