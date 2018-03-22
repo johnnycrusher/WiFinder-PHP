@@ -1,0 +1,207 @@
+*{
+    margin:0px;
+    padding:0px;
+}
+body{
+    background-color:#e9ebee;
+}
+.grid{
+    display: grid;
+    grid-template-columns: 1fr 20% 20% 20% 1fr;
+    grid-template-areas:
+    "header-fill-left header header menubar header-fill-right"
+    ". content content content ."
+    "footer-fill-left footer footer footer footer-fill-right";
+}
+#header{
+    background-color:#e9f0e9;
+    grid-area: header;
+    display: grid;
+    min-height: 5em;
+    grid-column: 1fr 1fr;
+    grid-template-areas:
+    "logo header-text"
+}
+#header-fill-left{
+    display:grid;
+    background-color:#e9f0e9;
+    grid-area: header-fill-left;
+}
+#header-fill-right{
+    display:grid;
+    background-color:#e9f0e9;
+    grid-area: header-fill-right;
+}
+
+#menubar{
+    background-color:#e9f0e9;
+    grid-area: menubar;
+    display:grid;
+    min-height: 5em;
+}
+#content{
+    grid-area: content;
+    min-height: 40em;
+    display: grid;
+    grid-template-columns:1fr;
+    grid-template-areas:
+    "Wifi-location-info"
+    "write-review"
+    "review";
+}
+#footer{
+    background-color: #363535;
+    grid-area:footer;
+    min-height: 10em;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas:
+    "Our-Mission . Connect-With-Us";
+}
+#footer-fill-left{
+    display:grid;
+    background-color:#363535;
+    grid-area: footer-fill-left;
+}
+#footer-fill-right{
+    display:grid;
+    background-color:#363535;
+    grid-area: footer-fill-right;
+}
+#button-loc{
+    width: 16em;
+    margin: 0 auto;
+    margin-top: auto;
+    margin-bottom: 5px;
+    line-height: 30px;
+}
+.menu-btn{
+    display: inline-block;
+    text-decoration: none;
+    color: black;
+    text-align: center;
+    width:75px;
+    height: 35px;
+    background-color: white;
+    border-style: solid;
+    border-color: black;
+    border-width:1px;
+}
+.current-page{
+    background-color: grey;
+    pointer-events: none;
+}
+#WiFi-location-info-box{
+    grid-area:Wifi-location-info;
+    margin: 0 auto;
+}
+#write-review-box{
+    grid-area:write-review;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.white-boxes{
+    border-style: solid;
+    border-width: thin;
+    background-color: white;
+    min-width: 5em;
+    min-height: 20em;
+    margin: 0 auto;
+}
+#publish-btn-container{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas:
+    ". . publish-btn";
+}
+#publish-locs{
+    grid-area: publish-btn;
+    display: grid;
+}
+#publish-btn{
+    width:150px;
+}
+#review-box{
+    grid-area:review;
+    width: 650px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.center-items{
+    margin-top: auto;
+    margin-bottom: auto;
+}
+#logo-elements{
+    grid-area:logo;
+}
+#header-text{
+    grid-area: header-text;
+    margin: auto;
+}
+#Our-Mission-Text{
+    width: 215px;
+    grid-area: Our-Mission;
+    color:white;
+}
+#connect-with-us{
+    color: white;
+    align-content: end;
+    vertical-align: top;
+    grid-area: Connect-With-Us;
+}
+@media only screen and (max-width: 1263px){
+    .grid{
+        display: grid;
+        grid-template-columns: 1fr 25% 25% 25% 1fr;
+        grid-template-areas:
+        ". header header menubar ."
+        ". content content content ."
+        ". footer footer footer .";
+    }
+}
+@media only screen and (max-width:950px){
+    .grid{
+        display: grid;
+        grid-template-columns: 1fr 25% 25% 25% 1fr;
+        grid-template-areas:
+        "header header header menubar menubar"
+        "content content content content content"
+        "footer footer footer footer footer";
+    }
+}
+@media only screen and (max-width:740px){
+
+    .grid{
+        display: grid;
+        grid-template-columns: 1fr 25% 25% 25% 1fr;
+        grid-template-areas:
+        "header header header header header"
+        "menubar menubar menubar menubar menubar"
+        "content content content content content"
+        "footer footer footer footer footer";
+    }
+
+    #other{
+        margin-bottom: auto;
+        margin-top: auto;
+    }
+    #content{
+        grid-area: content;
+        min-height: 40em;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-areas:
+        "other"
+        "registation";
+    }
+    #footer{
+        background-color: #363535;
+        grid-area:footer;
+        min-height: 10em;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas:
+        "Our-Mission Connect-With-Us";
+    }
+}
+

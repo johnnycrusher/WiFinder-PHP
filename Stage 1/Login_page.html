@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>User Registration Page</title>
+        <link href="css/Registration_Page_Styles.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    </head>
+    <body>
+        <div class="grid">
+            <div id="header">
+                <div id="logo-elements" class="center-items">
+                    <img src="img/logo46.svg" width="100px" height="100px">
+                    <h1>Wi-Finder</h1>
+                </div>
+                <div id="header-text" class="center-items">
+                    <h1>Sign Up</h1>
+                </div>
+            </div>
+            <div id="header-fill-left"></div>
+            <div id="header-fill-right"></div>
+            <div id="menubar">
+                <div id="button-loc">
+                    <a href="search_page.html" id="search-menu" class="menu-btn">Search</a>
+                    <a href="Registration_page.html" id="sign-up-menu"class="menu-btn current-page">Sign-Up</a>
+                    <a href="" id="login-menu" class="menu-btn">Login</a>
+                </div>
+            </div>
+            <div id="content">
+                <div id="other">
+                    <h1>This is a page for other content</h1>
+                    <h2>other shit blah blah blah</h2>
+                </div>
+                <div id="registation">
+                    <form id="create-account">
+                        <fieldset>
+                            <legend>
+                                <Strong>Sign Up</Strong>
+                            </legend>
+                            <p><strong>Name:</strong></p>
+                            <input type="text" id="FirstName" placeholder="First Name" required="required">
+                            <input type="text" id="LastName" placeholder="Last Name" required="required">
+                            <p><strong>Email:</strong></p>   
+                            <input type="email" id="email" placeholder="Email" required="required">
+                            <p><strong>Username:</strong></p>
+                            <input type="text" id="UserName" placeholder="Username" required="required">
+                            <p><strong>Password:</strong></p>
+                            <input type="password" id="Password" required="required">
+                            <p><strong>Comfirm your Password:</strong></p>
+                            <input type="password" id="Confirm-Password" required="required">
+                            <p><strong>Birthday:</strong></p>
+                            <select name="month" style="width:100px">
+                                <option value="Jan">Jan</option>
+                                <option value="Feb">Feb</option>
+                                <option value="Mar">Mar</option>
+                                <option value="May">May</option>
+                                <option value="Jun">Jun</option>
+                                <option value="Jul">Jul</option>
+                                <option value="Aug">Aug</option>
+                                <option value="Sep">Sep</option>
+                                <option value="Oct">Oct</option>
+                                <option value="Nov">Nov</option>
+                                <option value="Dec">Dec</option>
+                            </select>
+                            <input type="number" max="31" placeholder="Month" required="required">
+                            <input type="number" min="1900" max="2018" required="required" placeholder="Year">
+                            <p></p>
+                            <button id="sign-up-btn" type="Submit" value="Sign up">Sign Up</button>
+                        </fieldset>
+                    </form>     
+                </div>
+            </div>
+            <div id="footer">
+                <div id="Our-Mission-Text">
+                    <h2>Our Mission</h2>
+                    <p>WiFinder mission is to conntect the citizens of Brisbane with location data on where the closest Free Wifi-Location. To ensure they stay connected to the internet</p>
+                </div>
+                <div id="connect-with-us">
+                    <h2>Connect With Us On:</h2>
+                    <a href="" style="Color:White"><i class="fa fa-facebook-square fa-3x"></i></a>
+                    <a href="" style="Color:White"><i class="fa fa-instagram fa-3x"></i></a>
+                    <a href="" style="Color:White"><i class="fa fa-twitter-square fa-3x"></i></a>
+                </div>
+            </div>
+            <div id="footer-fill-left"></div>
+            <div id="footer-fill-right"></div>
+        </div>
+    </body>
+</html>
