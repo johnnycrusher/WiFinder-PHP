@@ -1,3 +1,4 @@
+/* Core Elements */
 *{
     margin:0px;
     padding:0px;
@@ -43,11 +44,9 @@ body{
     grid-area: content;
     min-height: 40em;
     display: grid;
-    grid-template-columns:1fr;
+    grid-template-columns: 1fr;
     grid-template-areas:
-    "Wifi-location-info"
-    "write-review"
-    "review";
+    "login"
 }
 #footer{
     background-color: #363535;
@@ -91,46 +90,11 @@ body{
     background-color: grey;
     pointer-events: none;
 }
-#WiFi-location-info-box{
-    grid-area:Wifi-location-info;
-    margin: 0 auto;
-}
-#write-review-box{
-    grid-area:write-review;
-    margin-top: 10px;
-    margin-bottom: 10px;
-}
-.white-boxes{
-    border-style: solid;
-    border-width: thin;
-    background-color: white;
-    min-width: 5em;
-    min-height: 20em;
-    margin: 0 auto;
-}
-#publish-btn-container{
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-areas:
-    ". . publish-btn";
-}
-#publish-locs{
-    grid-area: publish-btn;
-    display: grid;
-}
-#publish-btn{
-    width:150px;
-}
-#review-box{
-    grid-area:review;
-    width: 650px;
-    margin-top: 10px;
-    margin-bottom: 10px;
-}
 .center-items{
     margin-top: auto;
     margin-bottom: auto;
 }
+
 #logo-elements{
     grid-area:logo;
 }
@@ -149,6 +113,19 @@ body{
     vertical-align: top;
     grid-area: Connect-With-Us;
 }
+/* Page Specific Elements*/
+#Login{
+    grid-area: login;
+    background-color: #03a9f4; 
+    width: 15em;
+    margin: 0 auto;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+#Login-box{
+    height: 10em;
+}
+
 @media only screen and (max-width: 1263px){
     .grid{
         display: grid;
