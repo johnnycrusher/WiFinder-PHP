@@ -10,7 +10,7 @@
     grid-template-areas:
     "header-left header header header header-right"
     "filter-bar filter-bar filter-bar filter-bar filter-bar"
-    "content-fill-left content-left content-left content-left content-fill-right"
+    "content-left content-left content-left content-right content-fill-right"
     "footer footer footer footer footer";
     font-family: Arial, Helvetica, sans-serif;
 }
@@ -22,12 +22,13 @@
     grid-area: header;
     display: grid;
     min-height: 5em;
+    grid-template-areas:"fill fill header-text"
 }
 #header-text{
     text-align: left;
     font-size: 20pt;
     display: grid;
-    grid-area: header;
+    grid-area: header-text;
 }
 
 #header-left{
@@ -89,12 +90,16 @@
     display: grid;
     min-height: 40em;
     margin: 1em;
-    
+    background-color: #BDF3FF;
+    border: #38737F;
+    border-width: 2px;
+    border-spacing: 1em;
+    border-style: solid;
 }
 
 
 .item_box{
-    background-color: #BDF3FF;
+    
     border: #38737F;
     border-width: 2px;
     border-spacing: 1em;
@@ -114,31 +119,6 @@
 
 .item-box h3{
     padding: 4px;
-}
-
-/*search box*/
-#search-boxes{ 
-   grid-template-areas: "search-box";
-   margin: 4em;
-   margin-top: 5em;
-}
-
-
-#search-boxes input{
-    font-size: 3em;
-    text-align: left;
-    
-}
-
-#search-boxes button{
-    font-size: 2em;
-    border-width: 2px;
-    padding: 10px;
-    border-style: solid;
-    border-radius: 10px;
-    background-color: #38737F;
-    grid-area: search-box;
-    margin: 0.2em;
 }
 
 

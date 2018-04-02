@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Search Results</title>
+  <link href="css/search_results_page_style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+  <div class="grid">
+
+<!--header and various fills-->
+      <div id="header">
+          <div id = "header-text">
+            <h1>Results</h1>
+          </div>
+      </div>
+      <div id="header-left"></div>
+      <div id="header-right"></div>
+      <div id="menubar">
+
+<!--filters bar for search results-->
+      </div>
+      <div id="filter-bar">
+            <h2>
+                In INSERTNAME Area...
+            </h2>
+          <div class="filter-options">
+              <a href="">Highest Rating</a> 
+          </div>
+          <div class="filter-options">
+                <a href="">Closest</a> 
+            </div>
+         </div>
+
+<!--content area and various fills-->
+        <div id="content-fill-right">
+          </div>
+        <div id="content-fill-left">
+          </div>
+        <div id="content-right">
+          </div>
+
+   <div id="content-left">            
+          
+     <!--Search results up to five per page-->
+    <div id="results">
+            <div class="item-box">
+                 <h2>
+                   <a href="">Wifi Spot NAME</a>
+                 </h2> 
+                 <h3>
+                     2/8 Stars
+                 </h3>
+              
+            </div>
+
+        
+                <div class="item-box">
+                     <h2>
+                       <a href="">Wifi Spot NAME</a>
+                     </h2> 
+                     <h3>
+                         7/8 Stars
+                     </h3>
+                </div>
+         
+
+        
+            <div class="item-box">
+                         <h2>
+                           <a href="">Wifi Spot NAME</a>
+                         </h2> 
+                         <h3>
+                            42/8 Stars
+                         </h3>
+            </div>
+          
+
+                <div class="item-box">
+                             <h2>
+                               <a href="">Wifi Spot NAME</a>
+                             </h2> 
+                             <h3>
+                                 2/8 Stars
+                             </h3>
+                </div>
+           
+
+        
+                <div class="item-box">
+                             <h2>
+                               <a href="">Wifi Spot NAME</a>
+                             </h2> 
+                             <h3>
+                                42/8 Stars
+                             </h3>
+                </div>
+            
+     </div> <!--end of results-->
+    
+    </div> <!--end of content left-->
+
+<!-- interactable map-->
+         <div class="map_area">
+            <div class="map"> </div>
+          <div class="search_button">
+            
+          </div>
+        </div>
+      </div>
+<!-- footer -->
+      <div id="footer">
+            <p>Top of page</p>
+          </div>
+      
+    </div> <!--end of body-->
+
+  <script>
+    function initMap() {
+      var uluru = { lat: -25.363, lng: 131.044 };
+      var map = new google.maps.Map(document.getElementById('map'), {
+        zoom: 4,
+        center: uluru
+      });
+      var marker = new google.maps.Marker({
+        position: uluru,
+        map: map
+      });
+    }
+  </script>
+  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyABNLftPMkQVqLWU5ycUeIYPqbyRIAz-gE&callback=initMap">
+  </script>
+
+</body>
+
+</html>
