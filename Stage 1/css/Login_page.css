@@ -94,7 +94,9 @@ body{
     margin-top: auto;
     margin-bottom: auto;
 }
-
+#Login-Header{
+    text-align: center;
+}
 #logo-elements{
     grid-area:logo;
 }
@@ -118,13 +120,35 @@ body{
     grid-area: login;
     background-color: #03a9f4; 
     width: 15em;
+    height: 15em;
     margin: 0 auto;
     margin-top: auto;
     margin-bottom: auto;
 }
+
 #Login-box{
     height: 10em;
 }
+#Username-box{
+    margin: 10px 10px 10px 10px;
+}
+#Password-box{
+    margin: 10px 10px 10px 10px;
+}
+.input-box{
+    padding: 3%;
+    width: 90%;
+    color: #555;
+    font: 95% Arial, Helvetica, sans-serif;  /*Need to Change Fonts */
+}
+
+#login-btn{
+    margin: 10px 10px 10px 10px;
+    width: 90%;
+    padding: 3%;
+}
+
+
 
 @media only screen and (max-width: 1263px){
     .grid{

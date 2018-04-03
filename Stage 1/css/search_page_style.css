@@ -16,7 +16,6 @@
 }
 
 /*header*/
-
 #header{
     background-color: #38737F;
     grid-area: header;
@@ -89,9 +88,7 @@
     display: grid;
     min-height: 40em;
     margin: 1em;
-    
 }
-
 
 .item_box{
     background-color: #BDF3FF;

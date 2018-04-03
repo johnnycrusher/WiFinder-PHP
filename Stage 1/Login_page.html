@@ -15,7 +15,7 @@
                     <h1>Wi-Finder</h1>
                 </div>
                 <div id="header-text" class="center-items">
-                    <h1>Sign Up</h1>
+                    <h1>Login</h1>
                 </div>
             </div>
             <div id="header-fill-left"></div>
@@ -29,18 +29,19 @@
             </div>
             <div id="content">
                 <div id="Login">
-                    <form>
-                        <fieldset id="Login-box">
-                            <legend>
-                                <Strong>Login:</Strong>
-                            </legend>
+                    <form id="login-form">
+                        <h1 id="Login-Header">Login</h1>
+                        <div id="Username-box">
                             <p><strong>Username:</strong></p>
-                            <input type="text" id="UserName" placeholder="Username" required="required">
+                            <input type="text" id="Username" class="input-box" placeholder="Username" required="required">
+                        </div>
+                        <div id="Password-box">
                             <p><strong>Password:</strong></p>
-                            <input type="password" id="Password" required="required">
-                            <br>
+                            <input type="password" id="Password" class="input-box" required="required">
+                        </div>
+                        <div id="login-btn-box">
                             <button type="submit" id='login-btn'>Login</button>
-                        </fieldset>
+                        </div>
                     </form>
                 </div>
             </div>
