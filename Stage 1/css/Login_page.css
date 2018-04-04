@@ -92,7 +92,18 @@ body{
     border-radius: 5px;
 }
 .current-page{
+    display: inline-block;
+    text-decoration: none;
+    color: white;
+    text-align: center;
+    width:75px;
+    height: 35px;
     background-color: #717F7B;
+    border-style: solid;
+    border-color: #467F6E;
+    border-width:1px;
+    border-radius: 5px;
+    border-width:1px;
     pointer-events: none;
 }
 
