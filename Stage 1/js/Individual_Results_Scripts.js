@@ -34,4 +34,4 @@ function ratingHoverOut(item){
         stars[i].classList.remove("fa-star");
         stars[i].classList.add("fa-star-o");
     }
-}
+};

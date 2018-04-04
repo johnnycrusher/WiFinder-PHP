@@ -7,48 +7,58 @@ body{
     background-color:#e9ebee;
 }
 .grid{
+    font-family: Arial, Helvetica, sans-serif;
     display: grid;
     grid-template-columns: 1fr 20% 20% 20% 1fr;
+    grid-template-rows: 10% 75% 15%;
     grid-template-areas:
     "header-fill-left header header menubar header-fill-right"
     ". content content content ."
     "footer-fill-left footer footer footer footer-fill-right";
 }
+
 #header{
-    background-color:lightblue;
+    background-color: #467F6E;
     grid-area: header;
     display: grid;
     min-height: 5em;
+    
+    color: white;
     grid-column: 1fr 1fr;
     grid-template-areas:
     "logo header-text"
 }
 #header-fill-left{
     display:grid;
-    background-color:lightblue;
+    background-color: #467F6E;
     grid-area: header-fill-left;
 }
 #header-fill-right{
     display:grid;
-    background-color:lightblue;
+    background-color: #467F6E;
+    
     grid-area: header-fill-right;
 }
 #menubar{
-    background-color:lightblue;
+    background-color: #467F6E;
     grid-area: menubar;
     display:grid;
     min-height: 5em;
 }
+
 #content{
     grid-area: content;
     min-height: 40em;
     display: grid;
+    
+    /*background-color: #D7FFF3;*/
     grid-template-columns: 1fr 1fr;
     grid-template-areas:
     "other registation";
 }
+
 #footer{
-    background-color: #363535;
+    background-color: #717F7B;
     grid-area:footer;
     min-height: 10em;
     display: grid;
@@ -56,16 +66,18 @@ body{
     grid-template-areas:
     "Our-Mission . Connect-With-Us";
 }
+
 #footer-fill-left{
     display:grid;
-    background-color:#363535;
+    background-color:#717F7B;
     grid-area: footer-fill-left;
 }
 #footer-fill-right{
     display:grid;
-    background-color:#363535;
+    background-color:#717F7B;
     grid-area: footer-fill-right;
 }
+
 #button-loc{
     width: 16em;
     margin: 0 auto;
@@ -76,17 +88,30 @@ body{
 .menu-btn{
     display: inline-block;
     text-decoration: none;
-    color: black;
+    color: white;
     text-align: center;
     width:75px;
     height: 35px;
-    background-color: white;
+    background-color: #467F6E;
     border-style: solid;
-    border-color: black;
+    border-color: #467F6E;
     border-width:1px;
+    border-radius: 5px;
 }
+
 .current-page{
-    background-color: grey;
+    display: inline-block;
+    text-decoration: none;
+    color: white;
+    text-align: center;
+    width:75px;
+    height: 35px;
+    background-color: #717F7B;
+    border-style: solid;
+    border-color: #467F6E;
+    border-width:1px;
+    border-radius: 5px;
+    border-width:1px;
     pointer-events: none;
 }
 .center-items{
@@ -113,24 +138,54 @@ body{
 }
 /* Page Specific Elements */
 #registation{
-    grid-area:registation;
-    background-color: #03a9f4; 
+    grid-area: registation;
     width: 25em;
     margin: 0 auto;
     margin-top: auto;
     margin-bottom: auto;
+    padding: 1em;
 }
+
+#create-account h2 {
+    color: #467F6E;
+    padding: 5px;
+}
+#create-account p {
+    padding: 7px;
+}
+
+#create-account fieldset{
+    padding: .5em;
+    border-radius: 5px;
+}
+
 #sign-up-btn{
     display:block;
-    margin-top: 10px;
+    margin-top: 20px;
     margin: 0 auto;
     margin-bottom: 10px;
+    padding: 7px;
+    padding-left: 100px;
+    padding-right: 100px;
+    font-size: 13pt;
+    border-radius: 5px;
+    color: white;
+    border-color: #467F6E;
+    background-color: #467F6E;
 }
+
 #other{
     grid-area: other;
     text-align: center;
     margin-top: auto;
     margin-bottom: auto;
+    margin-right: 2em;
+    margin-left: 2em;
+}
+
+.error-message{
+    color:red;
+    visibility: hidden;
 }
 @media only screen and (max-width: 1263px){
     .grid{

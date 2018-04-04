@@ -1,155 +1,201 @@
-/*basic grid setup*/
 *{
     margin:0px;
     padding:0px;
 }
-.grid{
-    display: grid;
-    grid-template-columns: 1fr 10% 30% 30% 1fr;
-    grid-template-rows: auto;
-    grid-template-areas:
-    "header-left header header header header-right"
-    "filter-bar filter-bar filter-bar filter-bar filter-bar"
-    "content-fill-left content-left content-left content-left content-fill-right"
-    "footer footer footer footer footer";
-    font-family: Arial, Helvetica, sans-serif;
+body{
+    background-color:#e9ebee;
 }
-
-/*header*/
+.grid{
+    font-family: Arial, Helvetica, sans-serif;
+    display: grid;
+    grid-template-columns: 1fr 20% 20% 20% 1fr;
+    grid-template-rows: 10% 75% 15%;
+    grid-template-areas:
+    "header-fill-left header header menubar header-fill-right"
+    ". content content content ."
+    "footer-fill-left footer footer footer footer-fill-right";
+}
 #header{
-    background-color: #38737F;
+    background-color: #467F6E;
     grid-area: header;
     display: grid;
     min-height: 5em;
+    
+    color: white;
+    grid-column: 1fr 1fr;
+    grid-template-areas:
+    "logo header-text"
+}
+#header-fill-left{
+    display:grid;
+    background-color: #467F6E;
+    grid-area: header-fill-left;
+}
+#header-fill-right{
+    display:grid;
+    background-color: #467F6E;
+    
+    grid-area: header-fill-right;
+}
+#menubar{
+    background-color: #467F6E;
+    grid-area: menubar;
+    display:grid;
+    min-height: 5em;
+}
+#content{
+    grid-area: content;
+    min-height: 40em;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+    "search-input"
+    "options"
+    "search-btn"
+    ;
+}
+#footer{
+    background-color: #717F7B;
+    grid-area:footer;
+    min-height: 10em;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas:
+    "Our-Mission . Connect-With-Us";
+}
+#footer-fill-left{
+    display:grid;
+    background-color:#717F7B;
+    grid-area: footer-fill-left;
+}
+#footer-fill-right{
+    display:grid;
+    background-color:#717F7B;
+    grid-area: footer-fill-right;
+}
+#button-loc{
+    width: 16em;
+    margin: 0 auto;
+    margin-top: auto;
+    margin-bottom: 5px;
+    line-height: 30px;
+}
+.menu-btn{
+    display: inline-block;
+    text-decoration: none;
+    color: white;
+    text-align: center;
+    width:75px;
+    height: 35px;
+    background-color: #467F6E;
+    border-style: solid;
+    border-color: #467F6E;
+    border-width:1px;
+    border-radius: 5px;
+}
+.current-page{
+    background-color: #717F7B;
+    pointer-events: none;
+}
+
+#footer-fill-left{
+    display:grid;
+    background-color:#717F7B;
+    grid-area: footer-fill-left;
+}
+#footer-fill-right{
+    display:grid;
+    background-color:#717F7B;
+    grid-area: footer-fill-right;
+}
+#button-loc{
+    width: 16em;
+    margin: 0 auto;
+    margin-top: auto;
+    margin-bottom: 5px;
+    line-height: 30px;
+}
+.menu-btn{
+    display: inline-block;
+    text-decoration: none;
+    color: white;
+    text-align: center;
+    width:75px;
+    height: 35px;
+    background-color: #467F6E;
+    border-style: solid;
+    border-color: #467F6E;
+    border-width:1px;
+    border-radius: 5px;
+}
+.current-page{
+    background-color: #717F7B;
+    pointer-events: none;
+}
+
+/*Specific Page Styling*/
+
+#content input{
+    margin: 1em;
+    font-size: 30pt;
+    grid-area: search-input;
+}
+
+#search-btn-loc{
+    font-size: 30pt;
+    grid-area: search-btn;
+    
+}
+#search-btn-loc button{
+    font-size: 20pt;
+    border-radius: 5px;
+    color: white;
+    border-color: #467F6E;
+    background-color: #467F6E;
+}
+#advanced-options{
+    grid-area: options;
+    min-height: 2em;
+    padding: 1em;
+}
+
+#advanced-options select{
+    font-size: 12pt;
+}
+
+#advanced-options i{
+    color: #467F6E;
+    
+}
+
+#advanced-options h4{
+    font-size: 16pt;
+    margin-bottom: 10px;
+}
+#advanced-options p{
+    font-size: 14pt;
+    padding: 5px;
+}
+
+/*Standard page stuff*/
+#logo-elements{
+    grid-area:logo;
 }
 #header-text{
-    text-align: left;
-    font-size: 20pt;
-    display: grid;
-    grid-area: header;
+    grid-area: header-text;
+    margin: auto;
 }
-
-#header-left{
-    background-color: #38737F;
-    grid-area: header-left;
-    display: grid;
-    min-height: 5em;
+#Our-Mission-Text{
+    width: 215px;
+    grid-area: Our-Mission;
+    color:white;
 }
-#header-right{
-    background-color: #38737F;
-    grid-area: header-right;
-    display: grid;
-    min-height: 5em;
+#connect-with-us{
+    color: white;
+    align-content: end;
+    vertical-align: top;
+    grid-area: Connect-With-Us;
 }
-/*filter bars and options*/
-#filter-bar{
-    background-color: #5F7A7F;
-    grid-area: filter-bar;
-    display: grid;
-    padding: 1em;
-    text-align: center;    
-}
-
-.filter-options a {
-    background-color: #38737F;
-    margin-left: 10em;
-    border-width: 2px;
-    border-color: white;
-}
-
-/*content search results*/
-#content-fill-right{
-    background-color: #BDF3FF;
-    grid-area: content-fill-left; 
-}
-
-#content-fill-left{
-    background-color: #BDF3FF;
-    grid-area: content-fill-right; 
-}
-#content-right{    
-    background-color: #BDF3FF;
-    grid-area: content-right;
-    min-height: 40em;
-    display: grid;
-    
-}
-#content-left{
-    background-color: #BDF3FF;
-    grid-area: content-left;
-    min-height: 40em;
-    font-family: Arial, Helvetica, sans-serif;
-    display: grid;
-    
-}
-/*list of search results*/
-#results{
-    grid-area: content-left;
-    display: grid;
-    min-height: 40em;
-    margin: 1em;
-}
-
-.item_box{
-    background-color: #BDF3FF;
-    border: #38737F;
-    border-width: 2px;
-    border-spacing: 1em;
-    border-style: solid;
-    padding: 1em;
-
-    min-height: 6em;
-    min-width: 20em;
-    text-align: center;
-    display: grid;
-    grid-area: content-left;
-}
-
-.item-box h2{
-    padding: 4px;
-}
-
-.item-box h3{
-    padding: 4px;
-}
-
-/*search box*/
-#search-boxes{ 
-   grid-template-areas: "search-box";
-   margin: 4em;
-   margin-top: 5em;
-}
-
-
-#search-boxes input{
-    font-size: 3em;
-    text-align: left;
-    
-}
-
-#search-boxes button{
-    font-size: 2em;
-    border-width: 2px;
-    padding: 10px;
-    border-style: solid;
-    border-radius: 10px;
-    background-color: #38737F;
-    grid-area: search-box;
-    margin: 0.2em;
-}
-
-
-/*footer*/
-#footer{
-    background-color: #5F7A7F;
-    grid-area: footer;
-    min-height: 10em;
-    font-size: 8pt;
-    text-align: center;
-}
-
-
-
 @media only screen and (max-width: 1263px){
     .grid{
         display: grid;
@@ -187,7 +233,6 @@
         margin-top: auto;
     }
     #content{
-        background-color: green;
         grid-area: content;
         min-height: 40em;
         display: grid;
@@ -196,6 +241,14 @@
         "other"
         "registation";
     }
+    #footer{
+        background-color: #717F7B;
+        grid-area:footer;
+        min-height: 10em;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas:
+        "Our-Mission Connect-With-Us";
+    }
 }
-
 
