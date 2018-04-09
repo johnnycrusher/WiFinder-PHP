@@ -24,7 +24,7 @@
             <div id="menubar">
                 <div id="button-loc">
                     <a href="search_page.html" id="search-menu" class="menu-btn">Search <i class="fa fa-search"></i></a>
-                    <a href="Registration_page.html" id="sign-up-menu"class="current-page">Sign-Up</a>
+                    <a href="Registration_page.html" id="sign-up-menu"class="current-page">Sign-Up <i class="fa fa-user-plus"></i></a>
                     <a href="Login_Page.html" id="login-menu" class="menu-btn">Login <i class="fa fa-user-o"></i></a>
                 </div>
             </div>
@@ -40,22 +40,26 @@
                                 <Strong>Sign Up</Strong>
                             </legend>
                             <p><strong>Name:</strong></p>
-                            <input type="text" id="firstName" placeholder="First Name" required="required" onchange="hideError(this)">
-                            <input type="text" id="lastName" placeholder="Last Name" required="required" onchange="hideError(this)">
-                            <p><span id="nameMissing" class="error-message">First Name and Last Name is a required field!</span></p>
+                            <input type="text" id="firstName" class="input-field" placeholder="First Name" required="required" onchange="hideError(this)">
+                            <input type="text" id="lastName" class="input-field" placeholder="Last Name" required="required" onchange="hideError(this)">
+                            <span id="nameMissing" class="error-message">First Name and Last Name is a required field!</span>
+
                             <p><strong>Email:</strong></p>
-                            <input type="email" id="email" placeholder="Email" required="required" onchange="hideError(this)">
-                            <p><span id="emailMissing" class="error-message"> Email is a required field! </span></p>
+                            <input type="email" id="email" class="input-field" placeholder="Email" required="required" onchange="hideError(this)">
+                            <span id="emailMissing" class="error-message"> Email is a required field! </span>
+
                             <p><strong>Username:</strong></p>
-                            <input type="text" id="username" placeholder="Username" required="required" onchange="hideError(this)">
-                            <p><span id="usernameMissing" class="error-message"> Username is a required field! </span></p>
+                            <input type="text" id="username" class="input-field" placeholder="Username" required="required" onchange="hideError(this)">
+                            <span id="usernameMissing" class="error-message"> Username is a required field! </span>
+
                             <p><strong>Password:</strong></p>
-                            <input type="password" id="password" required="required" onchange="hideError(this)">
+                            <input type="password" id="password" class="input-field" required="required" onchange="hideError(this)">
                             <p><strong>Comfirm your Password:</strong></p>
-                            <input type="password" id="confirm-password" required="required" onchange="hideError(this)">
-                            <p><span id="passwordMissing" class="error-message">Password is a required field!</span></p>
+                            <input type="password" id="confirm-password" class="input-field" required="required" onchange="hideError(this)">
+                            <span id="passwordMissing" class="error-message">Password is a required field!</span>
+
                             <p><strong>Birthday:</strong></p>
-                            <select id="month" name="month" style="width:100px"  onchange="hideError(this)">
+                            <select id="month" name="month" onchange="hideError(this)">
                                 <option value="Select">Select</option>
                                 <option value="Jan">Jan</option>
                                 <option value="Feb">Feb</option>
@@ -70,8 +74,8 @@
                                 <option value="Dec">Dec</option>
                             </select>
                             <input type="number" id="day" placeholder="day" required="required"  onchange="hideError(this)">
-                            <input type="number" id="year" min="1900" max="2018" required="required" placeholder="Year"  onchange="hideError(this)">
-                            <p><span id="birthdayMissing" class="error-message"> Password is not the same on both fields! </span></p>
+                            <input type="number" id="year" min="1900" max="2018" required="required" placeholder="Year" onchange="hideError(this)">
+                            <span id="birthdayMissing" class="error-message"> Password is not the same on both fields! </span>
                             <button id="sign-up-btn" type="Submit" value="Sign up" onclick="validate()">Sign Up</button>
                         </fieldset>
                     </form>     

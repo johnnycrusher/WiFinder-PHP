@@ -2,94 +2,89 @@
 <html>
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Search Page</title>
-  <link href="css/search_page_style.css" rel="stylesheet" type="text/css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <script src="js/Individual_Results_Scripts.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Page</title>
+    <link href="css/search_page_style.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="js/search_page_script.js"></script>
+    <link rel="manifest" href="/manifest.json">
+    <meta name="apple-mobile-web-app-title" content="Wi-Finder">
+    <meta name="apple-mobile-web-app-capable" content="yes">
 </head>
 
 <body>
-  <div class="grid">
-    <div id="header">
-      <div id="logo-elements" class="center-items">
-          <img src="img/logo46.svg" width="100px" height="100px">
-          <h1>Wi-Finder</h1>
-      </div>
-      <div id="header-text" class="center-items">
-          <h1>Advanced Search</h1>
-      </div>
-  </div>
-  <div id="header-fill-left"></div>
-  <div id="header-fill-right"></div>
-  <div id="menubar">
-      <div id="button-loc">
-          <a href="" id="search-menu" class="menu-btn">Search</a>
-          <a href="Registration_Page.html" id="sign-up-menu"class="menu-btn">Sign-Up</a>
-          <a href="" id="login-menu" class="menu-btn">Login</a>
-      </div>
-  </div>
-      <div id="header-fill-left"></div>
-      <div id="header-fill-right"></div>
+    <div class="grid">
+        <div id="header">
+            <div id="logo-elements" class="center-items">
+                <img src="img/logo46.svg" width="100px" height="100px">
+                <h1>Wi-Finder</h1>
+            </div>
+            <div id="header-text" class="center-items">
+                <h1>Advanced Search</h1>
+            </div>
+        </div>
+        <div id="header-fill-left"></div>
+        <div id="header-fill-right"></div>
 
-          
-      <div id="content">
-          
-        <div id="search-boxes">       
-              <input type="text" placeholder="Search">
-             
+        <div id="menubar">
+            <div id="button-loc">
+                <a href="" id="search-menu" class="current-page">Search <i class="fa fa-search"></i></a>
+                <a href="Registration_Page.html" id="sign-up-menu" class="menu-btn">Sign-Up <i class="fa fa-user-plus"></i></a>
+                <a href="Login_page.html" id="login-menu" class="menu-btn">Login <i class="fa fa-user-o"></i></a>
+            </div>
+        </div>
+        <div id="content">
+            <div id="search-boxes">
+                <input id="search-box" type="text" placeholder="Search">
+                <button id="location-btn" onclick="getLocation()">
+                    <i class="fa fa-map-marker fa-3x"></i>
+                </button>
                 <div id="search-btn-loc">
-                <button type="submit">Search</button>
+                    <button onclick="location.href = 'search_results_page.html';" type="submit">Search</button>
                 </div>
-                
-              <div id="advanced-options">
-              <h4>Narrow your search results by...</h4>
-              <p>Searching for:
-              <select>
-                <option value="address">Address</option>
-                <option value="suburb">Suburb</option>
-              </select>
-              </p>
-              <p>Near:
-              <select>
-                <option value="park">Park</option>
-                <option value="library">Library</option>
-              </select>
-              </p>
-              <p>With a minimum rating of
-              <div>
-                  <span onmouseover="ratingHover(this)" onmouseout="ratingHoverOut(this)"><i id="one-star" class="fa fa-star-o"></i></span>
-                  <span onmouseover="ratingHover(this)" onmouseout="ratingHoverOut(this)"><i id="two-star" class="fa fa-star-o"></i></span>
-                  <span onmouseover="ratingHover(this)" onmouseout="ratingHoverOut(this)"><i id="three-star" class="fa fa-star-o"></i></span>
-                  <span onmouseover="ratingHover(this)" onmouseout="ratingHoverOut(this)"><i id="four-star" class="fa fa-star-o"></i></span>
-                  <span onmouseover="ratingHover(this)" onmouseout="ratingHoverOut(this)"><i id="five-star" class="fa fa-star-o"></i></span>
-              </div>
-              </p>
-              </div>
+                <div id="advanced-options">
+                    <h4>Narrow your search results by...</h4>
+                    <p>Searching for:
+                        <select>
+                            <option value="address">Address</option>
+                            <option value="suburb">Suburb</option>
+                        </select>
+                    </p>
+                    <p>Near:
+                        <select>
+                            <option value="park">Park</option>
+                            <option value="library">Library</option>
+                        </select>
+                    </p>
+                    <p>With a minimum rating of
+                        <div>
+                            <span onmouseover="ratingHover(this)" onmouseout="ratingHoverOut(this)"><i id="one-star" class="fa fa-star-o"></i></span>
+                            <span onmouseover="ratingHover(this)" onmouseout="ratingHoverOut(this)"><i id="two-star" class="fa fa-star-o"></i></span>
+                            <span onmouseover="ratingHover(this)" onmouseout="ratingHoverOut(this)"><i id="three-star" class="fa fa-star-o"></i></span>
+                            <span onmouseover="ratingHover(this)" onmouseout="ratingHoverOut(this)"><i id="four-star" class="fa fa-star-o"></i></span>
+                            <span onmouseover="ratingHover(this)" onmouseout="ratingHoverOut(this)"><i id="five-star" class="fa fa-star-o"></i></span>
+                        </div>
+                    </p>
+                </div>
+            </div>
+        </div>
 
-
-              
+        <div id="footer">
+            <div id="Our-Mission-Text">
+                <h2>Our Mission</h2>
+                <p>WiFinder mission is to conntect the citizens of Brisbane with location data on where the closest Free Wifi-Location.
+                    To ensure they stay connected to the internet</p>
+            </div>
+            <div id="connect-with-us">
+                <h2>Connect With Us On:</h2>
+                <a href="" style="Color:White"><i class="fa fa-facebook-square fa-3x"></i></a>
+                <a href="" style="Color:White"><i class="fa fa-instagram fa-3x"></i></a>
+                <a href="" style="Color:White"><i class="fa fa-twitter-square fa-3x"></i></a>
+            </div>
         </div>
-        
-      </div>
-  
-      
-      <div id="footer">
-        <div id="Our-Mission-Text">
-            <h2>Our Mission</h2>
-            <p>WiFinder mission is to conntect the citizens of Brisbane with location data on where the closest Free Wifi-Location.
-                To ensure they stay connected to the internet</p>
-        </div>
-        <div id="connect-with-us">
-            <h2>Connect With Us On:</h2>
-            <a href="" style="Color:White"><i class="fa fa-facebook-square fa-3x"></i></a>
-            <a href="" style="Color:White"><i class="fa fa-instagram fa-3x"></i></a>
-            <a href="" style="Color:White"><i class="fa fa-twitter-square fa-3x"></i></a>
-        </div>
-    </div>
-    <div id="footer-fill-left"></div>
-    <div id="footer-fill-right"></div>
+        <div id="footer-fill-left"></div>
+        <div id="footer-fill-right"></div>
 
     </div>
 

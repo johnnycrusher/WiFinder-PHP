@@ -6,6 +6,7 @@
         <title>User Registration Page</title>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <link href="css/Login_page.css" rel="stylesheet">
+        <script src="js/search_page_script.js"></script>
     </head>
     <body>
         <div class="grid">
@@ -22,29 +23,26 @@
             <div id="header-fill-right"></div>
             <div id="menubar">
                 <div id="button-loc">
-                    <a href="search_page.html" id="search-menu" class="menu-btn">Search</a>
-                    <a href="Registration_page.html" id="sign-up-menu"class="menu-btn">Sign-Up</a>
-                    <a href="Login_page.html" id="login-menu" class="current-page">Login</a>
+                    <a href="search_page.html" id="search-menu" class="menu-btn">Search <i class="fa fa-search"></i></a>
+                    <a href="Registration_page.html" id="sign-up-menu"class="menu-btn">Sign-Up <i class="fa fa-user-plus"></i></a>
+                    <a href="Login_page.html" id="login-menu" class="current-page">Login <i class="fa fa-user-o"></i></a>
                 </div>
             </div>
             <div id="content">
-                <div id="content">
-                    <div id="Login">
-                        <form>
-                            <fieldset id="Login-box">
-                                <legend>
-                                    <h2>Login:</h2>
-                                </legend>
-                                <!--<p>Username:</p>-->
-                                <input type="text" id="UserName" placeholder="Username" required="required">
-                                <!--<p>Password:</p>-->
-                                <input type="password" id="Password" placeholder="Password" required="required">
-                                <br>
-                                <button type="submit" id='login-btn'>Login</button>
-                                </fieldset>
-                            </div>
-                        </form>
-                    </div>
+                <div id="Login">
+                    <form>
+                        <fieldset id="Login-box">
+                            <legend>
+                                <h2>Login:</h2>
+                            </legend>
+                            <!--<p>Username:</p>-->
+                            <input type="text" id="UserName" class="input-field" placeholder="Username" required="required">
+                            <!--<p>Password:</p>-->
+                            <input type="password" id="Password" class="input-field" placeholder="Password" required="required">
+                            <br>
+                            <button type="submit" id='login-btn'>Login</button>
+                        </fieldset>
+                    </form>                     
                 </div>
             </div>
             <div id="footer">

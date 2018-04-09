@@ -48,7 +48,7 @@ body{
 
 #content{
     grid-area: content;
-    min-height: 40em;
+    min-height: 40.5em;
     display: grid;
     
     /*background-color: #D7FFF3;*/
@@ -98,7 +98,9 @@ body{
     border-width:1px;
     border-radius: 5px;
 }
-
+#sign-up-menu{
+    width: 90px;
+}
 .current-page{
     display: inline-block;
     text-decoration: none;
@@ -120,13 +122,13 @@ body{
 }
 #logo-elements{
     grid-area:logo;
+    visibility: visible;
 }
 #header-text{
     grid-area: header-text;
     margin: auto;
 }
 #Our-Mission-Text{
-    width: 215px;
     grid-area: Our-Mission;
     color:white;
 }
@@ -158,6 +160,13 @@ body{
     padding: .5em;
     border-radius: 5px;
 }
+#day{
+    width: 5em;
+}
+
+#month{
+    width: 100px;
+}
 
 #sign-up-btn{
     display:block;
@@ -184,17 +193,22 @@ body{
 }
 
 .error-message{
+    display:block;
     color:red;
     visibility: hidden;
+}
+
+.input-field{
+    padding: 3px;
 }
 @media only screen and (max-width: 1263px){
     .grid{
         display: grid;
         grid-template-columns: 1fr 25% 25% 25% 1fr;
         grid-template-areas:
-        ". header header menubar ."
+        "header-fill-left header header menubar header-fill-right"
         ". content content content ."
-        ". footer footer footer .";
+        "footer-fill-left footer footer footer footer-fill-right";
     }
 }
 @media only screen and (max-width:950px){
@@ -222,6 +236,66 @@ body{
     #other{
         margin-bottom: auto;
         margin-top: auto;
+        font-size: 1em;
+    }
+    #content{
+        grid-area: content;
+        min-height: 40em;
+        display: grid;
+        grid-template-columns:1fr;
+        grid-template-areas:
+        "other"
+        "registation";
+    }
+    #footer{
+        background-color: #717F7B;
+        grid-area:footer;
+        min-height: 10em;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas:
+        "Our-Mission Connect-With-Us";
+    }
+    #connect-with-us{
+        color: white;
+        align-content: end;
+        vertical-align: top;
+        margin: 0 auto;
+        grid-area: Connect-With-Us;
+    }
+}
+
+@media only screen and (max-width:500px){
+
+    .grid{
+        display: grid;
+        grid-template-columns: 1fr 25% 25% 25% 1fr;
+        grid-template-areas:
+        "header header header header header"
+        "menubar menubar menubar menubar menubar"
+        "content content content content content"
+        "footer footer footer footer footer";
+    }
+
+    #other{
+        margin-bottom: auto;
+        margin-top: auto;
+        font-size: 1em;
+    }
+    #header{
+        background-color: #467F6E;
+        grid-area: header;
+        display: grid;
+        min-height: 1em;
+        
+        color: white;
+        grid-column: 1fr;
+        grid-template-areas:
+        "header-text"
+    }
+    #logo-elements{
+        grid-area:logo;
+        display: none;
     }
     #content{
         grid-area: content;
@@ -232,14 +306,64 @@ body{
         "other"
         "registation";
     }
+    #registation{
+        grid-area: registation;
+        width: 90%;
+        margin: 0 auto;
+        margin-top: auto;
+        margin-bottom: auto;
+        padding: 1em;
+    }
+    #month{
+        width: 30%;
+    }
+    #day{
+        width: 30%;
+    }
+    #year{
+        width: 30%
+    }
+    .input-field{
+        width: 80%;
+    }
+    #sign-up-btn{
+        display:block;
+        margin-top: 20px;
+        margin: 0 auto;
+        margin-bottom: 10px;
+        padding: 7px;
+        padding-left: 50px;
+        padding-right: 50px;
+        font-size: 13pt;
+        border-radius: 5px;
+        color: white;
+        border-color: #467F6E;
+        background-color: #467F6E;
+    }
     #footer{
-        background-color: #363535;
+        background-color: #717F7B;
         grid-area:footer;
         min-height: 10em;
         display: grid;
         grid-template-columns: 1fr 1fr;
         grid-template-areas:
         "Our-Mission Connect-With-Us";
+    }
+    #Our-Mission-Text{
+        grid-area: Our-Mission;
+        color:white;
+    }
+    #Our-Missing-Text h2{
+        font-size: 1em !important;
+    }
+    #Our-Missing-Text p{
+        font-size: 0.5em !important;
+    }
+    #connect-with-us{
+        color: white;
+        align-content: end;
+        vertical-align: top;
+        grid-area: Connect-With-Us;
     }
 }
 

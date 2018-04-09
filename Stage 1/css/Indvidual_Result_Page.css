@@ -2,9 +2,11 @@
     margin:0px;
     padding:0px;
 }
+
 body{
     background-color:#e9ebee;
 }
+
 .grid{
     font-family: Arial, Helvetica, sans-serif;
     display: grid;
@@ -15,6 +17,7 @@ body{
     ". content content content ."
     "footer-fill-left footer footer footer footer-fill-right";
 }
+
 #header{
     background-color: #467F6E;
     grid-area: header;
@@ -26,81 +29,30 @@ body{
     grid-template-areas:
     "logo header-text"
 }
+
 #header-fill-left{
     display:grid;
     background-color: #467F6E;
     grid-area: header-fill-left;
 }
+
 #header-fill-right{
     display:grid;
     background-color: #467F6E;
     grid-area: header-fill-right;
 }
+
 #menubar{
     background-color: #467F6E;
     grid-area: menubar;
     display:grid;
     min-height: 5em;
 }
+
 #content{
     grid-area: content;
     min-height: 40em;
     display: grid;
-}
-#footer{
-    background-color: #717F7B;
-    grid-area:footer;
-    min-height: 10em;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-areas:
-    "Our-Mission . Connect-With-Us";
-}
-#footer-fill-left{
-    display:grid;
-    background-color:#717F7B;
-    grid-area: footer-fill-left;
-}
-#footer-fill-right{
-    display:grid;
-    background-color:#717F7B;
-    grid-area: footer-fill-right;
-}
-#button-loc{
-    width: 16em;
-    margin: 0 auto;
-    margin-top: auto;
-    margin-bottom: 5px;
-    line-height: 30px;
-}
-.menu-btn{
-    display: inline-block;
-    text-decoration: none;
-    color: white;
-    text-align: center;
-    width:75px;
-    height: 35px;
-    background-color: #467F6E;
-    border-style: solid;
-    border-color: #467F6E;
-    border-width:1px;
-    border-radius: 5px;
-}
-.current-page{
-    background-color: #717F7B;
-    pointer-events: none;
-}
-#content{
-    
-    grid-area: content;
-    min-height: 40em;
-    display: grid;
-    grid-template-columns:1fr;
-    grid-template-areas:
-    "Wifi-location-info"
-    "review"
-    "write-review"
-    ;
 }
 
 #footer{
@@ -112,16 +64,19 @@ body{
     grid-template-areas:
     "Our-Mission . Connect-With-Us";
 }
+
 #footer-fill-left{
     display:grid;
     background-color:#717F7B;
     grid-area: footer-fill-left;
 }
+
 #footer-fill-right{
     display:grid;
     background-color:#717F7B;
     grid-area: footer-fill-right;
 }
+
 #button-loc{
     width: 16em;
     margin: 0 auto;
@@ -129,6 +84,7 @@ body{
     margin-bottom: 5px;
     line-height: 30px;
 }
+
 .menu-btn{
     display: inline-block;
     text-decoration: none;
@@ -142,6 +98,72 @@ body{
     border-width:1px;
     border-radius: 5px;
 }
+
+.current-page{
+    background-color: #717F7B;
+    pointer-events: none;
+}
+
+#content{
+    grid-area: content;
+    min-height: 40.5em;
+    display: grid;
+    grid-template-columns:1fr;
+    grid-template-areas:
+    "map"
+    "Wifi-location-info"
+    "review"
+    "write-review";
+}
+
+#footer{
+    background-color: #717F7B;
+    grid-area:footer;
+    min-height: 10em;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas:
+    "Our-Mission . Connect-With-Us";
+}
+
+#footer-fill-left{
+    display:grid;
+    background-color:#717F7B;
+    grid-area: footer-fill-left;
+}
+
+#footer-fill-right{
+    display:grid;
+    background-color:#717F7B;
+    grid-area: footer-fill-right;
+}
+
+#button-loc{
+    width: 16em;
+    margin: 0 auto;
+    margin-top: auto;
+    margin-bottom: 5px;
+    line-height: 30px;
+}
+
+.menu-btn{
+    display: inline-block;
+    text-decoration: none;
+    color: white;
+    text-align: center;
+    width:75px;
+    height: 35px;
+    background-color: #467F6E;
+    border-style: solid;
+    border-color: #467F6E;
+    border-width:1px;
+    border-radius: 5px;
+}
+
+#sign-up-menu{
+    width: 90px;
+}
+
 .current-page{
     background-color: #717F7B;
     pointer-events: none;
@@ -154,6 +176,7 @@ body{
     padding-right: 6px;
     padding-bottom: 4px;
 }
+
 #content h3{
     font-size: 12pt;
     
@@ -161,13 +184,24 @@ body{
 
 #content i{
     color: #70CCB1;
-    
+}
+
+#map{
+    width: 650px;
+    height: 370px;
+    border-style: solid;
+    border-width: 1px;
+    grid-area: map;
+    margin: 0 auto;
+    margin-top: 20px;
+    margin-bottom: 10px;
 }
 
 #WiFi-location-info-box{
     grid-area:Wifi-location-info;
     margin: 0 auto;
 }
+
 #write-review-box{
     grid-area:write-review;
     margin-top: 14px;
@@ -175,6 +209,7 @@ body{
     padding: 10px;
     border-radius: 5px;
 }
+
 .white-boxes{
     border-style: solid;
     border-width: thin;
@@ -184,16 +219,19 @@ body{
     margin: 0 auto;
     border-radius: 5px;
 }
+
 #publish-btn-container{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-areas:
     ". . publish-btn";
 }
+
 #publish-locs{
     grid-area: publish-btn;
     display: grid;
 }
+
 #publish-btn{
     /*width:150px;*/
     font-size: 13pt;
@@ -204,50 +242,54 @@ body{
     border-radius: 5px;
     color: white;
 }
+
 #review-box{
     grid-area:review;
     width: 650px;
     margin-top: 10px;
     margin-bottom: 10px;
     padding: 10px;
-
 }
 
 #review-box textarea{
     font-size: 20pt;
     font-family: Arial, Helvetica, sans-serif;
-
 }
 .center-items{
     margin-top: auto;
     margin-bottom: auto;
 }
+
 #logo-elements{
     grid-area:logo;
 }
+
 #header-text{
     grid-area: header-text;
     margin: auto;
 }
+
 #Our-Mission-Text{
     width: 215px;
     grid-area: Our-Mission;
     color:white;
 }
+
 #connect-with-us{
     color: white;
     align-content: end;
     vertical-align: top;
     grid-area: Connect-With-Us;
 }
+
 @media only screen and (max-width: 1263px){
     .grid{
         display: grid;
         grid-template-columns: 1fr 25% 25% 25% 1fr;
         grid-template-areas:
-        ". header header menubar ."
+        "header-fill-left header header menubar header-fill-right"
         ". content content content ."
-        ". footer footer footer .";
+        "footer-fill-left footer footer footer footer-fill-right";
     }
 }
 @media only screen and (max-width:950px){
@@ -276,14 +318,30 @@ body{
         margin-bottom: auto;
         margin-top: auto;
     }
+    #map{
+        width: 90%;
+        height: 370px;
+    }
+    #review-box{
+        width: 90%;
+    }
+    #write-review-box{
+        width: 90%;
+    }
+    #write-review-box textarea{
+        width: 100%;
+    }
+    
     #content{
         grid-area: content;
         min-height: 40em;
         display: grid;
         grid-template-columns: 1fr;
         grid-template-areas:
-        "other"
-        "registation";
+        "map"
+        "Wifi-location-info"
+        "review"
+        "write-review";
     }
     #footer{
         background-color: #717F7B;
@@ -293,6 +351,84 @@ body{
         grid-template-columns: 1fr 1fr;
         grid-template-areas:
         "Our-Mission Connect-With-Us";
+    }
+}
+@media only screen and (max-width:500px){
+
+    .grid{
+        display: grid;
+        grid-template-columns: 1fr 25% 25% 25% 1fr;
+        grid-template-areas:
+        "header header header header header"
+        "menubar menubar menubar menubar menubar"
+        "content content content content content"
+        "footer footer footer footer footer";
+    }
+    #map{
+        height: 250px;
+    }
+
+    #other{
+        margin-bottom: auto;
+        margin-top: auto;
+        font-size: 1em;
+    }
+    #header{
+        background-color: #467F6E;
+        grid-area: header;
+        display: grid;
+        min-height: 1em;
+        
+        color: white;
+        grid-column: 1fr;
+        grid-template-areas:
+        "header-text"
+    }
+    #logo-elements{
+        grid-area:logo;
+        display: none;
+    }
+    #content{
+        grid-area: content;
+        min-height: 40em;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-areas:
+        "map"
+        "Wifi-location-info"
+        "review"
+        "write-review";
+    }
+    #publish-btn-container{
+        display: grid;
+        grid-template-columns: 1fr 70%;
+        grid-template-areas:
+        ". publish-btn";
+    }
+    #footer{
+        background-color: #717F7B;
+        grid-area:footer;
+        min-height: 10em;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas:
+        "Our-Mission Connect-With-Us";
+    }
+    #Our-Mission-Text{
+        grid-area: Our-Mission;
+        color:white;
+    }
+    #Our-Missing-Text h2{
+        font-size: 1em !important;
+    }
+    #Our-Missing-Text p{
+        font-size: 0.5em !important;
+    }
+    #connect-with-us{
+        color: white;
+        align-content: end;
+        vertical-align: top;
+        grid-area: Connect-With-Us;
     }
 }
 
