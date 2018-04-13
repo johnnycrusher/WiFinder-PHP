@@ -1,4 +1,4 @@
-function validate(){
+function validate(){  
     checkName();
     checkEmail();
     checkUsername();
@@ -14,7 +14,7 @@ function checkName(){
 
     if((firstNameValue.length==0) || (lastNameValue.length == 0)){
         //alert("No Name Entered");
-        document.getElementById("nameMissing").style.visibility = "visible"
+        document.getElementById("nameMissing").style.visibility = "visible";
         return false;
     }
     return true;
@@ -28,7 +28,7 @@ function checkEmail(){
         document.getElementById("emailMissing").innerHTML="Email is a required field!";
         return false;
     }
-    if(!(emailValue.indexOf('@') > -1)){
+    if(!(emailValue.indexOf("@") > -1)){
         document.getElementById("emailMissing").style.visibility = "visible";
         document.getElementById("emailMissing").innerHTML="Email is not in a correct format missing @";
         return false;
