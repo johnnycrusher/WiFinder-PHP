@@ -1,0 +1,24 @@
+{
+    "short_name": "Wi-Finder",
+    "name": "CAB230 Wi-Finder",
+
+    "icons": [{
+        "src": "img/logo46.svg",
+        "type": "image/svg",
+        "sizes": "128x128"
+    }, {
+        "src": "img/logo46.svg",
+        "type": "image/svg",
+        "sizes": "152x152"
+    }, {
+        "src": "img/logo46.svg",
+        "type": "image/svg",
+        "sizes": "144x144"
+    }, {
+        "src": "img/logo46.svg",
+        "type": "image/svg",
+        "sizes": "192x192"
+    }],
+    "start_url": "/search_page.html",
+    "display": "standalone"
+}

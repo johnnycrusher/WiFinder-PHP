@@ -1,0 +1,227 @@
+/*basic grid setup*/
+*{
+    margin:0px;
+    padding:0px;
+}
+
+body{
+    background-color: #BDF3FF;
+}
+
+.grid{
+    display: grid;
+    grid-template-columns: 1fr 20% 20% 20% 1fr;
+    grid-template-rows: auto;
+    grid-template-areas:
+    "header header header menubar header-right"
+    "filter-bar filter-bar filter-bar filter-bar filter-bar"
+    ". content content content ."
+    "footer footer footer footer footer";
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/*header*/
+#header{
+    background-color: #38737F;
+    grid-area: header;
+    display: grid;
+    min-height: 5em;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas:". logo header-text"
+}
+
+#header-text{
+    text-align: center;
+    font-size: 20pt;
+    display: grid;
+    grid-area: header-text;
+}
+#logo-elements{
+    grid-area:logo;
+}
+
+#header-right{
+    background-color: #38737F;
+    grid-area: header-right;
+    display: grid;
+    min-height: 5em;
+}
+
+/* Menu Bar */
+#menubar{
+    background-color: #38737F;
+    grid-area: menubar;
+    display:grid;
+    min-height: 5em;
+}
+
+#button-loc{
+    width: 16em;
+    margin: 0 auto;
+    margin-top: auto;
+    margin-bottom: 5px;
+    line-height: 30px;
+}
+
+.menu-btn{
+    display: inline-block;
+    text-decoration: none;
+    color: black;
+    text-align: center;
+    width:75px;
+    height: 35px;
+    background-color: white;
+    border-style: solid;
+    border-color: black;
+    border-width:1px;
+}
+#sign-up-menu{
+    width: 90px;
+}
+
+.current-page{
+    background-color: grey;
+    pointer-events: none;
+}
+
+/*filter bars and options*/
+#filter-bar{
+    background-color: #5F7A7F;
+    grid-area: filter-bar;
+    display: grid;
+    padding: 1em;
+    text-align: center;    
+}
+
+.filter-options a {
+    background-color: #38737F;
+    margin-left: 10em;
+    border-width: 2px;
+    border-color: white;
+}
+
+#content-left{
+    display: grid;
+    grid-area: content-left;
+}
+
+/*content search results*/
+#content{
+    background-color: #BDF3FF;
+    grid-area: content;
+    display:grid;
+    grid-template-columns: 70% 1fr;
+    grid-template-areas:
+    "results map-sidebar"
+}
+
+#map-sidebar{    
+    display:grid;
+    grid-area: map-sidebar;
+    min-height: 40em;
+    display: grid;
+}
+.map{
+    width: 190px;
+    height: 190px;
+    display: grid;
+    grid-area: map;
+}
+.location-info{
+    display: grid;
+    grid-area: location-info;
+}
+
+/*list of search results*/
+#results{
+    grid-area: results;
+    display: grid;
+    min-height: 40em;
+    margin: 1em;
+    background-color: #BDF3FF;
+}
+
+.item-box{
+    border: #38737F;
+    border-width: 2px;
+    border-spacing: 1em;
+    border-style: solid;
+    padding: 1em;
+    margin-bottom: 10px;
+    
+    min-height: 6em;
+    min-width: 20em;
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    grid-template-areas:
+    "map location-info";
+}
+
+.item-box h2{
+    padding: 4px;
+}
+
+.item-box h3{
+    padding: 4px;
+}
+
+/*footer*/
+#footer{
+    background-color: #5F7A7F;
+    grid-area: footer;
+    min-height: 10em;
+    font-size: 8pt;
+    text-align: center;
+}
+
+
+
+@media only screen and (max-width: 1263px){
+    .grid{
+        display: grid;
+        grid-template-columns: 1fr 25% 25% 25% 1fr;
+        grid-template-areas:
+        ". header header menubar ."
+        ". content content content ."
+        ". footer footer footer .";
+    }
+}
+@media only screen and (max-width:950px){
+    .grid{
+        display: grid;
+        grid-template-columns: 1fr 25% 25% 25% 1fr;
+        grid-template-areas:
+        "header header header menubar menubar"
+        "content content content content content"
+        "footer footer footer footer footer";
+    }
+}
+@media only screen and (max-width:740px){
+
+    .grid{
+        display: grid;
+        grid-template-columns: 1fr 25% 25% 25% 1fr;
+        grid-template-areas:
+        "header header header header header"
+        "menubar menubar menubar menubar menubar"
+        "content content content content content"
+        "footer footer footer footer footer";
+    }
+
+    #other{
+        margin-bottom: auto;
+        margin-top: auto;
+    }
+    #content{
+        background-color: green;
+        grid-area: content;
+        min-height: 40em;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-areas:
+        "other"
+        "registation";
+    }
+}
+
+

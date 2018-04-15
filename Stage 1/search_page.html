@@ -17,8 +17,7 @@
     <div class="grid">
         <div id="header">
             <div id="logo-elements" class="center-items">
-                <img src="img/logo46.svg" width="100px" height="100px">
-                <h1>Wi-Finder</h1>
+                <img src="img/logo final text 400x400.png" width="277px" height="81px">
             </div>
             <div id="header-text" class="center-items">
                 <h1>Advanced Search</h1>
@@ -34,39 +33,51 @@
                 <a href="Login_page.html" id="login-menu" class="menu-btn">Login <i class="fa fa-user-o"></i></a>
             </div>
         </div>
+
         <div id="content">
             <div id="search-boxes">
-                <input id="search-box" type="text" placeholder="Search">
-                <button id="location-btn" onclick="getLocation()">
-                    <i class="fa fa-map-marker fa-3x"></i>
-                </button>
-                <div id="search-btn-loc">
-                    <button onclick="location.href = 'search_results_page.html';" type="submit">Search</button>
-                </div>
-                <div id="advanced-options">
-                    <h4>Narrow your search results by...</h4>
-                    <p>Searching for:
-                        <select>
-                            <option value="address">Address</option>
-                            <option value="suburb">Suburb</option>
-                        </select>
-                    </p>
-                    <p>Near:
-                        <select>
-                            <option value="park">Park</option>
-                            <option value="library">Library</option>
-                        </select>
-                    </p>
-                    <p>With a minimum rating of
-                        <div>
-                            <span onmouseover="ratingHover(this)" onmouseout="ratingHoverOut(this)"><i id="one-star" class="fa fa-star-o"></i></span>
-                            <span onmouseover="ratingHover(this)" onmouseout="ratingHoverOut(this)"><i id="two-star" class="fa fa-star-o"></i></span>
-                            <span onmouseover="ratingHover(this)" onmouseout="ratingHoverOut(this)"><i id="three-star" class="fa fa-star-o"></i></span>
-                            <span onmouseover="ratingHover(this)" onmouseout="ratingHoverOut(this)"><i id="four-star" class="fa fa-star-o"></i></span>
-                            <span onmouseover="ratingHover(this)" onmouseout="ratingHoverOut(this)"><i id="five-star" class="fa fa-star-o"></i></span>
+                <form>
+                    <fieldset id="advance-search-box">
+                        <legend>
+                            <h2>Advance Search:</h2>
+                        </legend>
+                        <div id="search-box-input">
+                            <h2>Search for WiFi:</h2>
+                            <input id="search-box" type="text" placeholder="Search">
+                            <button id="location-btn" type="button" onclick="getLocation()">
+                                <i class="fa fa-map-marker fa-3x"></i>
+                            </button>
+                        </div>              
+                        <div id="advanced-options">
+                            <h4>Narrow your search results by...</h4>
+                            <p>Searching for:
+                                <select>
+                                    <option value="address">Address</option>
+                                    <option value="suburb">Suburb</option>
+                                </select>
+                            </p>
+                            <p>Near:
+                                <select>
+                                    <option value="both">Both</option>
+                                    <option value="park">Park</option>
+                                    <option value="library">Library</option>
+                                </select>
+                            </p>
+                            <p>With a minimum rating of
+                                <div>
+                                    <span onmouseover="ratingHover(this)" onmouseout="ratingHoverOut(this)"><i id="one-star" class="fa fa-star-o"></i></span>
+                                    <span onmouseover="ratingHover(this)" onmouseout="ratingHoverOut(this)"><i id="two-star" class="fa fa-star-o"></i></span>
+                                    <span onmouseover="ratingHover(this)" onmouseout="ratingHoverOut(this)"><i id="three-star" class="fa fa-star-o"></i></span>
+                                    <span onmouseover="ratingHover(this)" onmouseout="ratingHoverOut(this)"><i id="four-star" class="fa fa-star-o"></i></span>
+                                    <span onmouseover="ratingHover(this)" onmouseout="ratingHoverOut(this)"><i id="five-star" class="fa fa-star-o"></i></span>
+                                </div>
+                            </p>
                         </div>
-                    </p>
-                </div>
+                        <div id="search-btn-loc">
+                            <button onclick="location.href = 'search_results_page.html';" type="button">Search</button>
+                        </div>
+                    </fieldset>
+                </form>        
             </div>
         </div>
 

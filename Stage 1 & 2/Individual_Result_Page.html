@@ -7,16 +7,13 @@
         <link href="css/Indvidual_Result_Page.css" rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <script src="js/Individual_Results_Scripts.js"></script>
-
-        <link rel="manifest" href="/manifest.json">
-        <meta name="apple-mobile-web-app-title" content="Wi-Finder">
-        <meta name="apple-mobile-web-app-capable" content="yes">
     </head>
-    <body onload="intialiseMaps()">
+    <body onload="intialiseMaps(); getMySQLReviewData()">
         <div class="grid">
             <div id="header">
                 <div id="logo-elements" class="center-items">
-                    <img id="logo-img" src="img/logo final text 400x400.png" width="277px" height="81px">
+                    <img src="img/logo46.svg" width="100px" height="100px">
+                    <h1>Wi-Finder</h1>
                 </div>
                 <div id="header-text" class="center-items">
                     <h1>WiFi Location</h1>
@@ -72,8 +69,8 @@
                 <div id="review-box" class="white-boxes">
                     <h2>Reviews:</h2>
                     <div itemprop="review" itemscope itemtype="http://schema.org/Review" id="review-one">
-                        <h3 itemprop="author">John Huynh</h3>
-                        <h4 itemprop="datePublished">Date Publish: April 2, 2018</h4>
+                        <h3 id="user0" itemprop="author"></h3>
+                        <h4 id="datePublish0"itemprop="datePublished"></h4>
                             <div itemprop="reviewRating" itemscope itemtype="http://schema.org/Rating">
                                 <i class="fa fa-star"></i>
                                 <i class="fa fa-star"></i>
@@ -81,25 +78,10 @@
                                 <i class="fa fa-star"></i>
                                 <i class="fa fa-star-o"></i>
                                 <meta itemprop="worstRating" content="1">
-                                <span itemprop="ratingValue">4</span> /
+                                <span id=rating0 itemprop="ratingValue"></span> /
                                 <span itemprop="bestRating">5</span> stars
                             </div>
-                            <p itemprop="description">This is a nice place to enjoy your free WiFi it's quiet and very peaceful and the speed of the wifi is very fast would definitely recommend</p>
-                    </div>
-                    <div itemprop="review" itemscope itemtype="http://schema.org/Review" id="reivew-two">
-                        <h3 itemprop="author">James Smith</h3>
-                        <h4 itemprop="datePublished">Date Publish: March 10, 2018</h4>
-                        <div itemprop="reviewRating" itemscope itemtype="http://schema.org/Rating">
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star-o"></i>
-                            <meta itemprop="worstRating" content="1">
-                            <span itemprop="ratingValue">4</span> /
-                            <span itemprop="bestRating">5</span> stars
-                        </div>
-                        <p itemprop="description">This place was quite enjoyable place to get free WiFi it saved me when i had no data avaliable and allowed me to make a call. This place was also very quiet and peaceful</p>
+                            <p id=description0 itemprop="description"></p>
                     </div>
                 </div>
             </div>
