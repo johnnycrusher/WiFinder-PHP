@@ -1,0 +1,387 @@
+[
+  {
+    "Wifi Hotspot Name": "7th Brigade Park, Chermside",
+    "Address": "Delaware St",
+    "Suburb": "Chermside",
+    "Latitude": -27.37893,
+    "Longitude": 153.04461
+  },
+  {
+    "Wifi Hotspot Name": "Annerley Library Wifi",
+    "Address": "450 Ipswich Road",
+    "Suburb": "Annerley, 4103",
+    "Latitude": -27.50942285,
+    "Longitude": 153.0333218
+  },
+  {
+    "Wifi Hotspot Name": "Ashgrove Library Wifi",
+    "Address": "87 Amarina Avenue",
+    "Suburb": "Ashgrove, 4060",
+    "Latitude": -27.44394629,
+    "Longitude": 152.9870981
+  },
+  {
+    "Wifi Hotspot Name": "Banyo Library Wifi",
+    "Address": "284 St. Vincents Road",
+    "Suburb": "Banyo, 4014",
+    "Latitude": -27.37396641,
+    "Longitude": 153.0783234
+  },
+  {
+    "Wifi Hotspot Name": "Booker Place Park",
+    "Address": "Birkin Rd & Sugarwood St",
+    "Suburb": "Bellbowrie",
+    "Latitude": -27.56353,
+    "Longitude": 152.89372
+  },
+  {
+    "Wifi Hotspot Name": "Bracken Ridge Library Wifi",
+    "Address": "Corner Bracken and Barrett Street",
+    "Suburb": "Bracken Ridge, 4017",
+    "Latitude": -27.31797261,
+    "Longitude": 153.0378735
+  },
+  {
+    "Wifi Hotspot Name": "Brisbane Botanic Gardens",
+    "Address": "Mt Coot-tha Rd",
+    "Suburb": "Toowong",
+    "Latitude": -27.47724,
+    "Longitude": 152.97599
+  },
+  {
+    "Wifi Hotspot Name": "Brisbane Square Library Wifi",
+    "Address": "Brisbane Square, 266 George Street",
+    "Suburb": "Brisbane, 4000",
+    "Latitude": -27.47091173,
+    "Longitude": 153.0224598
+  },
+  {
+    "Wifi Hotspot Name": "Bulimba Library Wifi",
+    "Address": "Corner Riding Road & Oxford Street",
+    "Suburb": "Bulimba, 4171",
+    "Latitude": -27.45203086,
+    "Longitude": 153.0628242
+  },
+  {
+    "Wifi Hotspot Name": "Calamvale District Park",
+    "Address": "Formby & Ormskirk Sts",
+    "Suburb": "Calamvale",
+    "Latitude": -27.62152,
+    "Longitude": 153.03665
+  },
+  {
+    "Wifi Hotspot Name": "Carina Library Wifi",
+    "Address": "Corner Mayfield Road & Nyrang Street",
+    "Suburb": "Carina, 4152",
+    "Latitude": -27.49169314,
+    "Longitude": 153.0912127
+  },
+  {
+    "Wifi Hotspot Name": "Carindale Library Wifi",
+    "Address": "The Home and Leisure Centre, Corner Carindale Street  & Banchory Court, Westfield Carindale Shopping Centre",
+    "Suburb": "Carindale, 4152",
+    "Latitude": -27.50475928,
+    "Longitude": 153.1003965
+  },
+  {
+    "Wifi Hotspot Name": "Carindale Recreation Reserve",
+    "Address": "Cadogan and Bedivere Sts",
+    "Suburb": "Carindale",
+    "Latitude": -27.497,
+    "Longitude": 153.11105
+  },
+  {
+    "Wifi Hotspot Name": "Chermside Library Wifi",
+    "Address": "375 Hamilton  Road",
+    "Suburb": "Chermside, 4032",
+    "Latitude": -27.3856032,
+    "Longitude": 153.0349028
+  },
+  {
+    "Wifi Hotspot Name": "City Botanic Gardens Wifi",
+    "Address": "Alice Street",
+    "Suburb": "Brisbane City",
+    "Latitude": -27.47561,
+    "Longitude": 153.03005
+  },
+  {
+    "Wifi Hotspot Name": "Coopers Plains Library Wifi",
+    "Address": "107 Orange Grove Road",
+    "Suburb": "Coopers Plains, 4108",
+    "Latitude": -27.56510509,
+    "Longitude": 153.0403183
+  },
+  {
+    "Wifi Hotspot Name": "Corinda Library Wifi",
+    "Address": "641 Oxley Road",
+    "Suburb": "Corinda, 4075",
+    "Latitude": -27.53880237,
+    "Longitude": 152.9809091
+  },
+  {
+    "Wifi Hotspot Name": "D.M. Henderson Park",
+    "Address": "Granadilla St",
+    "Suburb": "MacGregor",
+    "Latitude": -27.57745,
+    "Longitude": 153.07603
+  },
+  {
+    "Wifi Hotspot Name": "Einbunpin Lagoon",
+    "Address": "Brighton Rd",
+    "Suburb": "Sandgate",
+    "Latitude": -27.31947,
+    "Longitude": 153.06822
+  },
+  {
+    "Wifi Hotspot Name": "Everton Park Library Wifi",
+    "Address": "561 South Pine Road",
+    "Suburb": "Everton park, 4053",
+    "Latitude": -27.4053336,
+    "Longitude": 152.9904205
+  },
+  {
+    "Wifi Hotspot Name": "Fairfield Library Wifi",
+    "Address": "Fairfield Gardens Shopping Centre, 180 Fairfield Road",
+    "Suburb": "Fairfield, 4103",
+    "Latitude": -27.50909038,
+    "Longitude": 153.0259709
+  },
+  {
+    "Wifi Hotspot Name": "Forest Lake Parklands",
+    "Address": "Forest Lake Bld",
+    "Suburb": "Forest Lake",
+    "Latitude": -27.6202,
+    "Longitude": 152.96625
+  },
+  {
+    "Wifi Hotspot Name": "Garden City Library Wifi",
+    "Address": "Garden City Shopping Centre, Corner Logan and Kessels Road",
+    "Suburb": "Upper Mount Gravatt, 4122",
+    "Latitude": -27.56244221,
+    "Longitude": 153.0809183
+  },
+  {
+    "Wifi Hotspot Name": "Glindemann Park",
+    "Address": "Logan Rd",
+    "Suburb": "Holland Park West",
+    "Latitude": -27.52552,
+    "Longitude": 153.06923
+  },
+  {
+    "Wifi Hotspot Name": "Grange Library Wifi",
+    "Address": "79 Evelyn Street",
+    "Suburb": "Grange, 4051",
+    "Latitude": -27.42531193,
+    "Longitude": 153.0174728
+  },
+  {
+    "Wifi Hotspot Name": "Gregory Park",
+    "Address": "Baroona Rd",
+    "Suburb": "Paddington",
+    "Latitude": -27.467,
+    "Longitude": 152.99981
+  },
+  {
+    "Wifi Hotspot Name": "Guyatt Park",
+    "Address": "Sir Fred Schonell Dve",
+    "Suburb": "St Lucia",
+    "Latitude": -27.49297,
+    "Longitude": 153.00187
+  },
+  {
+    "Wifi Hotspot Name": "Hamilton Library Wifi",
+    "Address": "Corner Racecourt Road and Rossiter Parade",
+    "Suburb": "Hamilton, 4007",
+    "Latitude": -27.43790137,
+    "Longitude": 153.0642227
+  },
+  {
+    "Wifi Hotspot Name": "Hidden World Park",
+    "Address": "Roghan Rd",
+    "Suburb": "Fitzgibbon",
+    "Latitude": -27.33971701,
+    "Longitude": 153.034981
+  },
+  {
+    "Wifi Hotspot Name": "Holland Park Library Wifi",
+    "Address": "81 Seville Road",
+    "Suburb": "Holland Park, 4121",
+    "Latitude": -27.52292286,
+    "Longitude": 153.0722921
+  },
+  {
+    "Wifi Hotspot Name": "Inala Library Wifi",
+    "Address": "Inala Shopping centre, Corsair Ave",
+    "Suburb": "Inala, 4077",
+    "Latitude": -27.59828574,
+    "Longitude": 152.9735217
+  },
+  {
+    "Wifi Hotspot Name": "Indooroopilly Library Wifi",
+    "Address": "Indrooroopilly Shopping centre, Level 4, 322 Moggill Road",
+    "Suburb": "Indooroopilly, 4068",
+    "Latitude": -27.49764287,
+    "Longitude": 152.9736471
+  },
+  {
+    "Wifi Hotspot Name": "Kalinga Park",
+    "Address": "Kalinga St",
+    "Suburb": "Clayfield",
+    "Latitude": -27.40666,
+    "Longitude": 153.05217
+  },
+  {
+    "Wifi Hotspot Name": "Kenmore Library Wifi",
+    "Address": "Kenmore Village Shopping Centre, Brookfield Road",
+    "Suburb": "Kenmore, 4069",
+    "Latitude": -27.50592852,
+    "Longitude": 152.9386437
+  },
+  {
+    "Wifi Hotspot Name": "King Edward Park (Jacob's Ladder)",
+    "Address": "Turbot St and Wickham Tce",
+    "Suburb": "Brisbane",
+    "Latitude": -27.46589,
+    "Longitude": 153.02406
+  },
+  {
+    "Wifi Hotspot Name": "King George Square",
+    "Address": "Ann & Adelaide Sts",
+    "Suburb": "Brisbane",
+    "Latitude": -27.46843,
+    "Longitude": 153.02422
+  },
+  {
+    "Wifi Hotspot Name": "Mitchelton Library Wifi",
+    "Address": "37 Helipolis Parada",
+    "Suburb": "Mitchelton, 4053",
+    "Latitude": -27.41704165,
+    "Longitude": 152.9783402
+  },
+  {
+    "Wifi Hotspot Name": "Mt Coot-tha Botanic Gardens Library Wifi",
+    "Address": "Administration Building, Brisbane Botanic Gardens (Mt Coot-tha), Mt Coot-tha Road",
+    "Suburb": "Toowong, 4066",
+    "Latitude": -27.47529908,
+    "Longitude": 152.9760412
+  },
+  {
+    "Wifi Hotspot Name": "Mt Gravatt Library Wifi",
+    "Address": "8 Creek Road",
+    "Suburb": "Mt Gravatt, 4122",
+    "Latitude": -27.53855482,
+    "Longitude": 153.0802628
+  },
+  {
+    "Wifi Hotspot Name": "Mt Ommaney Library Wifi",
+    "Address": "Mt Ommaney Shopping Centre, 171 Dandenong Road",
+    "Suburb": "Mt Ommaney, 4074",
+    "Latitude": -27.54824198,
+    "Longitude": 152.9378099
+  },
+  {
+    "Wifi Hotspot Name": "New Farm Library Wifi",
+    "Address": "135 Sydney Street",
+    "Suburb": "New Farm, 4005",
+    "Latitude": -27.46736574,
+    "Longitude": 153.0495841
+  },
+  {
+    "Wifi Hotspot Name": "New Farm Park Wifi",
+    "Address": "Brunswick Street",
+    "Suburb": "New Farm",
+    "Latitude": -27.47046,
+    "Longitude": 153.05223
+  },
+  {
+    "Wifi Hotspot Name": "Nundah Library Wifi",
+    "Address": "1 Bage Street",
+    "Suburb": "Nundah, 4012",
+    "Latitude": -27.40125908,
+    "Longitude": 153.0583751
+  },
+  {
+    "Wifi Hotspot Name": "Oriel Park",
+    "Address": "Cnr of Alexandra & Lancaster Rds",
+    "Suburb": "Ascot",
+    "Latitude": -27.42928,
+    "Longitude": 153.05768
+  },
+  {
+    "Wifi Hotspot Name": "Orleigh Park",
+    "Address": "Hill End Tce",
+    "Suburb": "West End",
+    "Latitude": -27.48995,
+    "Longitude": 153.00326
+  },
+  {
+    "Wifi Hotspot Name": "Post Office Square",
+    "Address": "Queen & Adelaide Sts",
+    "Suburb": "Brisbane",
+    "Latitude": -27.46735,
+    "Longitude": 153.02735
+  },
+  {
+    "Wifi Hotspot Name": "Rocks Riverside Park",
+    "Address": "Counihan Rd",
+    "Suburb": "Seventeen Mile Rocks",
+    "Latitude": -27.54153,
+    "Longitude": 152.95913
+  },
+  {
+    "Wifi Hotspot Name": "Sandgate Library Wifi",
+    "Address": "Seymour Street",
+    "Suburb": "Sandgate, 4017",
+    "Latitude": -27.32060523,
+    "Longitude": 153.0704927
+  },
+  {
+    "Wifi Hotspot Name": "Stones Corner Library Wifi",
+    "Address": "280 Logan Road",
+    "Suburb": "Stones Corner, 4120",
+    "Latitude": -27.49803575,
+    "Longitude": 153.043655
+  },
+  {
+    "Wifi Hotspot Name": "Sunnybank Hills Library Wifi",
+    "Address": "Sunnybank Hills Shopping Centre, Corner Compton and Calam Roads",
+    "Suburb": "Sunnybank Hills, 4109",
+    "Latitude": -27.6109253,
+    "Longitude": 153.0550706
+  },
+  {
+    "Wifi Hotspot Name": "Teralba Park",
+    "Address": "Pullen & Osborne Rds",
+    "Suburb": "Everton Park",
+    "Latitude": -27.40286,
+    "Longitude": 152.98059
+  },
+  {
+    "Wifi Hotspot Name": "Toowong Library Wifi",
+    "Address": "Toowon Village Shopping Centre, Sherwood Road",
+    "Suburb": "Toowong, 4066",
+    "Latitude": -27.48505116,
+    "Longitude": 152.9925091
+  },
+  {
+    "Wifi Hotspot Name": "West End Library Wifi",
+    "Address": "178 - 180 Boundary Street",
+    "Suburb": "West End, 4101",
+    "Latitude": -27.48245078,
+    "Longitude": 153.0120763
+  },
+  {
+    "Wifi Hotspot Name": "Wynnum Library Wifi",
+    "Address": "Wynnum Civic Centre, 66 Bay Terrace",
+    "Suburb": "Wynnum, 4178",
+    "Latitude": -27.44244894,
+    "Longitude": 153.1731968
+  },
+  {
+    "Wifi Hotspot Name": "Zillmere Library Wifi",
+    "Address": "Corner Jennings Street and Zillmere Road",
+    "Suburb": "Zillmere, 4034",
+    "Latitude": -27.36014232,
+    "Longitude": 153.0407898
+  }
+]
