@@ -11,7 +11,7 @@ body{
     grid-template-columns: 1fr 20% 20% 20% 1fr;
     grid-template-rows: 10% 75% 15%;
     grid-template-areas:
-    "header-fill-left header header menubar header-fill-right"
+    "header header header menubar header-fill-right"
     ". content content content ."
     "footer footer footer footer footer";
 }
@@ -20,16 +20,16 @@ body{
     grid-area: header;
     display: grid;
     min-height: 7.5em;
-    
     color: white;
     grid-template-columns: 1fr 1fr;
     grid-template-areas:
-    "logo header-text"
+    "logo . header-text"
 }
 #header-fill-left{
     display:grid;
     background-color: #467F6E;
     grid-area: header-fill-left;
+    
 }
 #header-fill-right{
     display:grid;
@@ -41,6 +41,7 @@ body{
     grid-area: menubar;
     display:grid;
     min-height: 7.5em;
+    padding-left: 7.2em;
 }
 #content{
     grid-area: content;
@@ -116,21 +117,28 @@ body{
 #advance-search-box{
     display: block;
     width: 35em;
-    
+    padding-right: 1em;
     margin: 0 auto;
     border-radius: 5px;
     padding: 10px;
+    color: #467F6E;
 }
 
 #search-btn-loc{
     font-size: 30pt;
     grid-area: search-btn;
+    margin-right: 1.5em;
 }
 
 #search-btn-loc button{
     font-size: 20pt;
     border-radius: 5px;
     color: white;
+    float: right;
+    margin: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding: 5px;
     border-color: #467F6E;
     background-color: #467F6E;
 }
@@ -144,6 +152,7 @@ body{
     grid-area: options;
     min-height: 2em;
     padding: 1em;
+    color: black;
 }
 
 #advanced-options select{
@@ -156,7 +165,7 @@ body{
 }
 
 #advanced-options h4{
-    font-size: 16pt;
+    font-size: 14pt;
     margin-bottom: 10px;
 }
 
@@ -167,12 +176,13 @@ body{
 
 /*Standard page stuff*/
 #logo-elements{
-    grid-area:logo;
-    margin:10px;
+    grid-area: logo;
+    margin:20px;
 }
 #header-text{
     grid-area: header-text;
     margin: auto;
+    text-align: center;
 }
 #Our-Mission-Text{
     grid-area: Our-Mission;

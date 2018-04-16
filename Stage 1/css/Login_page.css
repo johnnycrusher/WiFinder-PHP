@@ -11,7 +11,7 @@ body{
     grid-template-columns: 1fr 20% 20% 20% 1fr;
     grid-template-rows: 10% 75% 15%;
     grid-template-areas:
-    "header-fill-left header header menubar header-fill-right"
+    "header header header menubar header-fill-right"
     ". content content content ."
     "footer footer footer footer footer";
 }
@@ -24,7 +24,7 @@ body{
     color: white;
     grid-template-columns: 1fr 1fr;
     grid-template-areas:
-    "logo header-text"
+    "logo . header-text"
 }
 #header-fill-left{
     display:grid;
@@ -42,6 +42,7 @@ body{
     grid-area: menubar;
     display:grid;
     min-height: 7.5em;
+    padding-left: 7.2em;
 }
 #content{
     grid-area: content;
@@ -130,7 +131,7 @@ body{
 #Login{
     grid-area: login;
     margin-top: auto;
-    margin-bottom: 9em;
+    margin-bottom: 13em;
 }
 #Login-box{
     height: 20em;
@@ -170,7 +171,7 @@ body{
 /*Standard page stuff*/
 #logo-elements{
     grid-area:logo;
-    margin:10px;
+    margin:20px;
 }
 #logo-element img{
     vertical-align: middle;
@@ -178,6 +179,8 @@ body{
 #header-text{
     grid-area: header-text;
     margin: auto;
+    text-align: center;
+    margin-right: 6em;
 }
 #Our-Mission-Text{
     grid-area: Our-Mission;

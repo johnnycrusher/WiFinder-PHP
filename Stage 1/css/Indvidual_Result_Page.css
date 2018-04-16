@@ -13,7 +13,7 @@ body{
     grid-template-columns: 1fr 20% 20% 20% 1fr;
     grid-template-rows: 10% 75% 15%;
     grid-template-areas:
-    "header-fill-left header header menubar header-fill-right"
+    "header header header menubar header-fill-right"
     ". content content content ."
     "footer footer footer footer footer";
 }
@@ -27,7 +27,7 @@ body{
     color: white;
     grid-column: 1fr 1fr;
     grid-template-areas:
-    "logo header-text"
+    "logo . header-text"
 }
 
 #header-fill-left{
@@ -47,6 +47,7 @@ body{
     grid-area: menubar;
     display:grid;
     min-height: 7.5em;
+    padding-left: 7.2em;
 }
 
 #footer{
@@ -152,6 +153,10 @@ body{
     
 }
 
+#content h4{
+    font-size: 11pt;
+    
+}
 #content i{
     color: #70CCB1;
 }
@@ -232,7 +237,7 @@ body{
 
 #logo-elements{
     grid-area:logo;
-    margin:10px;
+    margin:20px;
 }
 
 #header-text{

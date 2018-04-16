@@ -12,7 +12,7 @@ body{
     grid-template-columns: 1fr 20% 20% 20% 1fr;
     grid-template-rows: 10% 75% 15%;
     grid-template-areas:
-    "header-fill-left header header menubar header-fill-right"
+    "header header header menubar header-fill-right"
     ". content content content ."
     "footer footer footer footer footer";
 }
@@ -26,7 +26,7 @@ body{
     color: white;
     grid-template-columns: 1fr 1fr;
     grid-template-areas:
-    "logo header-text"
+    "logo . header-text"
 }
 #header-fill-left{
     display:grid;
@@ -44,6 +44,7 @@ body{
     grid-area: menubar;
     display:grid;
     min-height: 7.5em;
+    padding-left: 7.2em;
 }
 
 #content{
@@ -111,11 +112,13 @@ body{
 }
 #logo-elements{
     grid-area:logo;
-    padding: 10px;
+    padding: 20px;
 }
 #header-text{
     grid-area: header-text;
     margin: auto;
+    margin-right: 5em;
+
 }
 #Our-Mission-Text{
     grid-area: Our-Mission;
@@ -134,6 +137,7 @@ body{
     margin-top: auto;
     margin-bottom: auto;
     padding: 1em;
+    color: #467F6E;
 }
 
 #create-account h2 {
@@ -142,6 +146,7 @@ body{
 }
 #create-account p {
     padding: 7px;
+    color: black;
 }
 
 #create-account fieldset{

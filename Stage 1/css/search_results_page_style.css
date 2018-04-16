@@ -12,7 +12,7 @@ body{
     grid-template-columns: 1fr 20% 20% 20% 1fr;
     grid-template-rows: 10% 75% 15%;
     grid-template-areas:
-    "header-fill-left header header menubar header-fill-right"
+    "header header header menubar header-fill-right"
     "filter-bar filter-bar filter-bar filter-bar filter-bar"
     ". content content content ."
     " footer footer footer footer footer";
@@ -27,7 +27,7 @@ body{
     color: white;
     grid-template-columns: 1fr 1fr;
     grid-template-areas:
-    "logo header-text"
+    "logo . header-text"
 }
 #header-fill-left{
     display:grid;
@@ -45,6 +45,7 @@ body{
     grid-area: menubar;
     display:grid;
     min-height: 7.5em;
+    padding-left: 7.2em;
 }
 
 #content{
@@ -112,11 +113,12 @@ body{
 }
 #logo-elements{
     grid-area:logo;
-    margin:10px;
+    margin:20px;
 }
 #header-text{
     grid-area: header-text;
     margin: auto;
+    padding-right: 4em;
 }
 #Our-Mission-Text{
     grid-area: Our-Mission;
@@ -130,7 +132,7 @@ body{
 /*filter bars and options*/
 #filter-bar{
     /* background-color: #EEECE9; */
-    background-color: #C2D0D7;
+    background-color: #CAFFEF;
     /* background-color: #B7B9BB; */
     /* background-color: #BBAEA4; */
 
@@ -160,10 +162,21 @@ body{
     margin-left: 0.5em;
     margin-right: 0.5em;
     border-radius: 10px;
-    background-color: #98C3CB;
+    color: white;
+    background-color: #467F6E;
     border-style: solid;
     border-width: 1px;
-    border-color: gold;
+    border-color: #467F6E;
+}
+
+#filter-location button{
+    border-radius: 3px;
+    color: white;
+    background-color: #467F6E;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #467F6E;
+    padding:2px;
 }
 
 /*content search results*/
@@ -196,14 +209,21 @@ body{
     margin: 1em;
 }
 
+#location-text{
+    margin: 4px;
+    margin-bottom: 5px;
+}
+
+
 .item-box{
-    border: #38737F;
+   
     border-width: 2px;
     border-spacing: 1em;
     border-style: solid;
     padding: 1em;
+    border-color: #467F6E;
     margin-bottom: 10px;
-    
+    border-radius: 5px;
     min-height: 6em;
     min-width: 20em;
     display: grid;
@@ -212,7 +232,7 @@ body{
     "map location-info";
 }
 .wifiName{
-    color: #38737F;
+   color: #467F6E;
 }
 .wifiName a{
     color: inherit;
@@ -221,6 +241,9 @@ body{
     color: #70CCB1;
 }
 
+.location{
+    color: #717F7B;
+}
 
 @media only screen and (max-width: 1263px){
     .grid{
