@@ -86,11 +86,10 @@ function getMySQLReviewData(){
                 if(first){
                     document.getElementById("user0").innerHTML = myObj[i].FirstName + " " + myObj[i].LastName;
                     document.getElementById("datePublish0").innerHTML ="Date Published: " + myObj[i].DatePublished;
-                    document.getElementById("rating0").innerHTML = myObj[i].Rating;
+                    setRatings(myObj[i].Rating,"rating0")
                     document.getElementById("description0").innerHTML = myObj[i].ReviewDescription;
                     first = false;
-                    second = true;
-                    
+                    second = true;                
                 }else{
                     if (second){
                         var newReview = document.getElementById("review-one").cloneNode(true);
@@ -105,12 +104,12 @@ function getMySQLReviewData(){
                     newReview.id = "review" + parseInt(i);
                     newReview.children[0].id = "user" + parseInt(i);
                     newReview.children[1].id = "datePublish" + parseInt(i);
-                    newReview.children[2].children[6].id = "rating" + parseInt(i);
+                    newReview.children[2].id = "rating" + parseInt(i);
                     newReview.children[3].id = "description" + parseInt(i);
                     console.log(document.getElementById("user" + parseInt(i)));
                     document.getElementById("user" + parseInt(i)).innerHTML = myObj[i].FirstName + " " + myObj[i].LastName;
                     document.getElementById("datePublish" + parseInt(i)).innerHTML ="Date Published: " + myObj[i].DatePublished;
-                    document.getElementById("rating" + parseInt(i)).innerHTML = myObj[i].Rating;
+                    setRatings(myObj[i].Rating,"rating" + parseInt(i));
                     document.getElementById("description" + parseInt(i)).innerHTML = myObj[i].ReviewDescription;
                 }
             }
@@ -121,9 +120,35 @@ function getMySQLReviewData(){
     xhr.send();
 }
 
+function setRatings(rating, reviewID ){
+    var ratingTag = document.getElementById(reviewID);
+    for (var i = 0; i<5 ; i++){
+        if(ratingTag.childNodes[i + i + 1].classList.contains("fa-star-o")){
+            ratingTag.childNodes[i + i + 1].classList.remove("fa-star-o");
+        }else if (ratingTag.childNodes[i + i + 1].classList.contains("fa-star")){
+            ratingTag.childNodes[i + i + 1].classList.remove("fa-star");
+        }
+        ratingTag.childNodes[i + i + 1].classList.add("fa-star-o")
+    }
+
+    for(var i = 0; i<rating; i++){
+        if(ratingTag.childNodes[i + i + 1].classList.contains("fa-star-o")){
+            ratingTag.childNodes[i + i + 1].classList.remove("fa-star-o");
+        }
+        ratingTag.childNodes[i + i + 1].classList.add("fa-star");
+    }
+    ratingTag.childNodes[13].innerHTML = rating;
+}
+
+
 function intialiseMaps(){
     var mapScript = document.createElement('script');
     mapScript.type = "text/javascript";
     mapScript.src = "https://maps.googleapis.com/maps/api/js?key=AIzaSyD-_Zd52SX6xAHEI15-WJm3iFA8LdKwL54&callback=initMap";
     document.body.appendChild(mapScript);
+}
+
+function loadMapsAndData(){
+    intialiseMaps(); 
+    getMySQLReviewData();
 }

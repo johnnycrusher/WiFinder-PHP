@@ -13,16 +13,16 @@ body{
     grid-template-areas:
     "header-fill-left header header menubar header-fill-right"
     ". content content content ."
-    "footer-fill-left footer footer footer footer-fill-right";
+    "footer footer footer footer footer";
 }
 #header{
     background-color: #467F6E;
     grid-area: header;
     display: grid;
-    min-height: 5em;
+    min-height: 7.5em;
     
     color: white;
-    grid-column: 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
     grid-template-areas:
     "logo header-text"
 }
@@ -34,18 +34,17 @@ body{
 #header-fill-right{
     display:grid;
     background-color: #467F6E;
-    
     grid-area: header-fill-right;
 }
 #menubar{
     background-color: #467F6E;
     grid-area: menubar;
     display:grid;
-    min-height: 5em;
+    min-height: 7.5em;
 }
 #content{
     grid-area: content;
-    min-height: 40.5em;
+    min-height: 44.5em;
     display: grid;
     grid-template-columns: 1fr;
     grid-template-areas:
@@ -53,24 +52,21 @@ body{
     "options"
     "search-btn";
 }
+#search-boxes{
+    margin-top: auto;
+}
 #footer{
     background-color: #717F7B;
     grid-area:footer;
-    min-height: 10em;
+    min-height: 7.5em;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 20% 20% 20% 1fr;
     grid-template-areas:
-    "Our-Mission . Connect-With-Us";
+    ". Our-Mission . Connect-With-Us .";
 }
-#footer-fill-left{
-    display:grid;
-    background-color:#717F7B;
-    grid-area: footer-fill-left;
-}
-#footer-fill-right{
-    display:grid;
-    background-color:#717F7B;
-    grid-area: footer-fill-right;
+#form-header{
+    color:#467F6E;
+    font-size: 22pt;
 }
 #button-loc{
     width: 16em;
@@ -110,65 +106,50 @@ body{
     pointer-events: none;
 }
 
-#footer-fill-left{
-    display:grid;
-    background-color:#717F7B;
-    grid-area: footer-fill-left;
-}
-#footer-fill-right{
-    display:grid;
-    background-color:#717F7B;
-    grid-area: footer-fill-right;
-}
-#button-loc{
-    width: 16em;
-    margin: 0 auto;
-    margin-top: auto;
-    margin-bottom: 5px;
-    line-height: 30px;
-}
-.menu-btn{
-    display: inline-block;
-    text-decoration: none;
-    color: white;
-    text-align: center;
-    width:75px;
-    height: 35px;
-    background-color: #467F6E;
-    border-style: solid;
-    border-color: #467F6E;
-    border-width:1px;
-    border-radius: 5px;
-}
-.current-page{
-    background-color: #717F7B;
-    pointer-events: none;
-}
-
 /*Specific Page Styling*/
 
-#content input{
-    margin: 1em;
-    font-size: 30pt;
+#search-box{
+
+    padding: 3px;
+    margin: 0.5em 0.5em 0.5em 0.5em;
+    font-size: 20pt;
+    width: 70%;
     grid-area: search-input;
+}
+
+#advance-search-box{
+    display: block;
+    width: 35em;
+    
+    margin: 0 auto;
+    border-radius: 5px;
+    padding: 10px;
 }
 
 #search-btn-loc{
     font-size: 30pt;
     grid-area: search-btn;
-    
 }
+
 #search-btn-loc button{
+    display: block;
     font-size: 20pt;
     border-radius: 5px;
+    margin: 0 auto;
+    width: 70%;
     color: white;
     border-color: #467F6E;
     background-color: #467F6E;
 }
+
 #location-btn{
     width: 50px;
     height: 50px;
+    color: white;
+    background-color: #467F6E;
+    border-radius: 5px;
 }
+
 #advanced-options{
     grid-area: options;
     min-height: 2em;
@@ -180,7 +161,7 @@ body{
 }
 
 #advanced-options i{
-    color: #467F6E;
+    color: #70CCB1;
     
 }
 
@@ -188,6 +169,7 @@ body{
     font-size: 16pt;
     margin-bottom: 10px;
 }
+
 #advanced-options p{
     font-size: 14pt;
     padding: 5px;
@@ -196,75 +178,111 @@ body{
 /*Standard page stuff*/
 #logo-elements{
     grid-area:logo;
+    margin:10px;
 }
 #header-text{
     grid-area: header-text;
     margin: auto;
 }
 #Our-Mission-Text{
-    width: 215px;
     grid-area: Our-Mission;
     color:white;
+    padding: 10px;
 }
 #connect-with-us{
     color: white;
-    align-content: end;
+    padding: 10px;
     vertical-align: top;
     grid-area: Connect-With-Us;
 }
+
 @media only screen and (max-width: 1263px){
     .grid{
-        display: grid;
         grid-template-columns: 1fr 25% 25% 25% 1fr;
         grid-template-areas:
-        ". header header menubar ."
-        ". content content content ."
-        ". footer footer footer .";
+        "header-fill-left header header menubar header-fill-left"
+        "content content content content content"
+        "footer footer footer footer footer";
+    }
+    #footer{
+        grid-template-columns: 1fr 25% 25% 25% 1fr;
     }
 }
 @media only screen and (max-width:950px){
     .grid{
-        display: grid;
-        grid-template-columns: 1fr 25% 25% 25% 1fr;
         grid-template-areas:
         "header header header menubar menubar"
         "content content content content content"
         "footer footer footer footer footer";
     }
+    #footer{
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-areas:
+        "Our-Mission . Connect-With-Us" 
+    }
 }
 @media only screen and (max-width:740px){
 
     .grid{
-        display: grid;
-        grid-template-columns: 1fr 25% 25% 25% 1fr;
         grid-template-areas:
         "header header header header header"
         "menubar menubar menubar menubar menubar"
         "content content content content content"
         "footer footer footer footer footer";
     }
-
-    #other{
-        margin-bottom: auto;
-        margin-top: auto;
+    
+    #menubar{
+        min-height: 3.5em;
     }
-    #content{
-        grid-area: content;
-        min-height: 40em;
-        display: grid;
-        grid-template-columns: 1fr;
+    #header{
+        grid-template-columns: 33% 67%;
         grid-template-areas:
-        "other"
-        "registation";
+        "logo header-text";
     }
     #footer{
-        background-color: #717F7B;
-        grid-area:footer;
-        min-height: 10em;
-        display: grid;
         grid-template-columns: 1fr 1fr;
         grid-template-areas:
         "Our-Mission Connect-With-Us";
     }
+    #header-text{
+        margin: 0px;
+        margin-top: auto;
+        margin-bottom: auto;
+    }
+
+    #logo-img{
+        content: url("../img/logofinal96x96.png");
+        width: 92px;
+        height: 92px;
+        float: right;
+    }
+
+    #advance-search-box{
+        width: 90%;
+    }
+}
+@media only screen and (max-width:500px){
+
+    #header{
+        min-height: 4em;
+        grid-template-columns: 1fr;
+        grid-template-areas:
+        "header-text"
+    }
+    #header-text{
+        margin: 0 auto;
+        margin-top: auto;
+        margin-bottom: auto;
+    }
+    #logo-elements{
+        display: none;
+    }
+    #Our-Missing-Text h2{
+        font-size: 1em !important;
+    }
+    #Our-Missing-Text p{
+        font-size: 0.5em !important;
+    }
+
 }
 

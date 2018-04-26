@@ -1,9 +1,13 @@
 function validate(){  
-    checkName();
-    checkEmail();
-    checkUsername();
-    checkPassword();
-    checkBirthDate();
+    var Name = checkName();
+    var Email = checkEmail();
+    var Username = checkUsername();
+    var Password = checkPassword();
+    var Birthdate = checkBirthDate();
+    var GenderSelection = checkGenderSelection();
+    if(Name && Email && Username && Password && Birthdate && GenderSelection){
+        alert("Form Validated");
+    }
 }
 function checkName(){
     var firstName = document.getElementById("firstName");
@@ -153,6 +157,18 @@ function checkLeapYear(year){
     }
 }
 
+function checkGenderSelection(){
+    var FemaleGen = document.getElementById("female-gender");
+    var MaleGen = document.getElementById("male-gender");
+    var OtherGen = document.getElementById("other-gender");
+
+    if(!(FemaleGen.checked) && !(MaleGen.checked) && !(OtherGen.checked)){
+        document.getElementById("genderMissing").style.visibility = "visible";
+        return false;
+    }
+    return true;
+}
+
 function hideError(x){
     if(("firstName" == x.id) || ("lastName" == x.id)){
         document.getElementById("nameMissing").style.visibility = "hidden";
@@ -168,5 +184,8 @@ function hideError(x){
     }
     if(("month" == x.id) || ("day" == x.id) || ("year" == x.id)){
         document.getElementById("birthdayMissing").style.visibility = "hidden";
+    }
+    if(("female-gender" == x.id) || ("male-gender" == x.id) || ("other-gender" == x.id)){
+        document.getElementById("genderMissing").style.visibility = "hidden";
     }
 }

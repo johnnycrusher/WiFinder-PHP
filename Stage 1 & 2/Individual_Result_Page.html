@@ -7,13 +7,16 @@
         <link href="css/Indvidual_Result_Page.css" rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <script src="js/Individual_Results_Scripts.js"></script>
+
+        <link rel="manifest" href="/manifest.json">
+        <meta name="apple-mobile-web-app-title" content="Wi-Finder">
+        <meta name="apple-mobile-web-app-capable" content="yes">
     </head>
-    <body onload="intialiseMaps(); getMySQLReviewData()">
+    <body onload="loadMapsAndData()">
         <div class="grid">
             <div id="header">
                 <div id="logo-elements" class="center-items">
-                    <img src="img/logo46.svg" width="100px" height="100px">
-                    <h1>Wi-Finder</h1>
+                    <img id="logo-img" src="img/logo final text 400x400.png" width="277px" height="81px">
                 </div>
                 <div id="header-text" class="center-items">
                     <h1>WiFi Location</h1>
@@ -71,14 +74,14 @@
                     <div itemprop="review" itemscope itemtype="http://schema.org/Review" id="review-one">
                         <h3 id="user0" itemprop="author"></h3>
                         <h4 id="datePublish0"itemprop="datePublished"></h4>
-                            <div itemprop="reviewRating" itemscope itemtype="http://schema.org/Rating">
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
+                            <div id="rating0" itemprop="reviewRating" itemscope itemtype="http://schema.org/Rating">
+                                <i class="fa fa-star-o"></i>
+                                <i class="fa fa-star-o"></i>
+                                <i class="fa fa-star-o"></i>
+                                <i class="fa fa-star-o"></i>
                                 <i class="fa fa-star-o"></i>
                                 <meta itemprop="worstRating" content="1">
-                                <span id=rating0 itemprop="ratingValue"></span> /
+                                <span itemprop="ratingValue"></span> /
                                 <span itemprop="bestRating">5</span> stars
                             </div>
                             <p id=description0 itemprop="description"></p>

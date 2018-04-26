@@ -13,16 +13,16 @@ body{
     grid-template-areas:
     "header-fill-left header header menubar header-fill-right"
     ". content content content ."
-    "footer-fill-left footer footer footer footer-fill-right";
+    "footer footer footer footer footer";
 }
 #header{
     background-color: #467F6E;
     grid-area: header;
     display: grid;
-    min-height: 5em;
+    min-height: 7.5em;
     
     color: white;
-    grid-column: 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
     grid-template-areas:
     "logo header-text"
 }
@@ -41,11 +41,11 @@ body{
     background-color: #467F6E;
     grid-area: menubar;
     display:grid;
-    min-height: 5em;
+    min-height: 7.5em;
 }
 #content{
     grid-area: content;
-    min-height: 40.5em;
+    min-height: 44.5em;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-areas:
@@ -54,24 +54,14 @@ body{
 #footer{
     background-color: #717F7B;
     grid-area:footer;
-    min-height: 10em;
+    min-height: 7.5em;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 20% 20% 20% 1fr;
     grid-template-areas:
-    "Our-Mission . Connect-With-Us";
+    ". Our-Mission . Connect-With-Us .";
 }
 
-#footer-fill-left{
-    display:grid;
-    background-color:#717F7B;
-    grid-area: footer-fill-left;
-}
 
-#footer-fill-right{
-    display:grid;
-    background-color:#717F7B;
-    grid-area: footer-fill-right;
-}
 #button-loc{
     width: 16em;
     margin: 0 auto;
@@ -140,16 +130,14 @@ body{
 #Login{
     grid-area: login;
     margin-top: auto;
-    margin-bottom: 9em;
+    margin-bottom: auto;
 }
 #Login-box{
-    height: 20em;
+    height: 15em;
     width: 20em;
     margin: 0 auto;
 
     border-radius: 5px;
-   
-    margin-bottom: 3em;
     padding: 10px;
 }
 #Login h2{
@@ -162,15 +150,19 @@ body{
     margin: 3px;
 }
 
-#Login button{
+#login-btn{
+    display: block;
+    margin: 0 auto;
     font-size: 16pt;
-    padding: 5px;
-    margin-top: 5px;
-    margin-left: 5px;
+    width: 80%;
     background-color:#467F6E;
     color: white;
     border-color:#467F6E;
     border-radius: 5px; 
+}
+
+#login-btn-container{
+    margin-top: 20px;
 }
 
 .input-field{
@@ -180,41 +172,51 @@ body{
 /*Standard page stuff*/
 #logo-elements{
     grid-area:logo;
+    margin:10px;
+}
+#logo-element img{
+    vertical-align: middle;
 }
 #header-text{
     grid-area: header-text;
     margin: auto;
+    padding: 10px;
 }
 #Our-Mission-Text{
-    width: 215px;
     grid-area: Our-Mission;
     color:white;
+    padding: 10px;
 }
 #connect-with-us{
     color: white;
-    align-content: end;
+    padding: 10px;
     vertical-align: top;
     grid-area: Connect-With-Us;
 }
 
 @media only screen and (max-width: 1263px){
     .grid{
-        display: grid;
         grid-template-columns: 1fr 25% 25% 25% 1fr;
         grid-template-areas:
         "header-fill-left header header menubar header-fill-right"
-        ". content content content ."
-        "footer-fill-left footer footer footer footer-fill-right";
+        "content content content content content"
+        "footer footer footer footer footer";
+    }
+    #footer{
+        grid-template-columns: 1fr 25% 25% 25% 1fr;
     }
 }
 @media only screen and (max-width:950px){
     .grid{
-        display: grid;
-        grid-template-columns: 1fr 25% 25% 25% 1fr;
         grid-template-areas:
         "header header header menubar menubar"
         "content content content content content"
         "footer footer footer footer footer";
+    }
+    #footer{
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-areas:
+        "Our-Mission . Connect-With-Us" 
     }
 }
 @media only screen and (max-width:740px){
@@ -228,22 +230,29 @@ body{
         "content content content content content"
         "footer footer footer footer footer";
     }
+    #menubar{
+        min-height: 3.5em;
+    }
 
-    #other{
-        margin-bottom: auto;
-        margin-top: auto;
-    }
     #header{
-        background-color: #467F6E;
-        grid-area: header;
-        display: grid;
-        min-height: 5em;
-        
-        color: white;
-        grid-column: 1fr 1fr 1fr;
+        grid-template-columns: 33% 67%;
         grid-template-areas:
-        "logo header-text ."
+        "logo header-text";
     }
+
+    #header-text{
+        margin: 0px;
+        margin-top: auto;
+        margin-bottom: auto;
+    }
+
+    #logo-img{
+        content: url("../img/logofinal96x96.png");
+        width: 92px;
+        height: 92px;
+        float: right;
+    }
+
     #content{
         margin: 0 auto;
         grid-template-columns: 1fr;
@@ -251,63 +260,37 @@ body{
         "login";
     }
     #footer{
-        background-color: #717F7B;
-        grid-area:footer;
-        min-height: 10em;
-        display: grid;
         grid-template-columns: 1fr 1fr;
         grid-template-areas:
         "Our-Mission Connect-With-Us";
     }
 }
 @media only screen and (max-width:500px){
-    .grid{
-        display: grid;
-        grid-template-columns: 1fr 25% 25% 25% 1fr;
-        grid-template-areas:
-        "header header header header header"
-        "menubar menubar menubar menubar menubar"
-        "content content content content content"
-        "footer footer footer footer footer";
-    }
 
     #header{
-        grid-column: 1fr;
+        grid-template-columns: 1fr;
         grid-template-areas:
-        "header-text"
+        "header-text";
+        min-height: 4em;
     }
     #logo-elements{
         display:none;
+    }
+
+    #header-text{
+        margin: 0 auto;
+        margin-top: auto;
+        margin-bottom: auto;
     }
 
     #Login-box{
         width: 90%;
     }
 
-    
-    #footer{
-        background-color: #717F7B;
-        grid-area:footer;
-        min-height: 10em;
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        grid-template-areas:
-        "Our-Mission Connect-With-Us";
-    }
-    #Our-Mission-Text{
-        grid-area: Our-Mission;
-        color:white;
-    }
     #Our-Missing-Text h2{
         font-size: 1em !important;
     }
     #Our-Missing-Text p{
         font-size: 0.5em !important;
-    }
-    #connect-with-us{
-        color: white;
-        align-content: end;
-        vertical-align: top;
-        grid-area: Connect-With-Us;
     }
 }
