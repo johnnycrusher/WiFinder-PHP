@@ -43,3 +43,31 @@ function intialiseMaps(){
        initMap();
     }
 }
+function ratingChoose(item){
+    var icons = item.firstChild;
+    var itemId = icons.getAttribute("id");
+
+    var oneStar = document.getElementById('one-star');
+    var twoStar = document.getElementById('two-star');
+    var threeStar = document.getElementById('three-star');
+    var fourStar = document.getElementById('four-star');
+    var fiveStar = document.getElementById('five-star');
+
+    var stars = [oneStar,twoStar,threeStar,fourStar,fiveStar];
+    var number = 0;
+    for(var i = 0; i<stars.length;i++){
+        if(itemId == (stars[i].getAttribute("id"))){
+            number = i + 1;
+        }
+    }
+    for(var j=0; j<stars.length;j++){
+        if(stars[j].classList.contains("fa-star")){
+            stars[j].classList.remove("fa-star");
+            stars[j].classList.add("fa-star-o");
+        }
+    }
+    for(var i = 0; i<number; i++){
+        stars[i].classList.remove("fa-star-o");
+        stars[i].classList.add("fa-star");
+    }
+}

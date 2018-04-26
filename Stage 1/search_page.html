@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-<!--Testing-->
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -17,10 +17,10 @@
     <div class="grid">
         <div id="header">
             <div id="logo-elements" class="center-items">
-                <img src="img/logo final text 400x400.png" width="277px" height="81px">
+                <img id="logo-img" src="img/logo final text 400x400.png" width="277px" height="81px">
             </div>
             <div id="header-text" class="center-items">
-                <h1>Advanced Search</h1>
+                <h1>Advance Search</h1>
             </div>
         </div>
         <div id="header-fill-left"></div>
@@ -39,11 +39,11 @@
                 <form>
                     <fieldset id="advance-search-box">
                         <legend>
-                            <h2>Advanced Search:</h2>
+                            <h2 id="form-header">Advance Search:</h2>
                         </legend>
                         <div id="search-box-input">
-                            
-                            <input id="search-box" type="text">
+                            <h2>Search for WiFi:</h2>
+                            <input id="search-box" type="text" placeholder="Search">
                             <button id="location-btn" type="button" onclick="getLocation()">
                                 <i class="fa fa-map-marker fa-3x"></i>
                             </button>
@@ -65,11 +65,11 @@
                             </p>
                             <p>With a minimum rating of
                                 <div>
-                                    <span onmouseover="ratingHover(this)" onmouseout="ratingHoverOut(this)"><i id="one-star" class="fa fa-star-o"></i></span>
-                                    <span onmouseover="ratingHover(this)" onmouseout="ratingHoverOut(this)"><i id="two-star" class="fa fa-star-o"></i></span>
-                                    <span onmouseover="ratingHover(this)" onmouseout="ratingHoverOut(this)"><i id="three-star" class="fa fa-star-o"></i></span>
-                                    <span onmouseover="ratingHover(this)" onmouseout="ratingHoverOut(this)"><i id="four-star" class="fa fa-star-o"></i></span>
-                                    <span onmouseover="ratingHover(this)" onmouseout="ratingHoverOut(this)"><i id="five-star" class="fa fa-star-o"></i></span>
+                                    <span onclick="ratingChoose(this)"><i id="one-star" class="fa fa-star-o"></i></span>
+                                    <span onclick="ratingChoose(this)"><i id="two-star" class="fa fa-star-o"></i></span>
+                                    <span onclick="ratingChoose(this)"><i id="three-star" class="fa fa-star-o"></i></span>
+                                    <span onclick="ratingChoose(this)"><i id="four-star" class="fa fa-star-o"></i></span>
+                                    <span onclick="ratingChoose(this)"><i id="five-star" class="fa fa-star-o"></i></span>
                                 </div>
                             </p>
                         </div>
@@ -84,7 +84,7 @@
         <div id="footer">
             <div id="Our-Mission-Text">
                 <h2>Our Mission</h2>
-                <p>WiFinder mission is to conntect the citizens of Brisbane with location data on where the closest Free Wifi-Location.
+                <p>WiFinder mission is to connect the citizens of Brisbane with location data on where the closest Free Wifi-Location.
                     To ensure they stay connected to the internet</p>
             </div>
             <div id="connect-with-us">
@@ -94,9 +94,6 @@
                 <a href="" style="Color:White"><i class="fa fa-twitter-square fa-3x"></i></a>
             </div>
         </div>
-        <div id="footer-fill-left"></div>
-        <div id="footer-fill-right"></div>
-
     </div>
 
 </body>

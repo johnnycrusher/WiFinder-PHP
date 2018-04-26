@@ -12,7 +12,7 @@ body{
     grid-template-columns: 1fr 20% 20% 20% 1fr;
     grid-template-rows: 10% 75% 15%;
     grid-template-areas:
-    "header header header menubar header-fill-right"
+    "header-fill-left header header menubar header-fill-right"
     "filter-bar filter-bar filter-bar filter-bar filter-bar"
     ". content content content ."
     " footer footer footer footer footer";
@@ -27,7 +27,7 @@ body{
     color: white;
     grid-template-columns: 1fr 1fr;
     grid-template-areas:
-    "logo . header-text"
+    "logo header-text"
 }
 #header-fill-left{
     display:grid;
@@ -45,7 +45,6 @@ body{
     grid-area: menubar;
     display:grid;
     min-height: 7.5em;
-    padding-left: 7.2em;
 }
 
 #content{
@@ -113,26 +112,27 @@ body{
 }
 #logo-elements{
     grid-area:logo;
-    margin:20px;
+    margin:10px;
 }
 #header-text{
     grid-area: header-text;
     margin: auto;
-    padding-right: 4em;
 }
 #Our-Mission-Text{
     grid-area: Our-Mission;
     color:white;
+    padding: 10px;
 }
 #connect-with-us{
     color: white;
+    padding: 10px;
     vertical-align: top;
     grid-area: Connect-With-Us;
 }
 /*filter bars and options*/
 #filter-bar{
     /* background-color: #EEECE9; */
-    background-color: #CAFFEF;
+    background-color: #C2D0D7;
     /* background-color: #B7B9BB; */
     /* background-color: #BBAEA4; */
 
@@ -162,14 +162,13 @@ body{
     margin-left: 0.5em;
     margin-right: 0.5em;
     border-radius: 10px;
-    color: white;
     background-color: #467F6E;
+    border-color: #467F6E;
+    color: #FFFFFF;
     border-style: solid;
     border-width: 1px;
-    border-color: #467F6E;
 }
-
-#filter-location button{
+#apply-btn{
     border-radius: 3px;
     color: white;
     background-color: #467F6E;
@@ -209,21 +208,14 @@ body{
     margin: 1em;
 }
 
-#location-text{
-    margin: 4px;
-    margin-bottom: 5px;
-}
-
-
 .item-box{
-   
+    border: #38737F;
     border-width: 2px;
     border-spacing: 1em;
     border-style: solid;
     padding: 1em;
-    border-color: #467F6E;
     margin-bottom: 10px;
-    border-radius: 5px;
+    
     min-height: 6em;
     min-width: 20em;
     display: grid;
@@ -232,7 +224,7 @@ body{
     "map location-info";
 }
 .wifiName{
-   color: #467F6E;
+    color: #38737F;
 }
 .wifiName a{
     color: inherit;
@@ -241,9 +233,6 @@ body{
     color: #70CCB1;
 }
 
-.location{
-    color: #717F7B;
-}
 
 @media only screen and (max-width: 1263px){
     .grid{
@@ -264,13 +253,11 @@ body{
         grid-template-areas:
         "sortBy filter-location";
     }
-
     #footer{
-        grid-template-columns: 1fr 1fr 1fr;
-        grid-template-areas:
-        "Our-Mission .  Connect-With-Us ";
+        grid-template-columns: 1fr 25% 25% 25% 1fr;
     }
-}
+
+    
 @media only screen and (max-width:950px){
     .grid{
         grid-template-areas:
@@ -279,6 +266,12 @@ body{
         "content content content content content"
         "footer footer footer footer footer";
     }
+    #footer{
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-areas:
+        "Our-Mission .  Connect-With-Us ";
+    }
+}
 }
 @media only screen and (max-width:740px){
 
@@ -289,6 +282,11 @@ body{
         "filter-bar filter-bar filter-bar filter-bar filter-bar"
         "content content content content content"
         "footer footer footer footer footer";
+    }
+    #header{
+        grid-template-columns: 33% 67%;
+        grid-template-areas:
+        "logo header-text";
     }
     #menubar{
         min-height: 3.5em;
@@ -306,6 +304,19 @@ body{
     .item-box{
         grid-template-columns: 110px 1fr;
         padding: 0em;
+    }
+
+    #header-text{
+        margin: 0px;
+        margin-top: auto;
+        margin-bottom: auto;
+    }
+
+    #logo-img{
+        content: url("../img/logofinal96x96.png");
+        width: 92px;
+        height: 92px;
+        float: right;
     }
 }
 @media only screen and (max-width:550px){
@@ -327,6 +338,11 @@ body{
         grid-template-areas:
         "header-text";
         min-height: 4em;
+    }
+    #header-text{
+        margin: 0 auto;
+        margin-top: auto;
+        margin-bottom: auto;
     }
 
     #sortBy{

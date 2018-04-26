@@ -13,7 +13,7 @@ body{
     grid-template-columns: 1fr 20% 20% 20% 1fr;
     grid-template-rows: 10% 75% 15%;
     grid-template-areas:
-    "header header header menubar header-fill-right"
+    "header-fill-left header header menubar header-fill-right"
     ". content content content ."
     "footer footer footer footer footer";
 }
@@ -27,7 +27,7 @@ body{
     color: white;
     grid-column: 1fr 1fr;
     grid-template-areas:
-    "logo . header-text"
+    "logo header-text"
 }
 
 #header-fill-left{
@@ -47,7 +47,6 @@ body{
     grid-area: menubar;
     display:grid;
     min-height: 7.5em;
-    padding-left: 7.2em;
 }
 
 #footer{
@@ -153,10 +152,6 @@ body{
     
 }
 
-#content h4{
-    font-size: 11pt;
-    
-}
 #content i{
     color: #70CCB1;
 }
@@ -237,7 +232,7 @@ body{
 
 #logo-elements{
     grid-area:logo;
-    margin:20px;
+    margin:10px;
 }
 
 #header-text{
@@ -248,11 +243,12 @@ body{
 #Our-Mission-Text{
     grid-area: Our-Mission;
     color:white;
+    padding: 10px;
 }
 
 #connect-with-us{
     color: white;
-    align-content: end;
+    padding: 10px;
     vertical-align: top;
     grid-area: Connect-With-Us;
 }
@@ -263,7 +259,10 @@ body{
         grid-template-areas:
         "header-fill-left header header menubar header-fill-right"
         "content content content content content"
-        "footer-fill-left footer footer footer footer-fill-right";
+        "footer footer footer footer footer";
+    }
+    #footer{
+        grid-template-columns: 1fr 25% 25% 25% 1fr;
     }
 }
 @media only screen and (max-width:950px){
@@ -272,6 +271,11 @@ body{
         "header header header menubar menubar"
         "content content content content content"
         "footer footer footer footer footer";
+    }
+    #footer{
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-areas:
+        "Our-Mission . Connect-With-Us" 
     }
 }
 @media only screen and (max-width:740px){
@@ -287,19 +291,22 @@ body{
         min-height: 3.5em;
     }
     #header{
-        grid-template-columns: 100px 1fr;
+        grid-template-columns: 33% 67%;
         grid-template-areas:
         "logo header-text";
     }
 
     #header-text{
         margin: 0px;
+        margin-top: auto;
+        margin-bottom: auto;
     }
 
     #logo-img{
         content: url("../img/logofinal96x96.png");
         width: 92px;
         height: 92px;
+        float: right;
     }
 
     #map{
@@ -333,6 +340,11 @@ body{
         grid-template-columns: 1fr;
         grid-template-areas:
         "header-text"
+    }
+    #header-text{
+        margin: 0 auto;
+        margin-top: auto;
+        margin-bottom: auto;
     }
     #logo-elements{
         display: none;

@@ -12,7 +12,7 @@ body{
     grid-template-columns: 1fr 20% 20% 20% 1fr;
     grid-template-rows: 10% 75% 15%;
     grid-template-areas:
-    "header header header menubar header-fill-right"
+    "header-fill-left header header menubar header-fill-right"
     ". content content content ."
     "footer footer footer footer footer";
 }
@@ -26,8 +26,9 @@ body{
     color: white;
     grid-template-columns: 1fr 1fr;
     grid-template-areas:
-    "logo . header-text"
+    "logo header-text"
 }
+
 #header-fill-left{
     display:grid;
     background-color: #467F6E;
@@ -39,12 +40,12 @@ body{
     
     grid-area: header-fill-right;
 }
+
 #menubar{
     background-color: #467F6E;
     grid-area: menubar;
     display:grid;
     min-height: 7.5em;
-    padding-left: 7.2em;
 }
 
 #content{
@@ -53,9 +54,14 @@ body{
     display: grid;
     
     /*background-color: #D7FFF3;*/
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
     grid-template-areas:
-    "other registation";
+    "registation";
+}
+
+#form-header{
+    color:#467F6E;
+    font-size: 22pt;
 }
 
 #footer{
@@ -67,7 +73,6 @@ body{
     grid-template-areas:
     ". Our-Mission . Connect-With-Us .";
 }
-
 
 #button-loc{
     width: 16em;
@@ -112,20 +117,20 @@ body{
 }
 #logo-elements{
     grid-area:logo;
-    padding: 20px;
+    padding: 10px;
 }
 #header-text{
     grid-area: header-text;
     margin: auto;
-    margin-right: 5em;
-
 }
 #Our-Mission-Text{
     grid-area: Our-Mission;
     color:white;
+    padding: 10px;
 }
 #connect-with-us{
     color: white;
+    padding: 10px;
     vertical-align: top;
     grid-area: Connect-With-Us;
 }
@@ -137,7 +142,6 @@ body{
     margin-top: auto;
     margin-bottom: auto;
     padding: 1em;
-    color: #467F6E;
 }
 
 #create-account h2 {
@@ -146,7 +150,6 @@ body{
 }
 #create-account p {
     padding: 7px;
-    color: black;
 }
 
 #create-account fieldset{
@@ -163,12 +166,11 @@ body{
 
 #sign-up-btn{
     display:block;
-    margin-top: 20px;
+    margin-top: 10px;
     margin: 0 auto;
     margin-bottom: 10px;
     padding: 7px;
-    padding-left: 100px;
-    padding-right: 100px;
+    width: 70%;
     font-size: 13pt;
     border-radius: 5px;
     color: white;
@@ -177,6 +179,7 @@ body{
 }
 
 #other{
+    display: none;
     grid-area: other;
     text-align: center;
     margin-top: auto;
@@ -191,6 +194,7 @@ body{
     visibility: hidden;
 }
 
+
 .input-field{
     padding: 3px;
 }
@@ -201,7 +205,9 @@ body{
         "header-fill-left header header menubar header-fill-right"
         "content content content content content"
         "footer footer footer footer footer";
-
+    }
+    #footer{
+        grid-template-columns: 1fr 25% 25% 25% 1fr;
     }
 }
 @media only screen and (max-width:950px){
@@ -210,6 +216,11 @@ body{
         "header header header menubar menubar"
         "content content content content content"
         "footer footer footer footer footer";
+    }
+    #footer{
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-areas:
+        "Our-Mission . Connect-With-Us" 
     }
 }
 @media only screen and (max-width:740px){
@@ -225,6 +236,12 @@ body{
     #other{
         font-size: 1em;
     }
+    
+    #header{
+        grid-template-columns: 33% 67%;
+        grid-template-areas:
+        "logo header-text";
+    }
 
     #menubar{
         min-height: 3.5em;
@@ -233,8 +250,10 @@ body{
     #content{
         grid-template-columns:1fr;
         grid-template-areas:
-        "other"
         "registation";
+    }
+    #other{
+        display: none;
     }
     #footer{
         grid-template-columns: 1fr 1fr;
@@ -243,6 +262,19 @@ body{
     }
     #connect-with-us{
         margin: 0 auto;
+    }
+
+    #header-text{
+        margin: 0px;
+        margin-top: auto;
+        margin-bottom: auto;
+    }
+
+    #logo-img{
+        content: url("../img/logofinal96x96.png");
+        width: 92px;
+        height: 92px;
+        float: right;
     }
 }
 
@@ -258,6 +290,12 @@ body{
         grid-template-columns: 1fr;
         grid-template-areas:
         "header-text"
+    }
+
+    #header-text{
+        margin: 0 auto;
+        margin-top: auto;
+        margin-bottom: auto;
     }
 
     #logo-elements{
@@ -277,10 +315,6 @@ body{
     }
     .input-field{
         width: 80%;
-    }
-    #sign-up-btn{
-        padding-left: 50px;
-        padding-right: 50px;
     }
 
     #Our-Missing-Text h2{
