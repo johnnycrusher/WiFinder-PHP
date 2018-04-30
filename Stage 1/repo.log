@@ -1,0 +1,165 @@
+* \2069861 : \Changes to layout and text.
+*   \b8cca98 : \Merge branch 'master' of https://bitbucket.org/John_Huynh/cab230-project
+|\  
+| * \ecb864e : \pages mostly completed
+* |   \c130e10 : \Merge branch 'master' of https://bitbucket.org/John_Huynh/cab230-project
+|\ \  
+| |/  
+| * \0f0f8d0 : \added Logo Files
+| * \3648e3a : \Made My pages responsive, Added Microdata to Individual Results Page, Added maps to results page, added geolocation to search page
+* | \c05d0ea : \Testing
+|/  
+* \8aa3543 : \edited current page btn
+* \6e65c5d : \merged changes with both copies
+* \4123553 : \fixed the box issues in Registration page and added menu bar and fixed up some grid layouts
+* \53b5d10 : \Added Search Results and Styling, Search page simplified.
+* \3587902 : \Base Login Page Completed
+* \a5c50c6 : \base login
+* \072b7ea : \fixed hover out
+* \4268707 : \fixed some small errors and added some functionality on hover rating system
+* \1700a08 : \Fixed some links and fixed the registation page
+* \b0013cf : \basic layout for Individual Results Page Completed
+* \8d86df3 : \Added Katherine Section
+* \112479d : \Registration Page Identical closely identical to Mockup
+* \798a19a : \added menubar in the header area
+* \f50ea95 : \README.md
+* \f5c54bb : \README.md created online with Bitbucket
+* \9176e1d : \User Registation Layout Completedcommit 2069861799c1a87dbed6acfdd972bb735b0cd2fd
+Author: DESKTOP-QC8OHAR\kathr <katherine.harijatna@connect.qut.edu.au>
+Date:   Mon Apr 16 12:19:44 2018 +1000
+
+    Changes to layout and text.
+
+commit b8cca989f7538e4a464ba2aae6ecb2ec467604e7
+Merge: c130e10 ecb864e
+Author: DESKTOP-QC8OHAR\kathr <katherine.harijatna@connect.qut.edu.au>
+Date:   Mon Apr 16 00:18:05 2018 +1000
+
+    Merge branch 'master' of https://bitbucket.org/John_Huynh/cab230-project
+
+commit ecb864eddf6b4afb050319be2b3939e8007bd5eb
+Author: John_Huynh <John.huynh@student.qut.edu.au>
+Date:   Mon Apr 16 00:09:23 2018 +1000
+
+    pages mostly completed
+
+commit c130e10c606e5bbe230ef7e18957c4b22e0f7cc0
+Merge: c05d0ea 0f0f8d0
+Author: DESKTOP-QC8OHAR\kathr <katherine.harijatna@connect.qut.edu.au>
+Date:   Fri Apr 13 23:49:38 2018 +1000
+
+    Merge branch 'master' of https://bitbucket.org/John_Huynh/cab230-project
+
+commit 0f0f8d0fb649ca12adbcebe13d6b464e4b051904
+Author: John_Huynh <John.huynh@student.qut.edu.au>
+Date:   Fri Apr 13 20:40:01 2018 +1000
+
+    added Logo Files
+
+commit 3648e3a8b95d1fc09d7fd351f5ffa4ade0d1f935
+Author: John_Huynh <John.huynh@student.qut.edu.au>
+Date:   Mon Apr 9 21:42:23 2018 +1000
+
+    Made My pages responsive, Added Microdata to Individual Results Page, Added maps to results page, added geolocation to search page
+
+commit c05d0eae47b2f3c588c633b88bee0265fec4c505
+Author: DESKTOP-QC8OHAR\kathr <katherine.harijatna@connect.qut.edu.au>
+Date:   Wed Apr 4 21:25:50 2018 +1000
+
+    Testing
+
+commit 8aa354399767634820c2ce7acbd15d50e58e3c44
+Author: John_Huynh <John.huynh@student.qut.edu.au>
+Date:   Wed Apr 4 19:36:28 2018 +1000
+
+    edited current page btn
+
+commit 6e65c5da0cdc6e1de43f35964756cc46367595f0
+Author: John_Huynh <John.huynh@student.qut.edu.au>
+Date:   Wed Apr 4 19:31:49 2018 +1000
+
+    merged changes with both copies
+
+commit 41235539da4f978c6d819cdf0be0bd0d5727b186
+Author: JohnnyCrusher <John.huynh@student.qut.edu.au>
+Date:   Tue Apr 3 15:51:05 2018 +1000
+
+    fixed the box issues in Registration page and added menu bar and fixed up some grid layouts
+
+commit 53b5d10e9b11f95063331edbdb4517174215f3a2
+Author: DESKTOP-QC8OHAR\kathr <katherine.harijatna@connect.qut.edu.au>
+Date:   Mon Apr 2 14:16:38 2018 +1000
+
+    Added Search Results and Styling, Search page simplified.
+
+commit 35879028de114b9971bb60cdc833a449c1ef4f96
+Author: JohnnyCrusher <John.huynh@student.qut.edu.au>
+Date:   Fri Mar 23 01:18:06 2018 +1000
+
+    Base Login Page Completed
+
+commit a5c50c6360e70787738992dd181cc4510236f64c
+Author: John_Huynh <John.huynh@student.qut.edu.au>
+Date:   Fri Mar 23 00:28:37 2018 +1000
+
+    base login
+
+commit 072b7ea94a49f0f7231e182da940cbac7d21c1e7
+Author: John_Huynh <John.huynh@student.qut.edu.au>
+Date:   Wed Mar 21 14:58:57 2018 +1000
+
+    fixed hover out
+
+commit 4268707713050f7325cabad0732536ebbf22a42a
+Author: JohnnyCrusher <John.huynh@student.qut.edu.au>
+Date:   Wed Mar 21 01:22:05 2018 +1000
+
+    fixed some small errors and added some functionality on hover rating system
+
+commit 1700a08d37cd20534d3c0442fb592793ce8a593e
+Author: JOHN-SURFACE\John <john.huynh@student.qut.edu.au>
+Date:   Tue Mar 20 23:16:28 2018 +1000
+
+    Fixed some links and fixed the registation page
+
+commit b0013cf6d6fa030e0f0b03a0576e350272dbe294
+Author: JohnnyCrusher <John.huynh@student.qut.edu.au>
+Date:   Tue Mar 20 01:16:38 2018 +1000
+
+    basic layout for Individual Results Page Completed
+
+commit 8d86df3a0055357eb0e216b2e1bd2406e461c8d5
+Author: DESKTOP-QC8OHAR\kathr <katherine.harijatna@connect.qut.edu.au>
+Date:   Mon Mar 19 12:17:59 2018 +1000
+
+    Added Katherine Section
+
+commit 112479db4f5929491d24cf1d8f98f214faf8f703
+Author: JohnnyCrusher <John.huynh@student.qut.edu.au>
+Date:   Mon Mar 19 01:43:56 2018 +1000
+
+    Registration Page Identical closely identical to Mockup
+
+commit 798a19a67aa3dc2eb5798d03b269954b54a21555
+Author: JohnnyCrusher <John.huynh@student.qut.edu.au>
+Date:   Sun Mar 18 13:06:44 2018 +1000
+
+    added menubar in the header area
+
+commit f50ea9517f1e0f376c65c3345aef64efeee9f0a7
+Author: John Huynh <john.huynh@student.qut.edu.au>
+Date:   Tue Mar 13 03:11:13 2018 +0000
+
+    README.md
+
+commit f5c54bb4b0f9de0fed9283df76bab90749ddc83f
+Author: John Huynh <john.huynh@student.qut.edu.au>
+Date:   Tue Mar 13 03:09:00 2018 +0000
+
+    README.md created online with Bitbucket
+
+commit 9176e1d8ca8459260deffded1acb8a140daf25dd
+Author: John_Huynh <John.huynh@student.qut.edu.au>
+Date:   Tue Mar 13 03:04:06 2018 +1000
+
+    User Registation Layout Completed

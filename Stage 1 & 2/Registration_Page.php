@@ -12,7 +12,7 @@
         <div class="grid">
             <div id="header">
                 <div id="logo-elements" class="center-items">
-                    <img id="logo-img" src="img/logo final text 400x400.png" width="277px" height="81px">
+                <img id="logo-img" src="img/logo final text 400x400.png" width="277px" height="81px">
                 </div>
                 <div id="header-text" class="center-items">
                     <h1>Sign Up</h1>
@@ -33,31 +33,39 @@
                     <h2>other shit blah blah blah</h2>
                 </div>
                 <div id="registation">
-                    <form id="create-account" action="/php/processSignupData.php" method="POST">
+                    <form id="create-account" action="Registration_Page.php" method="POST">
                         <fieldset>
                             <legend>
                                 <Strong>Sign Up</Strong>
                             </legend>
-                            <p><strong>Name:</strong></p>
+                            <!-- <p><strong>Name:</strong></p>
                             <input type="text" id="firstName" name="First Name" class="input-field" placeholder="First Name" required="required" onchange="hideError(this)">
                             <input type="text" id="lastName" name="Last Name" class="input-field" placeholder="Last Name" required="required" onchange="hideError(this)">
-                            <span id="nameMissing" class="error-message">First Name and Last Name is a required field!</span>
-
-                            <p><strong>Email:</strong></p>
+                            <span id="nameMissing" class="error-message">First Name and Last Name is a required field!</span> -->
+                            <?php
+                                $error = array();
+                                require(dirname(__DIR__).'/Stage 1 & 2/php/fields.php');
+                                generateName($error);
+                                generateDataField("Email:","email","email","email", "input-field","Email","hideError(this)",$error);
+                                generateDataField("Username:","text","username","username","input-field","Username","hideError(this)",$error);
+                                generatePassword($error);
+                                birthdayField($error);
+                            ?>
+                            <!-- <p><strong>Email:</strong></p>
                             <input type="email" id="email" name="email" class="input-field" placeholder="Email" required="required" onchange="hideError(this)">
-                            <span id="emailMissing" class="error-message"> Email is a required field! </span>
+                            <span id="emailMissing" class="error-message"> Email is a required field! </span> -->
 
-                            <p><strong>Username:</strong></p>
+                            <!-- <p><strong>Username:</strong></p>
                             <input type="text" id="username" name="username" class="input-field" placeholder="Username" required="required" onchange="hideError(this)">
-                            <span id="usernameMissing" class="error-message"> Username is a required field! </span>
+                            <span id="usernameMissing" class="error-message"> Username is a required field! </span> -->
 
-                            <p><strong>Password:</strong></p>
+                            <!-- <p><strong>Password:</strong></p>
                             <input type="password" id="password" name="password" class="input-field" required="required" onchange="hideError(this)">
                             <p><strong>Comfirm your Password:</strong></p>
                             <input type="password" id="confirm-password" name="confirm-password" class="input-field" required="required" onchange="hideError(this)">
-                            <span id="passwordMissing" class="error-message">Password is a required field!</span>
+                            <span id="passwordMissing" class="error-message">Password is a required field!</span> -->
 
-                            <p><strong>Birthday:</strong></p>
+                            <!-- <p><strong>Birthday:</strong></p>
                             <select id="month" name="month" onchange="hideError(this)">
                                 <option value="Select">Select</option>
                                 <option value="Jan">Jan</option>
@@ -74,7 +82,7 @@
                             </select>
                             <input type="number" id="day" name="day" placeholder="day" required="required"  onchange="hideError(this)">
                             <input type="number" id="year" name="year" min="1900" max="2018" required="required" placeholder="Year" onchange="hideError(this)">
-                            <span id="birthdayMissing" class="error-message"> Password is not the same on both fields! </span>
+                            <span id="birthdayMissing" class="error-message"> Password is not the same on both fields! </span> -->
                             <p><strong>Gender:</strong></p>
                             <input type="radio" id="female-gender" class="radio-btn" name="Gendern" value="Female" onchange="hideError(this)"> Female
                             <input type="radio" id="male-gender" class="radio-btn" name="Gender" value="Male" onchange="hideError(this)"> Male
