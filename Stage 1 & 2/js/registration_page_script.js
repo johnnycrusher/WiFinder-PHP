@@ -7,6 +7,10 @@ function validate(){
     var GenderSelection = checkGenderSelection();
     if(Name && Email && Username && Password && Birthdate && GenderSelection){
         alert("Form Validated");
+        return true;
+    }
+    if(!Name || !Email || !Username || !Password || !Birthdate || !GenderSelection){
+        return false;
     }
 }
 function checkName(){

@@ -33,6 +33,36 @@
                     <h2>other shit blah blah blah</h2>
                 </div>
                 <div id="registation">
+                    <?php 
+                        $errors = array();
+                        $submitted = False;
+                        require(dirname(__DIR__).'/Stage 1 & 2/php/validate.php');
+                        if(isset($_POST['first-name'])|| isset($_POST['last-name'])){
+                            validateName($errors, $_POST, 'first-name', 'last-name');
+                        }
+                        if(isset($_POST['email'])){
+                            validateEmail($errors, $_POST, 'email');
+                        }
+                        if(isset($_POST['username'])){
+                            validateUsername($errors, $_POST, 'username');
+                        }
+                        if(isset($_POST['password'])){
+                            validatePassword($errors, $_POST, 'password','confirm-password');
+                        }
+                        if(isset($_POST['month'])){
+                            validateBirthday($errors, $_POST, 'month','day', 'year');
+                        }
+                        
+                        if ($errors) {
+                            echo '<h1>Invalid, correct the following errors:</h1>';
+                            foreach ($errors as $field => $error) {
+                                echo "$field $error<br>";
+                            }
+                        // redisplay the form
+                        } else if($submitted) {
+                            echo 'form submitted successfully with no errors';
+                        }
+                    ?>
                     <form id="create-account" action="Registration_Page.php" method="POST">
                         <fieldset>
                             <legend>
@@ -88,7 +118,7 @@
                             <input type="radio" id="male-gender" class="radio-btn" name="Gender" value="Male" onchange="hideError(this)"> Male
                             <input type="radio" id="other-gender" class="radio-btn" name="Gender" value="Other" onchange="hideError(this)"> Other
                             <span id="genderMissing" class="error-message">Please select a gender!</span><br>
-                            <button id="sign-up-btn" type="Submit" value="Sign up" onclick="validate()">Sign Up</button>
+                            <input id="sign-up-btn" type="Submit" value="Sign up" onclick="return validate()"/>
                         </fieldset>
                     </form>     
                 </div>
