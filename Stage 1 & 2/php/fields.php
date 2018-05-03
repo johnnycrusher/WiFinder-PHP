@@ -10,9 +10,12 @@ function generateInputField($type, $id,$name, $class,$value,$placeholder,$onchan
 
 function generateError($error, $id){
     $errorID = "error-".$id;
-    echo ("<span id=\"$errorID\" class=\"error-message\">");
+   
     if(isset($error[$id])){
-        echo($error[$name]);
+        echo ("<span id=\"$errorID\" class=\"error-message\" style=\"visibility: visible\">");
+        echo($error[$id]);
+    }else{
+        echo ("<span id=\"$errorID\" class=\"error-message\">");
     }
     echo("</span>");
 }
@@ -43,6 +46,7 @@ function generateDataField($labelName,$type,$id,$name,$class,$placeholder,$oncha
 
 function birthdayField($errors){
     generateFieldName("Birthday:");
+    $monthValue = postData("month");
     generateBirthMonthField("month","month","hideError(this)");
     $dayValue = postData("day");
     $yearValue = postData("year");
@@ -68,7 +72,39 @@ function generatePassword($error){
     generateInputField("password","confirm-password","confirm-password","input-field",$value,"Password","hideError(this)");
     generateError($error, "password");
 }
-function generateGender($error){
 
+function generateRadioBox($id, $class, $name, $value, $onchange , $checked){
+    echo("<input type=\"radio\" id=\"$id\" class=\"$class\" name=\"$name\" value=\"$value\" onchange=\"$onchange\" checked=\"$checked\"> $value ");
+}
+
+function generateGender($error){
+    generateFieldName("Gender:");
+    echo("<input type=\"hidden\" name=\"gender\" value=\"no-selection\" />");
+    if(isset($_POST['gender'])){
+        $value = $_POST['gender'];
+        if(strcmp($value,"Female") == 0){
+            generateRadioBox("femail-gender", "radio-btn", "gender", "Female", "hideEror(this)","checked");
+            generateRadioBox("male-gender", "radio-btn", "gender", "Male", "hideEror(this)","false");
+            generateRadioBox("other-gender", "radio-btn", "gender", "Other", "hideEror(this)","false");
+        }else if(strcmp($value,"Male") == 0){
+            generateRadioBox("femail-gender", "radio-btn", "gender", "Female", "hideEror(this)","false");
+            generateRadioBox("male-gender", "radio-btn", "gender", "Male", "hideEror(this)","checked");
+            generateRadioBox("other-gender", "radio-btn", "gender", "Other", "hideEror(this)","false");
+        }else if(strcmp($value,"Other") == 0){
+            generateRadioBox("femail-gender", "radio-btn", "gender", "Female", "hideEror(this)","false");
+            generateRadioBox("male-gender", "radio-btn", "gender", "Male", "hideEror(this)","false");
+            generateRadioBox("other-gender", "radio-btn", "gender", "Other", "hideEror(this)","checked");
+        } else{
+            generateRadioBox("femail-gender", "radio-btn", "gender", "Female", "hideEror(this)","false");
+            generateRadioBox("male-gender", "radio-btn", "gender", "Male", "hideEror(this)","false");
+            generateRadioBox("other-gender", "radio-btn", "gender", "Other", "hideEror(this)","false");
+        }
+    }
+    else{
+        generateRadioBox("femail-gender", "radio-btn", "gender", "Female", "hideEror(this)","false");
+        generateRadioBox("male-gender", "radio-btn", "gender", "Male", "hideEror(this)","false");
+        generateRadioBox("other-gender", "radio-btn", "gender", "Other", "hideEror(this)","false");
+    }
+    generateError($error, "gender");
 }
 ?>

@@ -192,6 +192,6 @@ function hideError(x){
         document.getElementById("error-birthday").style.visibility = "hidden";
     }
     if(("female-gender" == x.id) || ("male-gender" == x.id) || ("other-gender" == x.id)){
-        document.getElementById("genderMissing").style.visibility = "hidden";
+        document.getElementById("error-gender").style.visibility = "hidden";
     }
 }

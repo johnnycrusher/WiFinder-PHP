@@ -35,10 +35,11 @@
                 <div id="registation">
                     <?php 
                         $errors = array();
-                        $submitted = False;
+                        $submitted  = False;
                         require(dirname(__DIR__).'/Stage 1 & 2/php/validate.php');
-                        if(isset($_POST['first-name'])|| isset($_POST['last-name'])){
+                        if(isset($_POST['first-name']) || isset($_POST['last-name'])){
                             validateName($errors, $_POST, 'first-name', 'last-name');
+                            $submitted = True;
                         }
                         if(isset($_POST['email'])){
                             validateEmail($errors, $_POST, 'email');
@@ -52,15 +53,14 @@
                         if(isset($_POST['month'])){
                             validateBirthday($errors, $_POST, 'month','day', 'year');
                         }
+                        if(isset($_POST['gender'])){
+                            validateGender($errors,$_POST,'gender');
+                        }
                         
-                        if ($errors) {
-                            echo '<h1>Invalid, correct the following errors:</h1>';
-                            foreach ($errors as $field => $error) {
-                                echo "$field $error<br>";
-                            }
-                        // redisplay the form
-                        } else if($submitted) {
-                            echo 'form submitted successfully with no errors';
+                        if($submitted && !$errors){
+                            require(dirname(__DIR__).'/Stage 1 & 2/php/sendDataToDatabase.php');
+                            insertUserInfomration($_POST['first-name'], $_POST['last-name'], $_POST['email'],$_POST['username'], $_POST['password'], "1996-05-26", $_POST['gender']);
+                            echo ('form submitted successfully with no errors');
                         }
                     ?>
                     <form id="create-account" action="Registration_Page.php" method="POST">
@@ -73,13 +73,13 @@
                             <input type="text" id="lastName" name="Last Name" class="input-field" placeholder="Last Name" required="required" onchange="hideError(this)">
                             <span id="nameMissing" class="error-message">First Name and Last Name is a required field!</span> -->
                             <?php
-                                $error = array();
                                 require(dirname(__DIR__).'/Stage 1 & 2/php/fields.php');
-                                generateName($error);
-                                generateDataField("Email:","email","email","email", "input-field","Email","hideError(this)",$error);
-                                generateDataField("Username:","text","username","username","input-field","Username","hideError(this)",$error);
-                                generatePassword($error);
-                                birthdayField($error);
+                                generateName($errors);
+                                generateDataField("Email:","email","email","email", "input-field","Email","hideError(this)",$errors);
+                                generateDataField("Username:","text","username","username","input-field","Username","hideError(this)",$errors);
+                                generatePassword($errors);
+                                birthdayField($errors);
+                                generateGender($errors);
                             ?>
                             <!-- <p><strong>Email:</strong></p>
                             <input type="email" id="email" name="email" class="input-field" placeholder="Email" required="required" onchange="hideError(this)">
@@ -113,11 +113,11 @@
                             <input type="number" id="day" name="day" placeholder="day" required="required"  onchange="hideError(this)">
                             <input type="number" id="year" name="year" min="1900" max="2018" required="required" placeholder="Year" onchange="hideError(this)">
                             <span id="birthdayMissing" class="error-message"> Password is not the same on both fields! </span> -->
-                            <p><strong>Gender:</strong></p>
-                            <input type="radio" id="female-gender" class="radio-btn" name="Gendern" value="Female" onchange="hideError(this)"> Female
+                            <!-- <p><strong>Gender:</strong></p>
+                            <input type="radio" id="female-gender" class="radio-btn" name="Gender" value="Female" onchange="hideError(this)"> Female
                             <input type="radio" id="male-gender" class="radio-btn" name="Gender" value="Male" onchange="hideError(this)"> Male
-                            <input type="radio" id="other-gender" class="radio-btn" name="Gender" value="Other" onchange="hideError(this)"> Other
-                            <span id="genderMissing" class="error-message">Please select a gender!</span><br>
+                            <input type="radio" id="other-gender" class="radio-btn" name="Gender" value="Other" onchange="hideError(this)"> Other -->
+                            <!-- <span id="genderMissing" class="error-message">Please select a gender!</span><br> -->
                             <input id="sign-up-btn" type="Submit" value="Sign up" onclick="return validate()"/>
                         </fieldset>
                     </form>     
