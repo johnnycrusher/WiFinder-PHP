@@ -70,4 +70,33 @@ function ratingChoose(item){
         stars[i].classList.remove("fa-star-o");
         stars[i].classList.add("fa-star");
     }
+
+    //update rating
+    rating = document.getElementById("rating");
+    var ratingCounter = 0;
+    for(var i = 0; i<stars.length; i++){
+        if(stars[i].classList.contains('fa-star')){
+            ratingCounter += 1;
+        }
+    }
+    rating.value = ratingCounter;
+
+}
+function determineRating(){
+    rating = document.getElementById("rating");
+
+    var oneStar = document.getElementById('one-star');
+    var twoStar = document.getElementById('two-star');
+    var threeStar = document.getElementById('three-star');
+    var fourStar = document.getElementById('four-star');
+    var fiveStar = document.getElementById('five-star');
+
+    var stars = [oneStar,twoStar,threeStar,fourStar,fiveStar];
+    var ratingCounter = 0;
+
+    for(var i = 0; i<stars.length; i++){
+        if(stars[i].classList.contains(fa-star)){
+            ratingCounter += 1;
+        }
+    }
 }

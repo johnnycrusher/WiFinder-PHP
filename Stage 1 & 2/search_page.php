@@ -61,6 +61,7 @@
                                     <span onclick="ratingChoose(this)"><i id="three-star" class="fa fa-star-o"></i></span>
                                     <span onclick="ratingChoose(this)"><i id="four-star" class="fa fa-star-o"></i></span>
                                     <span onclick="ratingChoose(this)"><i id="five-star" class="fa fa-star-o"></i></span>
+                                    <span><input type="text" id="rating" name="rating" value="0"  readonly/>/5</span>
                                 </div>
                             </p>
                         </div>

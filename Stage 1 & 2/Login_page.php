@@ -18,13 +18,13 @@
             if(retreiveLoginToDatabase($_POST['username'], $_POST['password'])){
                 session_start();
                 $_SESSION['user'] = true;
-                header("http://{$_SERVER['HTTP_HOST']}/search_page.php");
+                header("Location:search_page.php");
             }
         }
     ?>
         <div class="grid">
             <div id="header">
-            <?php include('php/header.inc');?>
+                <?php include('php/header.inc');?>
             </div>
             <div id="header-fill-left"></div>
             <div id="header-fill-right"></div>
