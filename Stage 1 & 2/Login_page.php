@@ -12,23 +12,24 @@
         <meta name="apple-mobile-web-app-capable" content="yes">
     </head>
     <body>
+    <?php 
+        require(dirname(__DIR__).'/Stage 1 & 2/php/retreiveDataFromDatabase.php');
+        if(isset($_POST['username'])){
+            if(retreiveLoginToDatabase($_POST['username'], $_POST['password'])){
+                session_start();
+                $_SESSION['user'] = true;
+                header("http://{$_SERVER['HTTP_HOST']}/search_page.php");
+            }
+        }
+    ?>
         <div class="grid">
             <div id="header">
-                <div id="logo-elements" class="center-items">
-                    <img id="logo-img" src="img/logo final text 400x400.png" width="277px" height="81px">
-                </div>
-                <div id="header-text" class="center-items">
-                    <h1>Login</h1>
-                </div>
+            <?php include('php/header.inc');?>
             </div>
             <div id="header-fill-left"></div>
             <div id="header-fill-right"></div>
             <div id="menubar">
-                <div id="button-loc">
-                    <a href="search_page.html" id="search-menu" class="menu-btn">Search <i class="fa fa-search"></i></a>
-                    <a href="Registration_page.html" id="sign-up-menu"class="menu-btn">Sign-Up <i class="fa fa-user-plus"></i></a>
-                    <a href="Login_page.html" id="login-menu" class="current-page">Login <i class="fa fa-user-o"></i></a>
-                </div>
+                <?php include('php/menu.inc');?>
             </div>
             <div id="content">
                 <div id="Login">
@@ -39,9 +40,9 @@
                             </legend>
                             <div>
                                 <p><b>Username:</b></p>
-                                <input type="text" id="UserName" class="input-field" placeholder="Username" required="required">
+                                <input type="text" id="UserName" name="username" class="input-field" placeholder="Username" required="required">
                                 <p><b>Password:</b></p>
-                                <input type="password" id="Password" class="input-field" placeholder="Password" required="required">
+                                <input type="password" id="Password" name="password" class="input-field" placeholder="Password" required="required">
                                 <br>
                                 <a href="">Forgot your password:</a>
                             </div>
@@ -54,16 +55,7 @@
                 </div>
             </div>
             <div id="footer">
-                <div id="Our-Mission-Text">
-                    <h2>Our Mission</h2>
-                    <p>WiFinder mission is to connect the citizens of Brisbane with location data on where the closest Free Wifi-Location. To ensure they stay connected to the internet</p>
-                </div>
-                <div id="connect-with-us">
-                    <h2>Connect With Us On:</h2>
-                    <a href="" style="Color:White"><i class="fa fa-facebook-square fa-3x"></i></a>
-                    <a href="" style="Color:White"><i class="fa fa-instagram fa-3x"></i></a>
-                    <a href="" style="Color:White"><i class="fa fa-twitter-square fa-3x"></i></a>
-                </div>
+                <?php include('php/footer.inc') ?>
             </div>
             <div id="footer-fill-left"></div>
             <div id="footer-fill-right"></div>

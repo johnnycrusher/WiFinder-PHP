@@ -31,9 +31,10 @@ function postData($name){
 
 function generateBirthMonthField($id, $name, $onchange){
     echo("<select id=\"$id\" name=\"$name\" onchange=\"$onchange\">");
-    $monthArray = array("Select","Jan","Feb","Mar","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec");
+    $monthArray = array("Select","Jan","Feb","Mar","April","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec");
+    $monthValue = array("Select","01","02","03","04","05","06","07","08","09","10","11","12");
     for($month = 0; $month<sizeof($monthArray); $month++){
-        echo("<option value=\"$monthArray[$month]\">$monthArray[$month]</option>");
+        echo("<option value=\"$monthValue[$month]\">$monthArray[$month]</option>");
     }
 }
 

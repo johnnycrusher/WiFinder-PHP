@@ -41,24 +41,24 @@ function validateBirthday(&$error, $field_list, $field_month,$field_day, $field_
     $day = (int)$field_list[$field_day];
     $year = (int)$field_list[$field_year];
     switch ($field_list[$field_month]){
-        case "Jan":
-        case "Mar":
-        case "Jul";
-        case "Oct";
-        case "Dec":
+        case "01":
+        case "03":
+        case "07";
+        case "10";
+        case "12":
             if(($day<=0) || ($day>31)){
                 $error["birthday"] = "This is not a valid Date";
             }
             break;
-        case "Apr":
-        case "Jun":
-        case "Sep":
-        case "Nov":
+        case "04":
+        case "06":
+        case "09":
+        case "11":
             if(($day<0) || ($day>30)){
                 $error["birthday"] = "This is not a valid Date";
             }
             break;
-        case "Feb":
+        case "02":
             $leapYearChecker = checkLeapYear($year);
             if($leapYearChecker == true){
                 if($day>29 || $day<0){

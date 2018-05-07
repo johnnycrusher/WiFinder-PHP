@@ -11,21 +11,12 @@
     <body>
         <div class="grid">
             <div id="header">
-                <div id="logo-elements" class="center-items">
-                <img id="logo-img" src="img/logo final text 400x400.png" width="277px" height="81px">
-                </div>
-                <div id="header-text" class="center-items">
-                    <h1>Sign Up</h1>
-                </div>
+                <?php include('php/header.inc');?>
             </div>
             <div id="header-fill-left"></div>
             <div id="header-fill-right"></div>
             <div id="menubar">
-                <div id="button-loc">
-                    <a href="search_page.html" id="search-menu" class="menu-btn">Search <i class="fa fa-search"></i></a>
-                    <a href="Registration_page.html" id="sign-up-menu"class="current-page">Sign-Up <i class="fa fa-user-plus"></i></a>
-                    <a href="Login_Page.html" id="login-menu" class="menu-btn">Login <i class="fa fa-user-o"></i></a>
-                </div>
+            <?php include('php/menu.inc');?>
             </div>
             <div id="content">
                 <div id="other">
@@ -59,7 +50,8 @@
                         
                         if($submitted && !$errors){
                             require(dirname(__DIR__).'/Stage 1 & 2/php/sendDataToDatabase.php');
-                            insertUserInfomration($_POST['first-name'], $_POST['last-name'], $_POST['email'],$_POST['username'], $_POST['password'], "1996-05-26", $_POST['gender']);
+                            $birthday = $_POST["year"]."-".$_POST["month"]."-".$_POST["day"];
+                            insertUserInfomration($_POST['first-name'], $_POST['last-name'], $_POST['email'],$_POST['username'], $_POST['password'], $birthday, $_POST['gender']);
                             echo ('form submitted successfully with no errors');
                         }
                     ?>
@@ -124,16 +116,7 @@
                 </div>
             </div>
             <div id="footer">
-                <div id="Our-Mission-Text">
-                    <h2>Our Mission</h2>
-                    <p>WiFinder mission is to conntect the citizens of Brisbane with location data on where the closest Free Wifi-Location. To ensure they stay connected to the internet</p>
-                </div>
-                <div id="connect-with-us">
-                    <h2>Connect With Us On:</h2>
-                    <a href="" style="Color:White"><i class="fa fa-facebook-square fa-3x"></i></a>
-                    <a href="" style="Color:White"><i class="fa fa-instagram fa-3x"></i></a>
-                    <a href="" style="Color:White"><i class="fa fa-twitter-square fa-3x"></i></a>
-                </div>
+                <?php include('php/footer.inc') ?>
             </div>
             <div id="footer-fill-left"></div>
             <div id="footer-fill-right"></div>
