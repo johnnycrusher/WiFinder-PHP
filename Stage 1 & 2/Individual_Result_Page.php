@@ -1,3 +1,6 @@
+<?php
+$here = $_GET['location'];
+?>
 <!DOCTYPE html>
 <html lang="en">
     <head>

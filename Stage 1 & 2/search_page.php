@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html>
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -47,6 +46,8 @@
                                     <option value="suburb">Suburb</option>
                                 </select>
                             </p>
+                            <input type="hidden" id="longitude" name="longitude" value ="0">
+                            <input type="hidden" id="latitude" name="latitude" value="0">
                             <p>Near:
                                 <select name="WiFi-location-type">
                                     <option value="both">Both</option>
@@ -77,7 +78,5 @@
             <?php include('php/footer.inc') ?>
         </div>
     </div>
-
 </body>
-
 </html>

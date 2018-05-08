@@ -10,4 +10,16 @@ function retreiveLoginToDatabase($username, $password){
     return $retreiveUsername-> rowCount()>0;
 }
 
+function retriveSearchResults($latitude, $longitude){
+    $pdo = new PDO('mysql:host=localhost;dbname=wifinder-application','admin','BlackDragon123=');
+    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+    $retreiveSearches = $pdo -> prepare("SELECT wifiHotspotname,LocationType,Address,Suburb,Latitude,Longitude, ( 3959 * acos( cos( radians(:latitude) ) * cos( radians( Latitude ) ) * cos( radians(Longitude) - radians(:longitude) ) + sin( radians(:latitude) ) * sin( radians( Latitude ) ) ) ) AS distance FROM `wifi-location` HAVING distance < 20 ORDER BY distance LIMIT 0,10");
+    $retreiveSearches ->bindValue(':latitude',$latitude);
+    $retreiveSearches ->bindValue(':longitude',$longitude);
+    $retreiveSearches -> execute();
+    $searchResults = $retreiveSearches -> fetchAll(PDO::FETCH_ASSOC);
+    return $searchResults;
+}
+
 ?>

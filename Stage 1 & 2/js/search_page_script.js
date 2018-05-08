@@ -11,7 +11,8 @@ function getLocation(){
 
 function storeLocation(position){
     myCoords={"lat": position.coords.latitude , "lng": position.coords.longitude};
-    console.log("done");
+    document.getElementById("latitude").value = myCoords.lat;
+    document.getElementById("longitude").value = myCoords.lng;
     intialiseMaps();
 }
 
