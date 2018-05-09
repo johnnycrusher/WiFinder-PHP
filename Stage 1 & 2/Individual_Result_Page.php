@@ -1,5 +1,10 @@
 <?php
 $here = $_GET['location'];
+require('php/retreiveDataFromDatabase.php');
+if(isset($_GET['location'])){
+    $reviewData = retrieveReviewData($_GET['location']);
+}
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -23,26 +28,18 @@ $here = $_GET['location'];
             </div>
             <div itemscope itemtype="http://schema.org/Place" id="content">
                 <div id="map"></div>
-                <div id="WiFi-location-info-box">
-                        <span itemprop="name"><h2>Annerly Library Wifi</h2></span>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star-o"></i>
-                        <div itemprop="aggregateRating" itemscope itemtype="http://schema.org/AggregateRating">
-                            <span itemprop="ratingValue">4</span>/5
-                            based on <span itemprop="reviewCount">2</span> customer reviews
-                        </div>
-                        <div itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
-                        <meta itemprop="name" content="Annerly Library Wifi">
-                        <span itemprop="streetAddress">450 Ipswich Road</span>,
-                        <span itemprop="addressRegion">Annerley</span>,
-                        <span itemprop="addressRegion">QLD</span>,
-                        <span itemprop="postalCode">4103</span>
-                    </div>
-                </div>
-                <div id="write-review-box" class="white-boxes">
+                <?php
+                    require("php/individualResultsInfo.php");
+                ?>
+                
+                <?php
+                    session_start();
+                    if(isset($_SESSION['user'])){
+                        require("php/writeReviewBox.php");
+                    }
+                ?>
+
+                <!-- <div id="write-review-box" class="white-boxes">
                     <h2>Write your reivew:</h2>
                     <div>
                         <span onmouseover="ratingHover(this)" onmouseout="ratingHoverOut(this)" onclick="ratingChoose()"><i id="one-star" class="fa fa-star-o"></i></span>
@@ -58,10 +55,13 @@ $here = $_GET['location'];
                             <button id="publish-btn">Publish Your Review</button>
                         </div>
                     </div>
-                </div>
+                </div> -->
                 <div id="review-box" class="white-boxes">
                     <h2>Reviews:</h2>
-                    <?php include('php/reviewbox.php'); ?>
+                    <?php
+                    require('php/reviewTiles.php');
+                    echo(generateReviews($reviewData));
+                    ?>
                 </div>
             </div>
 
