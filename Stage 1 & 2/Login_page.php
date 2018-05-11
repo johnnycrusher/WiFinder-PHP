@@ -17,7 +17,7 @@
         if(isset($_POST['username'])){
             if(retreiveLoginToDatabase($_POST['username'], $_POST['password'])){
                 session_start();
-                $_SESSION['user'] = true;
+                $_SESSION['user'] = $_POST['username'];
                 header("Location:search_page.php");
             }
         }

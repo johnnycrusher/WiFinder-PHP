@@ -1,4 +1,4 @@
-function ratingHover(item){
+function ratingChoose(item){
     var icons = item.firstChild;
     var itemId = icons.getAttribute("id");
 
@@ -15,109 +15,60 @@ function ratingHover(item){
             number = i + 1;
         }
     }
+    for(var j=0; j<stars.length;j++){
+        if(stars[j].classList.contains("fa-star")){
+            stars[j].classList.remove("fa-star");
+            stars[j].classList.add("fa-star-o");
+        }
+    }
     for(var i = 0; i<number; i++){
         stars[i].classList.remove("fa-star-o");
         stars[i].classList.add("fa-star");
     }
+
+    //update rating
+    rating = document.getElementById("rating");
+    var ratingCounter = 0;
+    for(var i = 0; i<stars.length; i++){
+        if(stars[i].classList.contains('fa-star')){
+            ratingCounter += 1;
+        }
+    }
+    rating.value = ratingCounter;
+
 }
-function ratingHoverOut(){
-    var oneStar = document.getElementById('one-star');
-    var twoStar = document.getElementById('two-star');
-    var threeStar = document.getElementById('three-star');
-    var fourStar = document.getElementById('four-star');
-    var fiveStar = document.getElementById('five-star');
 
-    var stars = [oneStar,twoStar,threeStar,fourStar,fiveStar];
-
-    for(var i = 0; i<5; i++){
-        stars[i].classList.remove("fa-star");
-        stars[i].classList.add("fa-star-o");
-    }
-};
-function ratingChoose(){
-    var oneStar = document.getElementById('one-star');
-    var twoStar = document.getElementById('two-star');
-    var threeStar = document.getElementById('three-star');
-    var fourStar = document.getElementById('four-star');
-    var fiveStar = document.getElementById('five-star');
-
-    var stars = [oneStar,twoStar,threeStar,fourStar,fiveStar];
-    for( var i = 0; i<stars.length; i++ ){
-        stars[i].parentNode.removeEventListener("mouseover",ratingHover,false);
-    }
+function setCoordinates(lat,lng,locationName,address){
+    this.latt = lat;
+    this.lngg = lng;
+    this.locationName = locationName;
+    this.address = address;
 }
 
 function initMap() {
-    var AnnerleyLibraryWifi = {lat: -27.5094, lng: 153.033};
+    var Location = {lat: latt, lng: lngg};
     var options = {
         zoom: 16,
-        center: AnnerleyLibraryWifi
+        center: Location
     }
     var maps = new google.maps.Map(document.getElementById("map"), options)
 
-    addMarker(AnnerleyLibraryWifi, maps);
+    addMarker(Location,locationName, address, maps);
   }
 
-function addMarker(coords , map){
+function addMarker(coords,nameOfLocation, addressLocation, map){
     var marker = new google.maps.Marker({
         position: coords,
         map: map
     });
-    console.log("`lat : ${coords.lat}`");
-    console.log("`lng ${coords.lng}`");
     var infowindow = new google.maps.InfoWindow({
-        content: '<h2>Annerly Library Wifi</h2>'+
-        '<p>450 Ipswich Road, Annerley,4103</p>'+
-        `<button onclick=window.open('https://www.google.com/maps/search/?api=1&query=${coords.lat},${coords.lng}');>Directions</button>`
+        content: '<h2>'+nameOfLocation+'</h2>'+
+        '<p>'+addressLocation+'</p>'+
+        `<button id="Direction-btn" onclick=window.open('https://www.google.com/maps/search/?api=1&query=${coords.lat},${coords.lng}');>Directions</button>`
     });
     marker.addListener('click', function(){
         infowindow.open(map,marker);
     });
-}
-function getMySQLReviewData(){
-    var xhr = new XMLHttpRequest();
-    xhr.onreadystatechange = function(){
-        if(this.readyState == 4 && this.status == 200){
-                var myObj = JSON.parse(this.responseText);
-                console.log(myObj);
-                var first = true;
-                var second = false;
-            for(var i = 0; i<myObj.length ; i++){
-                if(first){
-                    document.getElementById("user0").innerHTML = myObj[i].FirstName + " " + myObj[i].LastName;
-                    document.getElementById("datePublish0").innerHTML ="Date Published: " + myObj[i].DatePublished;
-                    setRatings(myObj[i].Rating,"rating0")
-                    document.getElementById("description0").innerHTML = myObj[i].ReviewDescription;
-                    first = false;
-                    second = true;                
-                }else{
-                    if (second){
-                        var newReview = document.getElementById("review-one").cloneNode(true);
-                        newReview.id = "review" + parseInt(i);
-                        document.getElementById("review-one").after(newReview); 
-                        newReview = document.getElementById("review" + parseInt(i));
-                        second = false; 
-                    }else{
-                        newReview = document.getElementById("review" + parseInt(i-1)).cloneNode(true);
-                        document.getElementById("review" + parseInt(i-1)).after(newReview);
-                    }
-                    newReview.id = "review" + parseInt(i);
-                    newReview.children[0].id = "user" + parseInt(i);
-                    newReview.children[1].id = "datePublish" + parseInt(i);
-                    newReview.children[2].id = "rating" + parseInt(i);
-                    newReview.children[3].id = "description" + parseInt(i);
-                    console.log(document.getElementById("user" + parseInt(i)));
-                    document.getElementById("user" + parseInt(i)).innerHTML = myObj[i].FirstName + " " + myObj[i].LastName;
-                    document.getElementById("datePublish" + parseInt(i)).innerHTML ="Date Published: " + myObj[i].DatePublished;
-                    setRatings(myObj[i].Rating,"rating" + parseInt(i));
-                    document.getElementById("description" + parseInt(i)).innerHTML = myObj[i].ReviewDescription;
-                }
-            }
-             
-        }
-    };
-    xhr.open('GET', 'php/reviewbox.php',true);
-    xhr.send();
 }
 
 function setRatings(rating, reviewID ){
@@ -148,7 +99,7 @@ function intialiseMaps(){
     document.body.appendChild(mapScript);
 }
 
-function loadMapsAndData(){
-    intialiseMaps(); 
-    getMySQLReviewData();
+function startMaps(latitude,longitude,locationName,address){
+    setCoordinates(latitude,longitude,locationName,address);
+    intialiseMaps();
 }

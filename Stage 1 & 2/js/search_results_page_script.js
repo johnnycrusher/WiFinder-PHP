@@ -1,4 +1,9 @@
-var mapElements = ["map-item-one", "map-item-two", "map-item-three", "map-item-four", "map-item-five"];
+var mapElements = ["map-item-one", "map-item-two", "map-item-three", "map-item-four", "map-item-five",
+                    "map-item-six", "map-item-seven", "map-item-eight", "map-item-nine", "map-item-ten",
+                    "map-item-eleven","map-item-twelve", "map-item-thirteen", "map-item-fourteen", "map-item-fifteen",
+                    "map-item-sixteen","map-item-seventeen", "map-item-eighteen", "map-item-nineteen", "map-item-twenty"];
+var location;
+var locationLength = 0;
 function intialiseMaps(){
     var mapScript = document.createElement('script');
     mapScript.type = "text/javascript";
@@ -6,24 +11,23 @@ function intialiseMaps(){
     document.body.appendChild(mapScript);
 }
 
-function initMap() {
-    var location= [{"lat": -27.5094, "lng": 153.033},
-        {"lat":-27.50909038,"lng":153.0259709},
-        {"lat":-27.49803575,"lng":153.043655},	
-        {"lat":-27.52552,"lng":153.06923},
-        {"lat":-27.56244221,"lng":153.0809183}];
+function setLocation(locationPlace){
+    for(var i = 0; i< locationPlace.length; i++){
+        this.location[i] = locationPlace[i];
+    }
+    this.locationLength = locationPlace.length;
 
-    var AnnerleyLibraryWifi = {lat: -27.5094, lng: 153.033};
+}
+
+
+function initMap() {
+
     var options = [];
-    for(var i = 0; i<location.length;i++){
+    for(var i = 0; i<locationLength;i++){
         options[i] = {
             zoom: 16,
             center: location[i]
         }
-    }
-    options[i] = {
-        zoom: 16,
-        center: AnnerleyLibraryWifi
     }
     var maps = [];
     for(var i = 0; i<mapElements.length; i++){
@@ -37,6 +41,11 @@ function addMarker(coords , map){
         map: map
     });
 }
-function opensite(){
-    window.open("Individual_Result_Page.html","_self",false)
+function opensite(location){
+    window.open("Individual_Result_Page.php?location=" + location,"_self",false)
+}
+
+function startMaps(location){
+    setLocation(location);
+    intialiseMaps()
 }

@@ -19,7 +19,7 @@ body{
 }
 
 #header{
-    background-color: #467F6E;
+    background-color: #467F6E !important;
     grid-area: header;
     display: grid;
     min-height: 7.5em;
@@ -232,6 +232,7 @@ body{
 .rating i{
     color: #70CCB1;
 }
+
 
 
 @media only screen and (max-width: 1263px){

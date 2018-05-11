@@ -21,7 +21,14 @@ if(isset($_POST['latitude'])){
 require("php/retreiveDataFromDatabase.php");
 if(isset($_SESSION['latitude']) && isset($_SESSION['longitude'])){
    $data = retriveSearchResults($_SESSION['latitude'], $_SESSION['longitude']);
+   $locationData = array();
+   for($index = 0; $index < sizeof($data); $index++){
+       array_push($locationData, array('lat'=>floatval($data[$index]['Latitude']), 'lng' =>floatval($data[$index]['Longitude'])));
+   }
+   $locationDataJSON = json_encode($locationData);
 }
+
+
 ?>
 
 <!DOCTYPE html>
@@ -37,7 +44,7 @@ if(isset($_SESSION['latitude']) && isset($_SESSION['longitude'])){
   
 </head>
 
-<body onload="intialiseMaps()">
+<body onload='startMaps(<?php echo($locationDataJSON)?>)'>
   <div class="grid">
 
     <!--header and various fills-->
@@ -83,113 +90,6 @@ if(isset($_SESSION['latitude']) && isset($_SESSION['longitude'])){
                 require("php/searchTiles.php");
                 echo(generateSearchTiles($data));
             ?>
-<!--        <div class="item-box">-->
-<!--          <div id="map-item-one" class="map" onclick="opensite()"></div>-->
-<!--          <div id="location-info-one"class="location-info">-->
-<!--            <div id="wifiLocationOne">-->
-<!--              <h2 class="wifiName">-->
-<!--                <a href="Individual_Result_Page.php">Annerley Library Wifi</a>-->
-<!--              </h2>-->
-<!--              <p class="rating">-->
-<!--                <i class="fa fa-star"></i>-->
-<!--                <i class="fa fa-star"></i>-->
-<!--                <i class="fa fa-star"></i>-->
-<!--                <i class="fa fa-star"></i>-->
-<!--                <i class="fa fa-star-o"></i>-->
-<!--                4/5 stars-->
-<!--              </p>-->
-<!--              <p class="address">Address: 450 Ipswich Road, Annerley, QLD, 4103</p>-->
-<!--              <p class="location">Location: Library</p>-->
-<!--            </div>-->
-<!--          </div>-->
-<!--        </div>-->
-<!---->
-<!--        <div class="item-box">-->
-<!--            <div id="map-item-two" class="map" onclick="opensite()"></div>-->
-<!--            <div id="location-info-two"class="location-info">-->
-<!--              <div id="wifiLocationTwo">-->
-<!--                <h2 class = "wifiName">-->
-<!--                  <a href="Individual_Result_Page.php">Fairfield Library Wifi</a>-->
-<!--                </h2>-->
-<!--                <p class="rating">-->
-<!--                  <i class="fa fa-star"></i>-->
-<!--                  <i class="fa fa-star"></i>-->
-<!--                  <i class="fa fa-star"></i>-->
-<!--                  <i class="fa fa-star-o"></i>-->
-<!--                  <i class="fa fa-star-o"></i>-->
-<!--                  3/5 stars            -->
-<!--                </p>-->
-<!--                <p class="address">Address: Fairfield Gardens Shopping center, 180 Fairfield Road, Fairfield, 4103</p>-->
-<!--                <p class="location">Location: Library</p>-->
-<!--              </div>-->
-<!--            </div> -->
-<!--        </div>-->
-<!---->
-<!--        <div class="item-box">-->
-<!--          <div id="map-item-three" class="map" onclick="opensite()"></div>-->
-<!--          <div id="location-info-three"class="location-info">-->
-<!--            <div id="wifiLocationThree">-->
-<!--              <h2 class = "wifiName">-->
-<!--                <a href="Individual_Result_Page.php">Stones Corner Library Wifi</a>-->
-<!--              </h2>-->
-<!--              <p class="rating">-->
-<!--                <i class="fa fa-star"></i>-->
-<!--                <i class="fa fa-star"></i>-->
-<!--                <i class="fa fa-star"></i>-->
-<!--                <i class="fa fa-star"></i>-->
-<!--                <i class="fa fa-star-o"></i>-->
-<!--                4/5 stars            -->
-<!--              </p>-->
-<!--              <p class="address">Address: 280 Logan Road, Stones Corner, QLD, 4120</p>-->
-<!--              <p class="location">Location: Park</p>-->
-<!--            </div>-->
-<!--          </div>-->
-<!--        </div>-->
-<!---->
-<!--        <div class="item-box">-->
-<!--          <div id="map-item-four" class="map" onclick="opensite()"></div>-->
-<!--          <div id="location-info-two"class="location-info">-->
-<!--              <div id="wifiLocationFour">-->
-<!--                <h2 class="wifiName">-->
-<!--                    <a href="Individual_Result_Page.php">Glindemann Park</a>-->
-<!--                  </h2>-->
-<!--                  <p class="rating">-->
-<!--                    <i class="fa fa-star"></i>-->
-<!--                    <i class="fa fa-star"></i>-->
-<!--                    <i class="fa fa-star-o"></i>-->
-<!--                    <i class="fa fa-star-o"></i>-->
-<!--                    <i class="fa fa-star-o"></i>-->
-<!--                    2/5 stars            -->
-<!--                  </p>-->
-<!--                  <p class="address">Address: Logan Road, Holland Park West, QLD, 4121</p>-->
-<!--                  <p class="location">Location: Park</p>-->
-<!--              </div>-->
-<!--            </div>-->
-<!--        </div>-->
-<!---->
-<!--        <div class="item-box">-->
-<!--          <div id="map-item-five" class="map" onclick="opensite()"></div>-->
-<!--          <div class="location-item">-->
-<!--            <div id="location-info-five"class="location-info">-->
-<!--              <div id="wifiLocationFive">-->
-<!--                <h2 class="wifiName">-->
-<!--                  <a href="Individual_Result_Page.php">Garden City Library Wifi</a>-->
-<!--                </h2>-->
-<!--                <p class="rating">-->
-<!--                  <i class="fa fa-star"></i>-->
-<!--                  <i class="fa fa-star"></i>-->
-<!--                  <i class="fa fa-star"></i>-->
-<!--                  <i class="fa fa-star-o"></i>-->
-<!--                  <i class="fa fa-star-o"></i>-->
-<!--                  3/5 stars            -->
-<!--                </p>-->
-<!--                <p class="address">Address: Garden City Shopping Centre, Corner Logan and Kessels Road,Upper Mount Gravatt,QLD, 4122</p>-->
-<!--                <p class="location">Location: Library</p>-->
-<!--              </div>-->
-<!--            </div>-->
-<!--          </div>-->
-<!--        </div>-->
-<!--      </div>-->
          </div>
     </div>
   <!-- footer -->

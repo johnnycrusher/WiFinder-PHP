@@ -95,4 +95,15 @@ function validateGender(&$error, $field_list, $field_name){
         $error[$field_name] = "Please select a gender";
     }
 }
+
+function validateReviewDescription(&$error,$field_list,$field_name){
+    if(strlen($field_list[$field_name]) == 0){
+        $error[$field_name] = "Review Description cannot be empty";
+    }
+}
+function validateRating(&$error,$field_list,$field_name){
+    if($field_list[$field_name] == 0){
+        $error[$field_name] = "Please Select a rating";
+    }
+}
 ?>

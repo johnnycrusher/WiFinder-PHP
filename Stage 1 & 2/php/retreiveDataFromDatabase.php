@@ -41,10 +41,20 @@ function retrieveReviewData($location){
     $pdo = new PDO('mysql:host=localhost;dbname=wifinder-application','admin','BlackDragon123=');
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-    $reteiveReviews = $pdo -> prepare("SELECT FirstName, LastName, DatePublished, Rating, ReviewDescription FROM reviews WHERE WifiHotspotName=:location ");
+    $reteiveReviews = $pdo -> prepare("SELECT Username, DatePublished, Rating, ReviewDescription FROM reviews WHERE WifiHotspotName=:location ");
     $reteiveReviews -> bindValue(':location',$location);
     $reteiveReviews -> execute();
     $reviewResults = $reteiveReviews -> fetchAll(PDO::FETCH_ASSOC);
     return $reviewResults;
+}
+function retrieveLocationData($location){
+    $pdo = new PDO ('mysql:host=localhost;dbname=wifinder-application','admin','BlackDragon123=');
+    $pdo -> setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
+
+    $retrieveLocationData = $pdo -> prepare("SELECT WifiHotspotName, Address, Suburb, Latitude, Longitude FROM `wifi-location` WHERE WifiHotspotName = :location");
+    $retrieveLocationData -> bindValue(':location',$location);
+    $retrieveLocationData -> execute();
+    $locationData = $retrieveLocationData -> fetchAll(PDO::FETCH_ASSOC);
+    return $locationData;
 }
 ?>

@@ -15,4 +15,21 @@
         $dataEntry-> bindValue(':gender',$gender);
         $dataEntry-> execute();
     }
+
+    function insertReviews(){
+        $location = $_GET['location'];
+        $username = $_SESSION['user'];
+        $rating = $_POST['rating'];
+        $reviewDescription = $_POST['reviewDescription'];
+
+        $pdo = new PDO('mysql:host=localhost;dbname=wifinder-application','admin','BlackDragon123=');
+        $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        $insertReview = $pdo -> prepare('INSERT INTO reviews (WifiHotspotName, Username,DatePublished, Rating, ReviewDescription)'.
+            'VALUES (:location,:username, CURDATE(),:rating,:reviewDescription)');
+        $insertReview -> bindValue(':location',$location);
+        $insertReview -> bindValue(':username',$username);
+        $insertReview -> bindValue(':rating',$rating);
+        $insertReview -> bindValue(':reviewDescription',$reviewDescription);
+        $insertReview -> execute();
+    }
 ?>

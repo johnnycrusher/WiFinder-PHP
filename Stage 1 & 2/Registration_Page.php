@@ -1,3 +1,34 @@
+<?php
+$errors = array();
+$submitted  = False;
+require(dirname(__DIR__).'/Stage 1 & 2/php/validate.php');
+if(isset($_POST['first-name']) || isset($_POST['last-name'])){
+    validateName($errors, $_POST, 'first-name', 'last-name');
+    $submitted = True;
+}
+if(isset($_POST['email'])){
+    validateEmail($errors, $_POST, 'email');
+}
+if(isset($_POST['username'])){
+    validateUsername($errors, $_POST, 'username');
+}
+if(isset($_POST['password'])){
+    validatePassword($errors, $_POST, 'password','confirm-password');
+}
+if(isset($_POST['month'])){
+    validateBirthday($errors, $_POST, 'month','day', 'year');
+}
+if(isset($_POST['gender'])){
+    validateGender($errors,$_POST,'gender');
+}
+
+if($submitted && !$errors){
+    require(dirname(__DIR__).'/Stage 1 & 2/php/sendDataToDatabase.php');
+    $birthday = $_POST["year"]."-".$_POST["month"]."-".$_POST["day"];
+    insertUserInfomration($_POST['first-name'], $_POST['last-name'], $_POST['email'],$_POST['username'], $_POST['password'], $birthday, $_POST['gender']);
+    echo ('form submitted successfully with no errors');
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -24,37 +55,6 @@
                     <h2>other shit blah blah blah</h2>
                 </div>
                 <div id="registation">
-                    <?php 
-                        $errors = array();
-                        $submitted  = False;
-                        require(dirname(__DIR__).'/Stage 1 & 2/php/validate.php');
-                        if(isset($_POST['first-name']) || isset($_POST['last-name'])){
-                            validateName($errors, $_POST, 'first-name', 'last-name');
-                            $submitted = True;
-                        }
-                        if(isset($_POST['email'])){
-                            validateEmail($errors, $_POST, 'email');
-                        }
-                        if(isset($_POST['username'])){
-                            validateUsername($errors, $_POST, 'username');
-                        }
-                        if(isset($_POST['password'])){
-                            validatePassword($errors, $_POST, 'password','confirm-password');
-                        }
-                        if(isset($_POST['month'])){
-                            validateBirthday($errors, $_POST, 'month','day', 'year');
-                        }
-                        if(isset($_POST['gender'])){
-                            validateGender($errors,$_POST,'gender');
-                        }
-                        
-                        if($submitted && !$errors){
-                            require(dirname(__DIR__).'/Stage 1 & 2/php/sendDataToDatabase.php');
-                            $birthday = $_POST["year"]."-".$_POST["month"]."-".$_POST["day"];
-                            insertUserInfomration($_POST['first-name'], $_POST['last-name'], $_POST['email'],$_POST['username'], $_POST['password'], $birthday, $_POST['gender']);
-                            echo ('form submitted successfully with no errors');
-                        }
-                    ?>
                     <form id="create-account" action="Registration_Page.php" method="POST">
                         <fieldset>
                             <legend>

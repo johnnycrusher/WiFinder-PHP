@@ -1,11 +1,11 @@
 <?php
 
 function generateSearchTiles($data){
-    $numberArray = array("one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten","eleven","twelve","thirteen","fourteen","fiftheen","sixteen","seventeen","eighteen","nineteen","twenty");
+    $numberArray = array("one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten","eleven","twelve","thirteen","fourteen","fifteen","sixteen","seventeen","eighteen","nineteen","twenty");
     $html = "";
     for ($index = 0; $index < sizeof($data); $index++) {
         $html .= "<div class=\"item-box\" >";
-        $html .= "<div id = \"map-item-$numberArray[$index]\" class=\"map\" onclick = \"opensite()\" ></div>";
+        $html .= "<div id =\"map-item-$numberArray[$index]\" class=\"map\" onclick = opensite(". "'".urlencode($data[$index]['wifiHotspotname'])."'".")></div>";
         $html .= "<div id = \"location-info-$numberArray[$index]\" class=\"location-info\" >";
             $html .= "<div id = \"wifiLocation$numberArray[$index]\" >";
                 $html .= "<h2 class=\"wifiName\" >";

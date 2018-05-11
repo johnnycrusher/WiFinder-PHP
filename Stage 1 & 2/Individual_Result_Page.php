@@ -1,9 +1,30 @@
 <?php
-$here = $_GET['location'];
+session_start();
+
+$errors = array();
+$submitted  = False;
+require('php/validate.php');
+if(isset($_POST['rating'])){
+    validateRating($errors,$_POST, 'rating');
+    $submitted = true;
+}
+if(isset($_POST['reviewDescription'])){
+    validateReviewDescription($errors,$_POST,'reviewDescription');
+    $submitted = true;
+}
+
+if($submitted && !$errors){
+    require('php/sendDataToDatabase.php');
+    insertReviews();
+}
+
+
 require('php/retreiveDataFromDatabase.php');
 if(isset($_GET['location'])){
     $reviewData = retrieveReviewData($_GET['location']);
+    $locationData = retrieveLocationData($_GET['location']);
 }
+
 
 ?>
 <!DOCTYPE html>
@@ -16,7 +37,7 @@ if(isset($_GET['location'])){
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <script src="js/Individual_Results_Scripts.js"></script>
     </head>
-    <body onload="intialiseMaps()">
+    <body onload="startMaps(<?php echo($locationData[0]['Latitude'])?>,<?php echo($locationData[0]['Longitude'])?>,'<?php echo ($locationData[0]['WifiHotspotName'])?>','<?php echo($locationData[0]['Address'].",".$locationData[0]['Suburb'])?>')">
         <div class="grid">
             <div id="header">
                 <?php include('php/header.inc');?>
@@ -33,29 +54,12 @@ if(isset($_GET['location'])){
                 ?>
                 
                 <?php
-                    session_start();
                     if(isset($_SESSION['user'])){
                         require("php/writeReviewBox.php");
+                    }else{
+                        require("php/notLoggedinWriteReviewBox.php");
                     }
                 ?>
-
-                <!-- <div id="write-review-box" class="white-boxes">
-                    <h2>Write your reivew:</h2>
-                    <div>
-                        <span onmouseover="ratingHover(this)" onmouseout="ratingHoverOut(this)" onclick="ratingChoose()"><i id="one-star" class="fa fa-star-o"></i></span>
-                        <span onmouseover="ratingHover(this)" onmouseout="ratingHoverOut(this)" onclick="ratingChoose()"><i id="two-star" class="fa fa-star-o"></i></span>
-                        <span onmouseover="ratingHover(this)" onmouseout="ratingHoverOut(this)" onclick="ratingChoose()"><i id="three-star" class="fa fa-star-o"></i></span>
-                        <span onmouseover="ratingHover(this)" onmouseout="ratingHoverOut(this)" onclick="ratingChoose()"><i id="four-star" class="fa fa-star-o"></i></span>
-                        <span onmouseover="ratingHover(this)" onmouseout="ratingHoverOut(this)" onclick="ratingChoose()"><i id="five-star" class="fa fa-star-o"></i></span>
-                    </div>
-                    <textarea rows="10" cols="85"></textarea>
-                    <br>
-                    <div id="publish-btn-container">
-                        <div id="publish-locs">
-                            <button id="publish-btn">Publish Your Review</button>
-                        </div>
-                    </div>
-                </div> -->
                 <div id="review-box" class="white-boxes">
                     <h2>Reviews:</h2>
                     <?php
