@@ -11,6 +11,8 @@ function intialiseMaps(){
     document.body.appendChild(mapScript);
 }
 
+
+
 function setLocation(locationPlace){
     for(var i = 0; i< locationPlace.length; i++){
         this.location[i] = locationPlace[i];

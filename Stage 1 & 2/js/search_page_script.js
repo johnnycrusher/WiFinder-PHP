@@ -1,7 +1,6 @@
-myCoords = {"lat": "","lng": ""};
-var mapsIntailised = false;
+var myCoords;
 var geocoder;
-var geocoderGeneratred = false;
+var LatLngGeocoder;
 
 function getLocation(){
     if(navigator.geolocation){
@@ -13,18 +12,15 @@ function storeLocation(position){
     myCoords={"lat": position.coords.latitude , "lng": position.coords.longitude};
     document.getElementById("latitude").value = myCoords.lat;
     document.getElementById("longitude").value = myCoords.lng;
-    intialiseMaps();
+    findAddress();
 }
 
 function initMap(){
-    if(!geocoderGeneratred){
-        geocoder = new google.maps.Geocoder;
-        geocoderGeneratred = true;
-    }
-    findAddress(geocoder);
+    geocoder = new google.maps.Geocoder();
+    LatLngGeocoder = new google.maps.Geocoder();
 }
 
-function findAddress(geocoder){
+function findAddress(){
     geocoder.geocode({'location': myCoords}, function(results, status){
         if (status === 'OK'){
             document.getElementById("search-box").value = results[0].address_components[0].long_name + " " + results[0].address_components[1].long_name + ", " + results[0].address_components[2].long_name;
@@ -32,18 +28,43 @@ function findAddress(geocoder){
     });
 }
 
-function intialiseMaps(){
-    if(!mapsIntailised){
-        var mapScript = document.createElement('script');
-        mapScript.type = "text/javascript";
-        mapScript.src = "https://maps.googleapis.com/maps/api/js?key=AIzaSyD-_Zd52SX6xAHEI15-WJm3iFA8LdKwL54&callback=initMap";
-        document.body.appendChild(mapScript);
-        mapsIntailised = true;
+function findLatLng(){
+    var address = document.getElementById("search-box").value;
+    var longatude = document.getElementById('longitude');
+    var latitude = document.getElementById('latitude');
+    if(longatude.value ==="0" && latitude.value ==="0"){
+        LatLngGeocoder.geocode({
+            'address': address,
+            componentRestrictions: {
+                country: 'AU'
+            }
+    }, function(results, status){
+            if (status === 'OK') {
+              console.log("working");
+              var lng = results[0].geometry.location.lng();
+              var lat = results[0].geometry.location.lat();
+              longatude.value = lng;
+              latitude.value = lat;
+              document.getElementById("form").submit();
+            } else {
+              alert('Geocode was not successful for the following reason: ' + status);
+            }
+        });
+    }else{
+        document.getElementById("form").submit();
     }
-    else{
-       initMap();
-    }
+    
 }
+
+function intialiseMaps(){
+    var mapScript = document.createElement('script');
+    mapScript.type = "text/javascript";
+    mapScript.src = "https://maps.googleapis.com/maps/api/js?key=AIzaSyD-_Zd52SX6xAHEI15-WJm3iFA8LdKwL54&callback=initMap";
+    document.body.appendChild(mapScript);
+    mapsIntailised = true;
+
+}
+
 function ratingChoose(item){
     var icons = item.firstChild;
     var itemId = icons.getAttribute("id");

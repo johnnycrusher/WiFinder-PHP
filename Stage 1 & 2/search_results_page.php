@@ -20,13 +20,16 @@ if(isset($_POST['latitude'])){
 }
 require("php/retreiveDataFromDatabase.php");
 if(isset($_SESSION['latitude']) && isset($_SESSION['longitude'])){
-   $data = retriveSearchResults($_SESSION['latitude'], $_SESSION['longitude']);
-   $locationData = array();
-   for($index = 0; $index < sizeof($data); $index++){
-       array_push($locationData, array('lat'=>floatval($data[$index]['Latitude']), 'lng' =>floatval($data[$index]['Longitude'])));
-   }
-   $locationDataJSON = json_encode($locationData);
+        $data = retriveSearchResults($_SESSION['latitude'], $_SESSION['longitude']);
+        $locationData = array();
+        for($index = 0; $index < sizeof($data); $index++){
+            array_push($locationData, array('lat'=>floatval($data[$index]['Latitude']), 'lng' =>floatval($data[$index]['Longitude'])));
+        }
+        $locationDataJSON = json_encode($locationData);
+
 }
+
+
 
 
 ?>

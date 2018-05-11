@@ -13,7 +13,7 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
 </head>
 
-<body>
+<body onload="intialiseMaps()">
     <div class="grid">
         <div id="header">
             <?php include('php/header.inc');?>
@@ -27,7 +27,7 @@
 
         <div id="content">
             <div id="search-boxes">
-                <form action="search_results_page.php" method="POST">
+                <form action="search_results_page.php" id="form" method="POST">
                     <fieldset id="advance-search-box">
                         <legend>
                             <h2 id="form-header">Advance Search:</h2>
@@ -68,7 +68,7 @@
                             </p>
                         </div>
                         <div id="search-btn-loc">
-                            <button type="submit">Search</button>
+                            <button type="button" onclick="findLatLng()">Search</button>
                         </div>
                     </fieldset>
                 </form>        
