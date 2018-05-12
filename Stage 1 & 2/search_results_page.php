@@ -26,7 +26,6 @@ if(isset($_SESSION['latitude']) && isset($_SESSION['longitude'])){
             array_push($locationData, array('lat'=>floatval($data[$index]['Latitude']), 'lng' =>floatval($data[$index]['Longitude'])));
         }
         $locationDataJSON = json_encode($locationData);
-
 }
 
 

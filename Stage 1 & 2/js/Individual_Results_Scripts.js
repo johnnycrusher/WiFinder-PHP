@@ -1,3 +1,5 @@
+var arrayOfNumber = ["one","two","three","four","five","six","seven","eight","nine","ten","eleven","twelve","thirteen"];
+
 function ratingChoose(item){
     var icons = item.firstChild;
     var itemId = icons.getAttribute("id");
@@ -35,6 +37,38 @@ function ratingChoose(item){
         }
     }
     rating.value = ratingCounter;
+
+}
+
+function ratingStarsDisplay(){
+    var ratingValue = document.getElementById("avgRating").innerText;
+    var ratingFloat = parseFloat(ratingValue);
+
+
+    var oneStar = document.getElementById('avgOneStar');
+    var twoStar = document.getElementById('avgTwoStar');
+    var threeStar = document.getElementById('avgThreeStar');
+    var fourStar = document.getElementById('avgFourStar');
+    var fiveStar = document.getElementById('avgFiveStar');
+    var stars = [oneStar,twoStar,threeStar,fourStar,fiveStar];
+
+    for (var index = 1; index <= 5; index+= 0.5){
+        if(index <= ratingFloat){
+            if(index == 1){
+                stars[index-1].classList.remove("fa-star-o");
+                stars[index-1].classList.add("fa-star");
+            }
+            else if(index%1 == 0.5){
+                stars[Math.round(index-1)].classList.remove("fa-star-o");
+                stars[Math.round(index-1)].classList.add("fa-star-half-o");
+            }else if(index%1 == 0){
+                stars[index-1].classList.remove("fa-star-half-o");
+                stars[index-1].classList.add("fa-star");
+            }
+
+
+        }
+    }
 
 }
 
@@ -99,7 +133,38 @@ function intialiseMaps(){
     document.body.appendChild(mapScript);
 }
 
+function setRatingStars(){
+    var oneStar = document.getElementsByClassName("one-star");
+    var twoStar = document.getElementsByClassName("two-star");
+    var threeStar = document.getElementsByClassName("three-star");
+    var fourStar = document.getElementsByClassName("four-star");
+    var fiveStar = document.getElementsByClassName("five-star");
+    var stars = [oneStar, twoStar,threeStar, fourStar, fiveStar];
+
+    var numOfReviews = oneStar.length;
+    var reviews = [];
+    for(var index = 0; index < numOfReviews; index++){
+        reviews.push(parseInt(document.getElementById("rating-"+arrayOfNumber[index]).innerText));
+    }
+
+    for(var reviewIndex = 0; reviewIndex < numOfReviews; reviewIndex++){
+        var ratingValue = reviews[reviewIndex];
+        for(var ratingIndex = 1; ratingIndex<=stars.length; ratingIndex++){
+            if(ratingIndex <= ratingValue){
+                stars[ratingIndex-1][reviewIndex].classList.remove("fa-star-o");
+                stars[ratingIndex-1][reviewIndex].classList.add("fa-star");
+            }
+        }
+    }
+}
+
+
+
+
 function startMaps(latitude,longitude,locationName,address){
+    setRatingStars();
+    ratingStarsDisplay();
     setCoordinates(latitude,longitude,locationName,address);
     intialiseMaps();
+
 }
