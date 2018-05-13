@@ -2,6 +2,8 @@ var mapElements = ["map-item-one", "map-item-two", "map-item-three", "map-item-f
                     "map-item-six", "map-item-seven", "map-item-eight", "map-item-nine", "map-item-ten",
                     "map-item-eleven","map-item-twelve", "map-item-thirteen", "map-item-fourteen", "map-item-fifteen",
                     "map-item-sixteen","map-item-seventeen", "map-item-eighteen", "map-item-nineteen", "map-item-twenty"];
+var arrayOfNumber = ["one","two","three","four","five","six","seven","eight","nine","ten",
+                     "eleven","twelve","thirteen","fourteen","fifteen","sixteen","seventeen","eighteen","nineteen", "twenty"];
 var location;
 var locationLength = 0;
 function intialiseMaps(){
@@ -19,6 +21,40 @@ function setLocation(locationPlace){
     }
     this.locationLength = locationPlace.length;
 
+}
+
+function setRatingStars(){
+    var oneStar = document.getElementsByClassName("one-star");
+    var twoStar = document.getElementsByClassName("two-star");
+    var threeStar = document.getElementsByClassName("three-star");
+    var fourStar = document.getElementsByClassName("four-star");
+    var fiveStar = document.getElementsByClassName("five-star");
+    var stars = [oneStar, twoStar,threeStar, fourStar, fiveStar];
+
+    var numOfSearchResults = oneStar.length;
+    var reviews = [];
+    for(var index = 0; index < numOfSearchResults; index++){
+        reviews.push(parseFloat(document.getElementById("rating-"+arrayOfNumber[index]).innerText));
+    }
+
+    for(var reviewIndex = 0; reviewIndex < numOfSearchResults; reviewIndex++){
+        var ratingValue = reviews[reviewIndex];
+        for(var ratingIndex = 1; ratingIndex<=stars.length; ratingIndex += 0.5){
+            if(ratingIndex <= ratingValue){
+                if(ratingIndex == 1){
+                    stars[ratingIndex-1][reviewIndex].classList.remove("fa-star-o");
+                    stars[ratingIndex-1][reviewIndex].classList.add("fa-star");
+                }else if(ratingIndex%1 == 0.5) {
+                    stars[Math.round(ratingIndex-1)][reviewIndex].classList.remove("fa-star-o");
+                    stars[Math.round(ratingIndex-1)][reviewIndex].classList.add("fa-star-half-o");
+                }else if(ratingIndex%1 == 0){
+                    stars[ratingIndex-1][reviewIndex].classList.remove("fa-star-half-o");
+                    stars[ratingIndex-1][reviewIndex].classList.add("fa-star");
+                }
+
+            }else{break;}
+        }
+    }
 }
 
 
@@ -48,6 +84,7 @@ function opensite(location){
 }
 
 function startMaps(location){
+    setRatingStars()
     setLocation(location);
     intialiseMaps()
 }

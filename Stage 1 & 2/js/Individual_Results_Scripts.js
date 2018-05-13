@@ -65,11 +65,8 @@ function ratingStarsDisplay(){
                 stars[index-1].classList.remove("fa-star-half-o");
                 stars[index-1].classList.add("fa-star");
             }
-
-
-        }
+        }else{break;}
     }
-
 }
 
 function setCoordinates(lat,lng,locationName,address){
@@ -153,7 +150,7 @@ function setRatingStars(){
             if(ratingIndex <= ratingValue){
                 stars[ratingIndex-1][reviewIndex].classList.remove("fa-star-o");
                 stars[ratingIndex-1][reviewIndex].classList.add("fa-star");
-            }
+            }else{break;}
         }
     }
 }
