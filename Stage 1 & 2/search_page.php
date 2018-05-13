@@ -27,7 +27,7 @@
 
         <div id="content">
             <div id="search-boxes">
-                <form action="search_results_page.php" id="form" method="POST">
+                <form action="search_results_page.php" id="form" method="GET">
                     <fieldset id="advance-search-box">
                         <legend>
                             <h2 id="form-header">Advance Search:</h2>

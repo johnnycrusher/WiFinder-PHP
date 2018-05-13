@@ -1,26 +1,9 @@
 <?php 
 session_start();
-if(isset($_POST['location'])){
-  $_SESSION['location'] = $_POST['location'];
-}
-if(isset($_POST['location-type'])){
-  $_SESSION['location-type'] = $_POST['location-type'];
-}
-if(isset($_POST['WiFi-location-type'])){
-  $_SESSION['WiFi-location-type'] = $_POST['WiFi-location-type'];
-}
-if(isset($_POST['rating'])){
-  $_SESSION['rating'] = $_POST['rating'];
-}
-if(isset($_POST['longitude'])){
-  $_SESSION['longitude'] = $_POST['longitude'];
-}
-if(isset($_POST['latitude'])){
-  $_SESSION['latitude'] = $_POST['latitude'];
-}
+
 require("php/retreiveDataFromDatabase.php");
-if(isset($_SESSION['latitude']) && isset($_SESSION['longitude'])){
-        $data = retriveSearchResults($_SESSION['latitude'], $_SESSION['longitude']);
+if(isset($_GET['latitude']) && isset($_GET['longitude'])){
+        $data = retriveSearchResults($_GET['latitude'], $_GET['longitude']);
         $locationData = array();
         for($index = 0; $index < sizeof($data); $index++){
             array_push($locationData, array('lat'=>floatval($data[$index]['Latitude']), 'lng' =>floatval($data[$index]['Longitude'])));
@@ -87,7 +70,7 @@ if(isset($_SESSION['latitude']) && isset($_SESSION['longitude'])){
     <div id="content">
       <!--Search results up to five per page-->
       <div id="results">
-        <h2 id=location-text> WiFi Locations near <?php echo($_SESSION["location"]) ?></h2>
+        <h2 id=location-text> WiFi Locations near <?php echo($_GET["location"]) ?></h2>
             <?php
                 require("php/searchTiles.php");
                 echo(generateSearchTiles($data));
