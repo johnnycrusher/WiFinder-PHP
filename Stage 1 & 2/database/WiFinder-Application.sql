@@ -25,13 +25,12 @@ DROP TABLE IF EXISTS `reviews`;
 CREATE TABLE `reviews` (
   `LocationsID` int(11) NOT NULL AUTO_INCREMENT,
   `WifiHotspotName` varchar(256) DEFAULT NULL,
-  `FirstName` varchar(256) DEFAULT NULL,
-  `LastName` varchar(256) DEFAULT NULL,
+  `Username` varchar(256) DEFAULT NULL,
   `DatePublished` date DEFAULT NULL,
   `Rating` int(11) DEFAULT NULL,
   `ReviewDescription` varchar(256) DEFAULT NULL,
   PRIMARY KEY (`LocationsID`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -40,7 +39,7 @@ CREATE TABLE `reviews` (
 
 LOCK TABLES `reviews` WRITE;
 /*!40000 ALTER TABLE `reviews` DISABLE KEYS */;
-INSERT INTO `reviews` VALUES (1,'Annerley Library Wifi','John','Huynh','2018-04-05',4,'This is a nice place to enjoy your free WiFi it\'s quiet and very peaceful and the speed of the wifi is very fast would definitely recommend.'),(2,'Annerley Library Wifi','James','Smith','2018-03-10',4,'This place was quite enjoyable place to get free WiFi it saved me when i had no data avaliable and allowed me to make a call. This place was also very quiet and peaceful.'),(3,'Annerley Library Wifi','Jimmy','Zhang','2018-04-13',3,'This is an place is a very relaxing place to enjoy free wifi and there is no data limit so i was able to stay the whole day to study and enjoy peace and quiet.'),(4,'Annerley Library Wifi','Austin','Evans','2018-04-27',5,'This place is bomb!'),(5,'Random Place','Hello','World','2018-04-28',1,'This Place Sucks!');
+INSERT INTO `reviews` VALUES (1,'Annerley Library Wifi','JohnnyCrusher','2018-04-05',4,'This is a nice place to enjoy your free WiFi it\'s quiet and very peaceful and the speed of the wifi is very fast would definitely recommend.'),(2,'Annerley Library Wifi','JamesZhang22','2018-03-10',4,'This place was quite enjoyable place to get free WiFi it saved me when i had no data avaliable and allowed me to make a call. This place was also very quiet and peaceful.'),(3,'Annerley Library Wifi','JimmyFallon11','2018-04-13',3,'This is an place is a very relaxing place to enjoy free wifi and there is no data limit so i was able to stay the whole day to study and enjoy peace and quiet.'),(4,'Annerley Library Wifi','AustinEvans','2018-04-27',5,'This place is bomb!'),(6,'Ashgrove Library Wifi','KingSword','2018-05-11',4,'This place is pretty awesome u must go'),(7,'Ashgrove Library Wifi','MonkeyDLuffy','2018-05-11',2,'This place is okay i\'d advise u to find somewhere else'),(8,'Forest Lake Parklands','JohnnyCrusher','2018-05-11',4,'This place is pretty bomb u guys need to go!'),(13,'Inala Library Wifi','JohnnyCrusher','2018-05-11',2,'This place sucks the wifi is slow and it just bad.'),(14,'Annerley Library Wifi','JohnnyCrusher','2018-05-13',3,'This place is alright u guys should go i guess...'),(15,'Annerley Library Wifi','JohnnyCrusher','2018-05-13',3,'This place is pretty deceeeee'),(16,'Annerley Library Wifi','JohnnyCrusher','2018-05-13',2,'This place is ehhh'),(17,'Annerley Library Wifi','JohnnyCrusher','2018-05-14',5,'This is a bomb as place');
 /*!40000 ALTER TABLE `reviews` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -113,4 +112,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-05-10 15:33:13
+-- Dump completed on 2018-05-15  0:34:33
