@@ -24,9 +24,13 @@ function validateName(&$error, $field_list, $field_name, $field_lastName){
 function validateEmail(&$error, $field_list, $field_name) {
     $pattern = '/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/';
     if (!isset($field_list[$field_name])|| empty($field_list[$field_name])) {
-    $error[$field_name] = 'Email is a required field';
+        $error[$field_name] = 'Email is a required field';
     } else if (!preg_match($pattern, $field_list[$field_name])) {
-    $error[$field_name] = 'Email is invalid';
+        $error[$field_name] = 'Email is invalid';
+    }
+    include("retreiveDataFromDatabase.php");
+    if (checkExistingEmail($field_list[$field_name])) {
+        $error[$field_name] = "Email already exist in database";
     }
 }
 
@@ -43,6 +47,9 @@ function validatePassword(&$error,$field_list, $field_name, $field_name_confirm)
 function validateUsername(&$error, $field_list,$field_name){
     if(strlen($field_list[$field_name]) == 0){
         $error[$field_name] = "Username is a required field";
+    }
+    if(checkExistingUsername($field_list[$field_name])){
+        $error[$field_name] = "Username already exist in database";
     }
 }
 

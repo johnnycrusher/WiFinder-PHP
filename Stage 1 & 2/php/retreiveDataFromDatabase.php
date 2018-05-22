@@ -68,6 +68,7 @@ function retrieveReviewData($location){
     $reviewResults = $reteiveReviews -> fetchAll(PDO::FETCH_ASSOC);
     return $reviewResults;
 }
+
 function retrieveLocationData($location){
     include('connectDB.inc');
 
@@ -76,5 +77,24 @@ function retrieveLocationData($location){
     $retrieveLocationData -> execute();
     $locationData = $retrieveLocationData -> fetchAll(PDO::FETCH_ASSOC);
     return $locationData;
+}
+
+function checkExistingUsername($username){
+    include('connectDB.inc');
+
+    $findUsername = $pdo -> prepare("SELECT Username FROM users WHERE Username=:username");
+    $findUsername -> bindValue(':username',$username);
+    $findUsername -> execute();
+    $userExist = $findUsername -> rowCount()>0;
+    return $userExist;
+}
+function checkExistingEmail($email){
+    include('connectDB.inc');
+
+    $findEmail = $pdo -> prepare("SELECT Email FROM users WHERE Email=:email");
+    $findEmail -> bindValue(':email',$email);
+    $findEmail -> execute();
+    $emailExist = $findEmail -> rowCount()>0;
+    return $emailExist;
 }
 ?>
