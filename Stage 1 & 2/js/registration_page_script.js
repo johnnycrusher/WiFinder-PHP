@@ -37,6 +37,7 @@ function checkEmail(){
         document.getElementById("error-email").innerHTML="Email is a required field!";
         return false;
     }
+    //TODO: change to regex validation to check for @ and .
     if(!(emailValue.indexOf("@") > -1)){
         document.getElementById("error-email").style.visibility = "visible";
         document.getElementById("error-email").innerHTML="Email is not in a correct format missing @";
@@ -74,6 +75,7 @@ function checkPassword(){
     }
     return true;
 }
+
 function checkBirthDate(){
     var month = document.getElementById("month");
     var monthValue = month.options[month.selectedIndex].text;

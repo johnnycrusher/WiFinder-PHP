@@ -9,6 +9,16 @@ function validateName(&$error, $field_list, $field_name, $field_lastName){
     if(strlen($field_list[$field_name]) == 0 && (strlen($field_list[$field_lastName]) == 0)){
         $error["name"] = 'First Name and Last Name is required field';
     }
+    $pattern = "/[a-zA-Z ,.'-]+$/";
+    if(!preg_match($pattern,$field_list[$field_name])){
+        $error["name"] = 'First Name should only contains letters and whitespace';
+    }
+    if(!preg_match($pattern,$field_list[$field_lastName])){
+        $error["name"] = 'Last Name should only contains letters and whitespace';
+    }
+    if(!preg_match($pattern,$field_list[$field_name]) && !preg_match($pattern,$field_list[$field_lastName])){
+        $error["name"] = 'First and Last name should only contains letters and whitespace';
+    }
 }
 
 function validateEmail(&$error, $field_list, $field_name) {

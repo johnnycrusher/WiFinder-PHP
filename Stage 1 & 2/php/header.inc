@@ -1,5 +1,5 @@
 <div id="logo-elements" class="center-items">
-<img id="logo-img" src="img/logo final text 400x400.png" width="277px" height="81px">
+<img id="logo-img" src="img/logo_final_text_400x400.png" width="277" height="81" alt="WiFinder Logo">
 </div>
 <div id="header-text" class="center-items">
 <?php

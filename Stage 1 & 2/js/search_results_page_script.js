@@ -84,9 +84,9 @@ function opensite(location){
 }
 
 function startMaps(location){
-    setRatingStars()
+    setRatingStars();
     setLocation(location);
-    intialiseMaps()
+    intialiseMaps();
 }
 
 function changeSortingOption(button){
@@ -100,6 +100,21 @@ function changeSortingOption(button){
         newURL = urlLink.replace(regEx,'alphabetical');
     }else{
         newURL = urlLink.replace(regEx,'distance');
+    }
+    window.location = newURL;
+}
+function changeLocationType(){
+    var urlLink = document.URL;
+    var newURL;
+    var regEx = /(?<=WiFi-location-type=).*?(?=&)/g;
+    var locationTypeSelector = document.getElementById('location-type');
+    var locationTypeValue = locationTypeSelector.options[locationTypeSelector.selectedIndex].value;
+    if(locationTypeValue === 'both'){
+        newURL = urlLink.replace(regEx,'both');
+    }else if(locationTypeValue === 'library'){
+        newURL = urlLink.replace(regEx,'library');
+    }else if(locationTypeValue === 'park'){
+        newURL = urlLink.replace(regEx,'park');
     }
     window.location = newURL;
 }

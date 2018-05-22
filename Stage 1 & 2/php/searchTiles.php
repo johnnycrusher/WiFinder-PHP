@@ -5,11 +5,11 @@ function generateSearchTiles($data){
     $html = "";
     for ($index = 0; $index < sizeof($data); $index++) {
         $html .= "<div class=\"item-box\" >";
-        $html .= "<div id =\"map-item-$numberArray[$index]\" class=\"map\" onclick = opensite(". "'".urlencode($data[$index]['WifiHotspotName'])."'".")></div>";
+        $html .= "<div id =\"map-item-$numberArray[$index]\" class=\"map\" onclick = \"opensite("."'".urlencode($data[$index]['WifiHotspotName'])."'".")\"></div>";
         $html .= "<div id = \"location-info-$numberArray[$index]\" class=\"location-info\" >";
             $html .= "<div id = \"wifiLocation-$numberArray[$index]\" >";
                 $html .= "<h2 class=\"wifiName\" >";
-                    $html .= "<a href ="."Individual_Result_Page.php?location=".urlencode($data[$index]['WifiHotspotName']).">".$data[$index]['WifiHotspotName']."</a>";
+                    $html .= "<a href ="."\"Individual_Result_Page.php?location=".urlencode($data[$index]['WifiHotspotName'])."\">".$data[$index]['WifiHotspotName']."</a>";
                 $html .= "</h2 >";
                 $html .= "<p class=\"rating\" >";
                     $html .= "<i class=\"fa fa-star-o one-star\"></i >";

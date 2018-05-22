@@ -51,8 +51,8 @@ function birthdayField($errors){
     generateBirthMonthField("month","month","hideError(this)");
     $dayValue = postData("day");
     $yearValue = postData("year");
-    generateInputField("number","day","day","null",$dayValue,"day","hideError(this)");
-    generateInputField("number","year","year","null",$yearValue,"year","hideError(this)");
+    generateDateInputField("number","day","day",$dayValue,"day","hideError(this)");
+    generateDateInputField("number","year","year",$yearValue,"year","hideError(this)");
     generateError($errors,"birthday");
 }
 
@@ -72,6 +72,10 @@ function generatePassword($error){
     generateFieldName("Confirm your Password:");
     generateInputField("password","confirm-password","confirm-password","input-field",$value,"Password","hideError(this)");
     generateError($error, "password");
+}
+
+function generateDateInputField($type, $id,$name,$value,$placeholder,$onchange){
+    echo("<input type=\"$type\" id=\"$id\" name=\"$name\" value=\"$value\" placeholder=\"$placeholder\" onchange=\"$onchange\">");
 }
 
 function generateRadioBox($id, $class, $name, $value, $onchange , $checked){

@@ -60,11 +60,8 @@ if($submitted && !$errors){
                             <legend>
                                 <Strong>Sign Up</Strong>
                             </legend>
-                            <!-- <p><strong>Name:</strong></p>
-                            <input type="text" id="firstName" name="First Name" class="input-field" placeholder="First Name" required="required" onchange="hideError(this)">
-                            <input type="text" id="lastName" name="Last Name" class="input-field" placeholder="Last Name" required="required" onchange="hideError(this)">
-                            <span id="nameMissing" class="error-message">First Name and Last Name is a required field!</span> -->
                             <?php
+                                //TODO: Keep Selected Month
                                 require(dirname(__DIR__).'/Stage 1 & 2/php/fields.php');
                                 generateName($errors);
                                 generateDataField("Email:","email","email","email", "input-field","Email","hideError(this)",$errors);

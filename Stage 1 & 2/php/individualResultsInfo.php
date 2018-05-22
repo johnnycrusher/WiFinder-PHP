@@ -2,7 +2,7 @@
 $data = retrieveLocationResults($_GET['location']);
 ?>
 <div id="WiFi-location-info-box">
-    <span itemprop="name"><h2><?php echo($data[0]['WifiHotspotName'])?></h2></span>
+    <h2 itemprop="name"><?php echo($data[0]['WifiHotspotName'])?></h2>
     <i class="fa fa-star-o" id="avgOneStar"></i>
     <i class="fa fa-star-o" id="avgTwoStar"></i>
     <i class="fa fa-star-o" id="avgThreeStar"></i>

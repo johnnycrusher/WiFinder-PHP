@@ -75,7 +75,6 @@
                 </form>        
             </div>
         </div>
-
         <div id="footer">
             <?php include('php/footer.inc') ?>
         </div>

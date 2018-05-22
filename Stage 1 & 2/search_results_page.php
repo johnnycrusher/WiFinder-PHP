@@ -10,10 +10,6 @@ if(isset($_GET['latitude']) && isset($_GET['longitude'])){
         }
         $locationDataJSON = json_encode($locationData);
 }
-
-
-
-
 ?>
 
 <!DOCTYPE html>
@@ -46,26 +42,25 @@ if(isset($_GET['latitude']) && isset($_GET['longitude'])){
 
     <!--filters bar for search results-->
     <div id="filter-bar">
-    <span id = "sortBy">
+    <div id = "sortBy">
       <h4>Sort By:
       <button class="sortByButton" onclick="changeSortingOption(this)" id="rating-btn">Rating</button>
       <button class="sortByButton" onclick="changeSortingOption(this)" id="name-btn">Name</button>
       <button class="sortByButton" onclick="changeSortingOption(this)" id="distance-btn">Near Me</button>
       </h4>
-    </span>
-    <span id = "filter-location">
+    </div>
+    <div id = "filter-location">
       <h4>
         Location:
-        <select name="Locations">
-          <option value = "both">Both</option>
+        <select name="location-type" id="location-type">
+          <option value ="both">Both</option>
           <option value="park">Park</option>
           <option value="library">Library</option>
         </select>
-        <button id="apply-btn">Apply</button>
+        <button id="apply-btn" onclick="changeLocationType()">Apply</button>
       </h4>
-    </span>
     </div>
-
+    </div>
     <!--content area and various fills-->
     <div id="content">
       <!--Search results up to five per page-->
