@@ -48,9 +48,9 @@ if(isset($_GET['latitude']) && isset($_GET['longitude'])){
     <div id="filter-bar">
     <span id = "sortBy">
       <h4>Sort By:
-      <button class="sortByButton">Rating</button>
-      <button class="sortByButton">Name</button>
-      <button class="sortByButton">Near Me</button>
+      <button class="sortByButton" onclick="changeSortingOption(this)" id="rating-btn">Rating</button>
+      <button class="sortByButton" onclick="changeSortingOption(this)" id="name-btn">Name</button>
+      <button class="sortByButton" onclick="changeSortingOption(this)" id="distance-btn">Near Me</button>
       </h4>
     </span>
     <span id = "filter-location">

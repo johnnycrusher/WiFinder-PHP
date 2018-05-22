@@ -88,3 +88,19 @@ function startMaps(location){
     setLocation(location);
     intialiseMaps()
 }
+
+function changeSortingOption(button){
+    var urlLink = document.URL;
+    var newURL;
+    var regEx = /(?<=sort=).*$/g;
+    var x=button.id
+    if(x === 'rating-btn'){
+        newURL = urlLink.replace(regEx,'rating'); 
+    }else if(x === 'name-btn'){
+        newURL = urlLink.replace(regEx,'alphabetical');
+    }else{
+        newURL = urlLink.replace(regEx,'distance');
+    }
+    window.location = newURL;
+}
+

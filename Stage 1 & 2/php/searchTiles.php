@@ -17,7 +17,7 @@ function generateSearchTiles($data){
                     $html .= "<i class=\"fa fa-star-o three-star\"></i >";
                     $html .= "<i class=\"fa fa-star-o four-star\"></i >";
                     $html .= "<i class=\"fa fa-star-o five-star\"></i >";
-                    $html .= "<span id='rating-$numberArray[$index]'> ".$data[$index]['AvgReview']."</span>/ 5 stars";
+                    $html .= "<span id='rating-$numberArray[$index]'> ".$data[$index]['AvgRating']."</span>/ 5 stars";
                 $html .= "</p >";
                 $html .= "<p class=\"address\" > Address:" . $data[$index]['Address'] . "," . $data[$index]['Suburb'] . "</p >";
                 $html .= "<p class=\"location\" > Location:" . $data[$index]['LocationType'] . "</p >";

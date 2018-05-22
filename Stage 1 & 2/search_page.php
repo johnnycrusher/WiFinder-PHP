@@ -66,6 +66,7 @@
                                     <span><input type="text" id="rating" name="rating" value="0"  readonly/>/5</span>
                                 </div>
                             </p>
+                            <input type="hidden" id="sort" name="sort" value="distance">
                         </div>
                         <div id="search-btn-loc">
                             <button type="button" onclick="findLatLng()">Search</button>

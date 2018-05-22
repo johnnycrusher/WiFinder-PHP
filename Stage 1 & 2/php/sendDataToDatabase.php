@@ -1,8 +1,7 @@
 <?php
     function insertUserInfomration($firstname, $lastname, $email, $username, $password, $birthday, $gender){
         $salt = uniqid();
-        $pdo = new PDO('mysql:host=localhost;dbname=wifinder-application','admin','BlackDragon123=');
-        $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        include('connectDB.inc');
         $dataEntry = $pdo -> prepare('INSERT INTO users (`First Name`, `Last Name`, Email, Username, Password, Salt, Birthday, Gender) '.
                                       'VALUES (:firstname,:lastname,:email,:username,SHA2(CONCAT(:password,:salt),0),:salt,:birthday,:gender)');
         $dataEntry-> bindValue(':firstname',$firstname);
@@ -22,8 +21,7 @@
         $rating = $_POST['rating'];
         $reviewDescription = $_POST['reviewDescription'];
 
-        $pdo = new PDO('mysql:host=localhost;dbname=wifinder-application','admin','BlackDragon123=');
-        $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        include('connectDB.inc');
         $insertReview = $pdo -> prepare('INSERT INTO reviews (WifiHotspotName, Username,DatePublished, Rating, ReviewDescription)'.
             'VALUES (:location,:username, CURDATE(),:rating,:reviewDescription)');
         $insertReview -> bindValue(':location',$location);

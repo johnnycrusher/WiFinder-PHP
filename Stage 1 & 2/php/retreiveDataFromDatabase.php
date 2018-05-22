@@ -1,7 +1,6 @@
 <?php
 function retreiveLoginToDatabase($username, $password){
-    $pdo = new PDO('mysql:host=localhost;dbname=wifinder-application','admin','BlackDragon123=');
-    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    include('connectDB.inc');
 
     $retreiveUsername = $pdo -> prepare("SELECT Username,Password,Salt FROM users Where Username=:username AND PASSWORD = SHA2(CONCAT(:password,Salt),0)");
     $retreiveUsername ->bindValue(':username',$username);
@@ -11,28 +10,43 @@ function retreiveLoginToDatabase($username, $password){
 }
 
 function retriveSearchResults($latitude, $longitude){
-    $pdo = new PDO('mysql:host=localhost;dbname=wifinder-application','admin','BlackDragon123=');
-    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    include('connectDB.inc');
+
+    if(strcmp($_GET['sort'],"rating")==0){
+        $search = 'AvgRating DESC';
+    }else if(strcmp($_GET['sort'],"alphabetical")==0){
+        $search = 'WifiHotspotName ASC';
+    }else{
+        $search = 'distance';
+    }
+
+    if(strcmp($_GET['WiFi-location-type'],"park")==0){
+        $Where = "LocationType = 'Park'";
+    }else if(strcmp($_GET['WiFi-location-type'],"library") == 0){
+        $Where = "LocationType = 'Library'";
+    }else{
+        $Where = "LocationType = 'Park' OR LocationType = 'Library'";
+    }
 
     $retreiveSearches = $pdo -> prepare("SELECT w.WifiHotspotName,w.LocationType,w.Address,w.Suburb,w.Latitude,w.Longitude,".
     "(3959 * acos(cos(radians(:latitude))*cos(radians(Latitude))*cos(radians(Longitude)-radians(:longitude))+sin(radians(:latitude))*sin(radians(Latitude)))) ".
-     "AS distance, ifnull(round(avg(r.rating),1),0) AS AvgReview FROM `wifi-location` w ".
+     "AS distance, ifnull(round(avg(r.rating),1),0) AS AvgRating FROM `wifi-location` w ".
     "LEFT JOIN reviews r ".
     "ON w.WifiHotspotName = r.WifiHotspotName ".
+    "WHERE ".$Where ." ".
     "GROUP BY WifiHotspotName ".
-    "HAVING DISTANCE<20 ".
-    "ORDER BY distance ".
-     "LIMIT 0,20");
-    $retreiveSearches ->bindValue(':latitude',$latitude);
-    $retreiveSearches ->bindValue(':longitude',$longitude);
+    "HAVING distance<20 AND avgRating >= :rating ".
+    "ORDER BY ". $search ." LIMIT 0,20");
+    $retreiveSearches->bindValue(':latitude',$latitude);
+    $retreiveSearches->bindValue(':longitude',$longitude);
+    $retreiveSearches->bindValue(':rating',$_GET['rating']);
     $retreiveSearches -> execute();
     $searchResults = $retreiveSearches -> fetchAll(PDO::FETCH_ASSOC);
     return $searchResults;
 }
 
 function retrieveLocationResults($location){
-    $pdo = new PDO('mysql:host=localhost;dbname=wifinder-application','admin','BlackDragon123=');
-    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    include('connectDB.inc');
 
     $reteiveLocation = $pdo -> prepare("SELECT * ".
     "FROM(SELECT`wifi-location`.WifiHotspotName, Address, Suburb FROM `wifi-location` WHERE `wifi-location`.WifiHotspotName = :location) AS A ".
@@ -46,8 +60,7 @@ function retrieveLocationResults($location){
 }
 
 function retrieveReviewData($location){
-    $pdo = new PDO('mysql:host=localhost;dbname=wifinder-application','admin','BlackDragon123=');
-    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    include('connectDB.inc');
 
     $reteiveReviews = $pdo -> prepare("SELECT Username, DatePublished, Rating, ReviewDescription FROM reviews WHERE WifiHotspotName=:location ");
     $reteiveReviews -> bindValue(':location',$location);
@@ -56,8 +69,7 @@ function retrieveReviewData($location){
     return $reviewResults;
 }
 function retrieveLocationData($location){
-    $pdo = new PDO ('mysql:host=localhost;dbname=wifinder-application','admin','BlackDragon123=');
-    $pdo -> setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
+    include('connectDB.inc');
 
     $retrieveLocationData = $pdo -> prepare("SELECT WifiHotspotName, Address, Suburb, Latitude, Longitude FROM `wifi-location` WHERE WifiHotspotName = :location");
     $retrieveLocationData -> bindValue(':location',$location);
