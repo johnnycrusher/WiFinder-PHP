@@ -11,6 +11,7 @@
     <link rel="manifest" href="/manifest.json">
     <meta name="apple-mobile-web-app-title" content="Wi-Finder">
     <meta name="apple-mobile-web-app-capable" content="yes">
+    <link rel="apple-touch-icon" href="img/logofinal144x144.png">
 </head>
 
 <body onload="intialiseMaps()">
@@ -38,15 +39,15 @@
                             <button id="location-btn" type="button" onclick="getLocation()">
                                 <i class="fa fa-map-marker fa-3x"></i>
                             </button>
+                            <h2>Search By :
+                            <select name="search" id="searchType">
+                                <option value="address">Address</option>
+                                <option value="name">Location Name</option>
+                            </select>
+                            </h2>
                         </div>              
                         <div id="advanced-options">
                             <h4>Narrow your search results by...</h4>
-                            <p>Searching for:
-                                <select name="location-type">
-                                    <option value="address">Address</option>
-                                    <option value="suburb">Suburb</option>
-                                </select>
-                            </p>
                             <input type="hidden" id="longitude" name="longitude" value ="0">
                             <input type="hidden" id="latitude" name="latitude" value="0">
                             <p>Near:
@@ -72,7 +73,7 @@
                             <button type="button" onclick="findLatLng()">Search</button>
                         </div>
                     </fieldset>
-                </form>        
+                </form>
             </div>
         </div>
         <div id="footer">

@@ -15,10 +15,11 @@ header('Refresh: 5; URL=/search_page.php');?>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>User Registration Page</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link href="css/Login_page.css" rel="stylesheet">
+    <link href="css/logout.css" rel="stylesheet">
     <link rel="manifest" href="/manifest.json">
     <meta name="apple-mobile-web-app-title" content="Wi-Finder">
     <meta name="apple-mobile-web-app-capable" content="yes">
+    <link rel="apple-touch-icon" href="img/logofinal144x144.png">
 </head>
 <body>
 <div class="grid">
@@ -31,8 +32,8 @@ header('Refresh: 5; URL=/search_page.php');?>
         <?php include('php/menu.inc');?>
     </div>
     <div id="content">
-        <div>
-            <h2> You have now sucessfully logged out. You will now be redirected back to the search page</h2>
+        <div id="logout-text-container">
+            <h2 id="logout-text"> You have now sucessfully logged out. You will now be redirected back to the search page</h2>
         </div>
     </div>
     <div id="footer">

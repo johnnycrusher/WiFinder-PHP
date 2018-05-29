@@ -8,7 +8,39 @@ function retreiveLoginToDatabase($username, $password){
     $retreiveUsername-> execute();
     return $retreiveUsername-> rowCount()>0;
 }
+function retreiveSearchResulsByName(){
+    include('connectDB.inc');
+    $location = $_GET['location'];
+    if(strcmp($_GET['sort'],"rating")==0){
+        $search = 'AvgRating DESC';
+    }else if(strcmp($_GET['sort'],"alphabetical")==0){
+        $search = 'WifiHotspotName ASC';
+    }else{
+        $search = 'distance';
+    }
 
+    if(strcmp($_GET['WiFi-location-type'],"park")==0){
+        $Where = "LocationType = 'Park'";
+    }else if(strcmp($_GET['WiFi-location-type'],"library") == 0){
+        $Where = "LocationType = 'Library'";
+    }else{
+        $Where = "LocationType = 'Park' OR LocationType = 'Library'";
+    }
+
+    $retrieveSearch = $pdo -> prepare("SELECT w.WifiHotspotName,w.LocationType,w.Address,w.Suburb,w.Latitude,w.Longitude,".
+    "ifnull(round(avg(r.rating),1),0) AS AvgRating FROM `wifi-location` w ".
+    "LEFT JOIN reviews r ".
+    "ON w.WifiHotspotName = r.WifiHotspotName ".
+    "WHERE (".$Where .") AND w.WifiHotspotName LIKE :location ".
+    "GROUP BY WifiHotspotName ".
+    "HAVING avgRating >= :rating ".
+    "LIMIT 0,20");
+    $retrieveSearch -> bindValue(':location',"%$location%", PDO::PARAM_STR);
+    $retrieveSearch -> bindValue(':rating',$_GET['rating']);
+    $retrieveSearch -> execute();
+    $searchData = $retrieveSearch -> fetchAll(PDO::FETCH_ASSOC);
+    return $searchData;
+}
 function retriveSearchResults($latitude, $longitude){
     include('connectDB.inc');
 

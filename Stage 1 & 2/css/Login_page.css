@@ -19,7 +19,7 @@ body{
     background-color: #467F6E;
     grid-area: header;
     display: grid;
-    min-height: 7.5em;
+    min-height: 15vh;
     
     color: white;
     grid-template-columns: 1fr 1fr;
@@ -41,11 +41,11 @@ body{
     background-color: #467F6E;
     grid-area: menubar;
     display:grid;
-    min-height: 7.5em;
+    min-height: 15vh;
 }
 #content{
     grid-area: content;
-    min-height: 44.5em;
+    min-height: 70vh;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-areas:
@@ -54,7 +54,7 @@ body{
 #footer{
     background-color: #717F7B;
     grid-area:footer;
-    min-height: 7.5em;
+    min-height: 15vh;
     display: grid;
     grid-template-columns: 1fr 20% 20% 20% 1fr;
     grid-template-areas:
@@ -194,6 +194,11 @@ body{
     grid-area: Connect-With-Us;
 }
 
+.error-message{
+    display:block;
+    color:red;
+}
+
 @media only screen and (max-width: 1263px){
     .grid{
         grid-template-columns: 1fr 25% 25% 25% 1fr;
@@ -201,6 +206,9 @@ body{
         "header-fill-left header header menubar header-fill-right"
         "content content content content content"
         "footer footer footer footer footer";
+    }
+    #header-text h1{
+        font-size: 2em !important;
     }
     #footer{
         grid-template-columns: 1fr 25% 25% 25% 1fr;
@@ -231,26 +239,18 @@ body{
         "footer footer footer footer footer";
     }
     #menubar{
-        min-height: 3.5em;
+        min-height: 5vh;
     }
 
     #header{
-        grid-template-columns: 33% 67%;
+        min-height: 10vh;
+        grid-template-columns: 1fr;
         grid-template-areas:
-        "logo header-text";
+        "header-text";
     }
 
-    #header-text{
-        margin: 0px;
-        margin-top: auto;
-        margin-bottom: auto;
-    }
-
-    #logo-img{
-        content: url("../img/logofinal96x96.png");
-        width: 92px;
-        height: 92px;
-        float: right;
+    #logo-elements{
+        display: none;
     }
 
     #content{
@@ -259,6 +259,7 @@ body{
         grid-template-areas:
         "login";
     }
+    
     #footer{
         grid-template-columns: 1fr 1fr;
         grid-template-areas:
@@ -267,30 +268,21 @@ body{
 }
 @media only screen and (max-width:500px){
 
-    #header{
-        grid-template-columns: 1fr;
-        grid-template-areas:
-        "header-text";
-        min-height: 4em;
-    }
     #logo-elements{
         display:none;
-    }
-
-    #header-text{
-        margin: 0 auto;
-        margin-top: auto;
-        margin-bottom: auto;
     }
 
     #Login-box{
         width: 90%;
     }
 
-    #Our-Missing-Text h2{
+    #Our-Mission-Text p{
+        font-size: 0.8em !important;
+    }
+    #connect-with-us h2{
         font-size: 1em !important;
     }
-    #Our-Missing-Text p{
-        font-size: 0.5em !important;
+    #connect-with-us a{
+        font-size: 0.8em !important;
     }
 }

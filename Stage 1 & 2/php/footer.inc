@@ -4,7 +4,7 @@
 </div>
 <div id="connect-with-us">
     <h2>Connect With Us On:</h2>
-    <a href="" style="Color:White"><i class="fa fa-facebook-square fa-3x"></i></a>
+    <a href="https://www.facebook.com/Brisbane-Wi-Finder-2072712876280583" style="Color:White"><i class="fa fa-facebook-square fa-3x"></i></a>
     <a href="" style="Color:White"><i class="fa fa-instagram fa-3x"></i></a>
-    <a href="" style="Color:White"><i class="fa fa-twitter-square fa-3x"></i></a>
+    <a href="https://twitter.com/FinderWi" target="_blank" style="Color:White"><i class="fa fa-twitter-square fa-3x"></i></a>
 </div>

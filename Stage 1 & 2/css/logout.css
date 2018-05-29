@@ -1,4 +1,3 @@
-/* Core Elements */
 *{
     margin:0px;
     padding:0px;
@@ -16,19 +15,17 @@ body{
     ". content content content ."
     "footer footer footer footer footer";
 }
-
 #header{
     background-color: #467F6E;
     grid-area: header;
     display: grid;
-    min-height: 15vh;
+    min-height: 7.5em;
     
     color: white;
     grid-template-columns: 1fr 1fr;
     grid-template-areas:
     "logo header-text"
 }
-
 #header-fill-left{
     display:grid;
     background-color: #467F6E;
@@ -40,39 +37,30 @@ body{
     
     grid-area: header-fill-right;
 }
-
 #menubar{
     background-color: #467F6E;
     grid-area: menubar;
     display:grid;
-    min-height: 15vh;
+    min-height: 7.5em;
 }
-
 #content{
     grid-area: content;
-    min-height: 70vh;
+    min-height: 44.5em;
     display: grid;
-    
-    /*background-color: #D7FFF3;*/
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
     grid-template-areas:
-    "registation";
+    ". login .";
 }
-
-#form-header{
-    color:#467F6E;
-    font-size: 22pt;
-}
-
 #footer{
     background-color: #717F7B;
     grid-area:footer;
-    min-height: 15vh;
+    min-height: 7.5em;
     display: grid;
     grid-template-columns: 1fr 20% 20% 20% 1fr;
     grid-template-areas:
     ". Our-Mission . Connect-With-Us .";
 }
+
 
 #button-loc{
     width: 16em;
@@ -80,10 +68,6 @@ body{
     margin-top: auto;
     margin-bottom: 5px;
     line-height: 30px;
-}
-
-#lastName{
-    margin-left: 10px;
 }
 .menu-btn{
     display: inline-block;
@@ -97,9 +81,6 @@ body{
     border-color: #467F6E;
     border-width:1px;
     border-radius: 5px;
-}
-#sign-up-menu{
-    width: 90px;
 }
 .current-page{
     display: inline-block;
@@ -116,16 +97,47 @@ body{
     border-width:1px;
     pointer-events: none;
 }
-.center-items{
-    vertical-align: center;
+
+#button-loc{
+    width: 16em;
+    margin: 0 auto;
+    margin-top: auto;
+    margin-bottom: 5px;
+    line-height: 30px;
 }
+.menu-btn{
+    display: inline-block;
+    text-decoration: none;
+    color: white;
+    text-align: center;
+    width:75px;
+    height: 35px;
+    background-color: #467F6E;
+    border-style: solid;
+    border-color: #467F6E;
+    border-width:1px;
+    border-radius: 5px;
+}
+.current-page{
+    background-color: #717F7B;
+    pointer-events: none;
+}
+#sign-up-menu{
+    width: 90px;
+}
+
+/*Standard page stuff*/
 #logo-elements{
     grid-area:logo;
-    padding: 10px;
+    margin:10px;
+}
+#logo-element img{
+    vertical-align: middle;
 }
 #header-text{
     grid-area: header-text;
     margin: auto;
+    padding: 10px;
 }
 #Our-Mission-Text{
     grid-area: Our-Mission;
@@ -138,70 +150,7 @@ body{
     vertical-align: top;
     grid-area: Connect-With-Us;
 }
-/* Page Specific Elements */
-#registation{
-    grid-area: registation;
-    width: 25em;
-    margin: 0 auto;
-    margin-top: auto;
-    margin-bottom: auto;
-    padding: 1em;
-}
 
-#create-account h2 {
-    color: #467F6E;
-    padding: 5px;
-}
-#create-account p {
-    padding: 7px;
-}
-
-#create-account fieldset{
-    padding: .5em;
-    border-radius: 5px;
-}
-#day{
-    width: 5em;
-}
-
-#month{
-    width: 100px;
-}
-
-#sign-up-btn{
-    display:block;
-    margin-top: 10px;
-    margin: 0 auto;
-    margin-bottom: 10px;
-    padding: 7px;
-    width: 70%;
-    font-size: 13pt;
-    border-radius: 5px;
-    color: white;
-    border-color: #467F6E;
-    background-color: #467F6E;
-}
-
-#other{
-    display: none;
-    grid-area: other;
-    text-align: center;
-    margin-top: auto;
-    margin-bottom: auto;
-    margin-right: 2em;
-    margin-left: 2em;
-}
-
-.error-message{
-    display:block;
-    color:red;
-    visibility: hidden;
-}
-
-
-.input-field{
-    padding: 3px;
-}
 @media only screen and (max-width: 1263px){
     .grid{
         grid-template-columns: 1fr 25% 25% 25% 1fr;
@@ -227,49 +176,29 @@ body{
         "Our-Mission . Connect-With-Us" 
     }
 }
-@media only screen and (max-width:800px){
+@media only screen and (max-width:740px){
 
     .grid{
+        display: grid;
+        grid-template-columns: 1fr 25% 25% 25% 1fr;
         grid-template-areas:
         "header header header header header"
         "menubar menubar menubar menubar menubar"
         "content content content content content"
         "footer footer footer footer footer";
     }
-
-    #other{
-        font-size: 1em;
-    }
-    
     #menubar{
-        min-height: 5vh;
+        min-height: 3.5em;
     }
+
     #header{
-        min-height: 10vh;
         grid-template-columns: 1fr;
         grid-template-areas:
         "header-text";
     }
-    
+
     #logo-elements{
         display: none;
-    }
-    
-    #content{
-        grid-template-columns:1fr;
-        grid-template-areas:
-        "registation";
-    }
-    #other{
-        display: none;
-    }
-    #footer{
-        grid-template-columns: 1fr 1fr;
-        grid-template-areas:
-        "Our-Mission Connect-With-Us";
-    }
-    #connect-with-us{
-        margin: 0 auto;
     }
 
     #header-text h1{
@@ -277,34 +206,36 @@ body{
         margin-top: auto;
         margin-bottom: auto;
     }
-}
 
+    #content{
+        margin: 0 auto;
+        grid-template-columns: 1fr;
+        grid-template-areas:
+        "login";
+    }
+    
+    #footer{
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas:
+        "Our-Mission Connect-With-Us";
+    }
+}
 @media only screen and (max-width:500px){
 
-    #other{
-        margin-bottom: auto;
-        margin-top: auto;
-        font-size: 1em;
+    #header{
+        min-height: 4em;
     }
 
-    #registation{
+    #logo-elements{
+        display:none;
+    }
+
+    #Login-box{
         width: 90%;
     }
-    #lastName{
-        margin-top:10px;
-        margin-left:0px;
-    }
-    #month{
-        width: 30%;
-    }
-    #day{
-        width: 30%;
-    }
-    #year{
-        width: 30%
-    }
-    .input-field{
-        width: 80%;
+
+    #content{
+        min-height: 30em;
     }
 
     #Our-Mission-Text p{
@@ -317,4 +248,3 @@ body{
         font-size: 0.8em !important;
     }
 }
-

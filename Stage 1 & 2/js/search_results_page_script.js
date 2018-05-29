@@ -68,7 +68,7 @@ function initMap() {
         }
     }
     var maps = [];
-    for(var i = 0; i<mapElements.length; i++){
+    for(var i = 0; i<locationLength; i++){
         maps[i] = new google.maps.Map(document.getElementById(mapElements[i]), options[i]) 
         addMarker(location[i], maps[i]);
     }

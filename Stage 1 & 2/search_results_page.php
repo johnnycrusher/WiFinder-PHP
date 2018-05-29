@@ -2,14 +2,26 @@
 session_start();
 
 require("php/retreiveDataFromDatabase.php");
-if(isset($_GET['latitude']) && isset($_GET['longitude'])){
-        $data = retriveSearchResults($_GET['latitude'], $_GET['longitude']);
-        $locationData = array();
-        for($index = 0; $index < sizeof($data); $index++){
-            array_push($locationData, array('lat'=>floatval($data[$index]['Latitude']), 'lng' =>floatval($data[$index]['Longitude'])));
-        }
-        $locationDataJSON = json_encode($locationData);
+if(isset($_GET['search'])){
+  if($_GET['search'] === "name"){
+    $data = retreiveSearchResulsByName($_GET['location']);
+    $locationData = array();
+    for($index = 0; $index < sizeof($data); $index++){
+      array_push($locationData, array('lat'=>floatval($data[$index]['Latitude']), 'lng' =>floatval($data[$index]['Longitude'])));
+    }
+    $locationDataJSON = json_encode($locationData);
+  }else{
+    if(isset($_GET['latitude']) && isset($_GET['longitude'])){
+      $data = retriveSearchResults($_GET['latitude'], $_GET['longitude']);
+      $locationData = array();
+      for($index = 0; $index < sizeof($data); $index++){
+        array_push($locationData, array('lat'=>floatval($data[$index]['Latitude']), 'lng' =>floatval($data[$index]['Longitude'])));
+      }
+     $locationDataJSON = json_encode($locationData);
+    }
+  }
 }
+
 ?>
 
 <!DOCTYPE html>
@@ -22,6 +34,10 @@ if(isset($_GET['latitude']) && isset($_GET['longitude'])){
   <link href="css/search_results_page_style.css" rel="stylesheet" type="text/css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <script src="js/search_results_page_script.js" type="text/javascript"></script>
+  <link rel="manifest" href="/manifest.json">
+  <meta name="apple-mobile-web-app-title" content="Wi-Finder">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <link rel="apple-touch-icon" href="img/logofinal144x144.png">
   
 </head>
 
@@ -68,7 +84,15 @@ if(isset($_GET['latitude']) && isset($_GET['longitude'])){
         <h2 id=location-text> WiFi Locations near <?php echo($_GET["location"]) ?></h2>
             <?php
                 require("php/searchTiles.php");
-                echo(generateSearchTiles($data));
+                if(sizeof($data) > 0 && $_GET['search'] ==="address"){
+                  echo(generateSearchTiles($data,true));
+                }else if(sizeof($data) > 0 && $_GET['search'] ==="name"){
+                  echo(generateSearchTiles($data,false));
+                }
+                  else{
+                  echo("<h2 class=\"center-horizontally\">No search result found redirecting to Advance Search Page</h2>");
+                  header('Refresh: 5; URL=/search_page.php');
+                } 
             ?>
          </div>
     </div>

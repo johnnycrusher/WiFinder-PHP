@@ -1,3 +1,17 @@
+<?php 
+$loggedIn = false;
+$submitted = false;
+require(dirname(__DIR__).'/Stage 1 & 2/php/retreiveDataFromDatabase.php');
+if(isset($_POST['username'])){
+    $submitted = true;
+    if(retreiveLoginToDatabase($_POST['username'], $_POST['password'])){
+        $loggedIn = true;
+        session_start();
+        $_SESSION['user'] = $_POST['username'];
+        header("Location:search_page.php");
+    }
+}
+    ?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -10,18 +24,9 @@
         <link rel="manifest" href="/manifest.json">
         <meta name="apple-mobile-web-app-title" content="Wi-Finder">
         <meta name="apple-mobile-web-app-capable" content="yes">
+        <link rel="apple-touch-icon" href="img/logofinal144x144.png">
     </head>
     <body>
-    <?php 
-        require(dirname(__DIR__).'/Stage 1 & 2/php/retreiveDataFromDatabase.php');
-        if(isset($_POST['username'])){
-            if(retreiveLoginToDatabase($_POST['username'], $_POST['password'])){
-                session_start();
-                $_SESSION['user'] = $_POST['username'];
-                header("Location:search_page.php");
-            }
-        }
-    ?>
         <div class="grid">
             <div id="header">
                 <?php include('php/header.inc');?>
@@ -33,12 +38,17 @@
             </div>
             <div id="content">
                 <div id="Login">
-                    <form action="login_page.php" method="POST">
+                    <form action="Login_page.php" method="POST">
                         <fieldset id="Login-box">
                             <legend>
                                 <h2 id="form-header">Login:</h2>
                             </legend>
                             <div>
+                                <?php
+                                if(!$loggedIn && $submitted){
+                                    echo("<p class=\"error-message\">Username or Password is Invalid</p>");
+                                }
+                                ?>
                                 <p><b>Username:</b></p>
                                 <input type="text" id="UserName" name="username" class="input-field" placeholder="Username" required="required">
                                 <p><b>Password:</b></p>

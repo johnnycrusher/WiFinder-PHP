@@ -4,6 +4,7 @@
 }
 body{
     background-color:#e9ebee;
+    height: 100vh;
 }
 .grid{
     font-family: Arial, Helvetica, sans-serif;
@@ -19,7 +20,7 @@ body{
     background-color: #467F6E;
     grid-area: header;
     display: grid;
-    min-height: 7.5em;
+    min-height: 15vh;
     
     color: white;
     grid-template-columns: 1fr 1fr;
@@ -40,11 +41,11 @@ body{
     background-color: #467F6E;
     grid-area: menubar;
     display:grid;
-    min-height: 7.5em;
+    min-height: 15vh;
 }
 #content{
     grid-area: content;
-    min-height: 44.5em;
+    min-height: 70vh;
     display: grid;
     grid-template-columns: 1fr;
     grid-template-areas:
@@ -58,7 +59,7 @@ body{
 #footer{
     background-color: #717F7B;
     grid-area:footer;
-    min-height: 7.5em;
+    min-height: 15vh;
     display: grid;
     grid-template-columns: 1fr 20% 20% 20% 1fr;
     grid-template-areas:
@@ -214,6 +215,9 @@ body{
     #footer{
         grid-template-columns: 1fr 25% 25% 25% 1fr;
     }
+    #header-text h1{
+        font-size:1.5em;
+    }
 }
 @media only screen and (max-width:950px){
     .grid{
@@ -237,59 +241,102 @@ body{
         "content content content content content"
         "footer footer footer footer footer";
     }
-    
+
     #menubar{
-        min-height: 3.5em;
+        min-height: 5vh;
     }
     #header{
-        grid-template-columns: 33% 67%;
+        min-height: 10vh;
+        grid-template-columns: 1fr;
         grid-template-areas:
-        "logo header-text";
+        "header-text";
     }
-    #footer{
-        grid-template-columns: 1fr 1fr;
-        grid-template-areas:
-        "Our-Mission Connect-With-Us";
+
+    #logo-elements{
+        display: none;
     }
-    #header-text{
+
+    #header-text h1{
+        font-size:2em;
+    }
+
+    #header-text h1{
         margin: 0px;
         margin-top: auto;
         margin-bottom: auto;
     }
 
-    #logo-img{
-        content: url("../img/logofinal96x96.png");
-        width: 92px;
-        height: 92px;
-        float: right;
+    #footer{
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas:
+        "Our-Mission Connect-With-Us";
     }
-
+    
     #advance-search-box{
         width: 90%;
     }
 }
 @media only screen and (max-width:500px){
 
-    #header{
-        min-height: 4em;
-        grid-template-columns: 1fr;
-        grid-template-areas:
-        "header-text"
+    #header-text h1{
+        font-size:1.5em;
     }
-    #header-text{
-        margin: 0 auto;
-        margin-top: auto;
-        margin-bottom: auto;
+
+    #search-box-input{
+        font-size:1.2em;
     }
+
+    #advance-options{
+        font-size:1.0em;
+    }
+
     #logo-elements{
         display: none;
     }
-    #Our-Missing-Text h2{
+
+    #advance-search-box{
+        padding:0.5em 0em 0.5em 0em;
+        margin: 0.5em 0em 0.5em 0em;
+        
+    }
+    
+
+    input[type="text"]{
         font-size: 1em !important;
     }
-    #Our-Missing-Text p{
-        font-size: 0.5em !important;
+
+    input{
+        height: 1.5em !important;
     }
 
+    h2{
+        font-size: 1.5em !important;
+    }
+
+    h4{
+        font-size: 1.2em !important;
+    }
+
+    p{
+        font-size: 1em !important;
+    }
+
+    #location-btn{
+        width:47px;
+        height: 47px;
+    }
+
+    #Our-Mission-Text p{
+        font-size: 0.8em !important;
+    }
+    #connect-with-us h2{
+        font-size: 1em !important;
+    }
+    #connect-with-us a{
+        font-size: 0.8em !important;
+    }
+    #search-box {
+        width: 65%;
+    }
 }
 

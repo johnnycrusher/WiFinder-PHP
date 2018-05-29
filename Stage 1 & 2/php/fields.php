@@ -30,10 +30,14 @@ function postData($name){
 }
 
 function generateBirthMonthField($id, $name, $onchange){
+    $value = postData($name);
     echo("<select id=\"$id\" name=\"$name\" onchange=\"$onchange\">");
     $monthArray = array("Select","Jan","Feb","Mar","April","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec");
     $monthValue = array("Select","01","02","03","04","05","06","07","08","09","10","11","12");
     for($month = 0; $month<sizeof($monthArray); $month++){
+        if($value == $monthValue[$month]){
+            echo("<option value=\"$monthValue[$month]\" selected=\"selected\">$monthArray[$month]</option>");
+        }
         echo("<option value=\"$monthValue[$month]\">$monthArray[$month]</option>");
     }
 }
@@ -78,8 +82,13 @@ function generateDateInputField($type, $id,$name,$value,$placeholder,$onchange){
     echo("<input type=\"$type\" id=\"$id\" name=\"$name\" value=\"$value\" placeholder=\"$placeholder\" onchange=\"$onchange\">");
 }
 
-function generateRadioBox($id, $class, $name, $value, $onchange , $checked){
-    echo("<input type=\"radio\" id=\"$id\" class=\"$class\" name=\"$name\" value=\"$value\" onchange=\"$onchange\" checked=\"$checked\"> $value ");
+function generateRadioBox($id, $class, $name, $value, $onchange, $checked){
+    if(strcmp($checked,"false")==0){
+        echo("<input type=\"radio\" id=\"$id\" class=\"$class\" name=\"$name\" value=\"$value\" onchange=\"$onchange\"> $value ");
+    }else{
+        echo("<input type=\"radio\" id=\"$id\" class=\"$class\" name=\"$name\" value=\"$value\" onchange=\"$onchange\" checked=\"$checked\"> $value ");
+    }
+    
 }
 
 function generateGender($error){

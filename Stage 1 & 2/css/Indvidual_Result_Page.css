@@ -5,6 +5,7 @@
 
 body{
     background-color:#e9ebee;
+    height: 100vh;
 }
 
 .grid{
@@ -22,7 +23,7 @@ body{
     background-color: #467F6E;
     grid-area: header;
     display: grid;
-    min-height: 7.5em;
+    min-height: 15vh;
     
     color: white;
     grid-template-columns: 1fr 1fr;
@@ -46,13 +47,13 @@ body{
     background-color: #467F6E;
     grid-area: menubar;
     display:grid;
-    min-height: 7.5em;
+    min-height: 15vh;
 }
 
 #footer{
     background-color: #717F7B;
     grid-area:footer;
-    min-height: 7.5em;
+    min-height: 15vh;
     display: grid;
     grid-template-columns: 1fr 20% 20% 20% 1fr;
     grid-template-areas:
@@ -96,7 +97,7 @@ body{
 
 #content{
     grid-area: content;
-    min-height: 44.5em;
+    min-height: 70vh;
     display: grid;
     grid-template-columns:1fr;
     grid-template-areas:
@@ -104,16 +105,6 @@ body{
     "Wifi-location-info"
     "review"
     "write-review";
-}
-
-#footer{
-    background-color: #717F7B;
-    grid-area:footer;
-    min-height: 7.5em;
-    display: grid;
-    grid-template-columns: 1fr 20% 20% 20% 1fr;
-    grid-template-areas:
-    ". Our-Mission . Connect-With-Us .";
 }
 
 #button-loc{
@@ -296,25 +287,24 @@ body{
         "footer footer footer footer footer";
     }
     #menubar{
-        min-height: 3.5em;
-    }
-    #header{
-        grid-template-columns: 33% 67%;
-        grid-template-areas:
-        "logo header-text";
+        min-height: 5vh;
     }
 
-    #header-text{
+    #logo-elements{
+        display: none;
+    }
+
+    #header{
+        min-height: 10vh;
+        grid-template-columns: 1fr;
+        grid-template-areas:
+        "header-text";
+    }
+    
+    #header-text h1{
         margin: 0px;
         margin-top: auto;
         margin-bottom: auto;
-    }
-
-    #logo-img{
-        content: url("../img/logofinal96x96.png");
-        width: 92px;
-        height: 92px;
-        float: right;
     }
 
     #map{
@@ -342,18 +332,7 @@ body{
     #map{
         height: 250px;
     }
-
-    #header{
-        min-height: 4em;
-        grid-template-columns: 1fr;
-        grid-template-areas:
-        "header-text"
-    }
-    #header-text{
-        margin: 0 auto;
-        margin-top: auto;
-        margin-bottom: auto;
-    }
+    
     #logo-elements{
         display: none;
     }
@@ -364,11 +343,14 @@ body{
         ". publish-btn";
     }
 
-    #Our-Missing-Text h2{
+    #Our-Mission-Text p{
+        font-size: 0.8em !important;
+    }
+    #connect-with-us h2{
         font-size: 1em !important;
     }
-    #Our-Missing-Text p{
-        font-size: 0.5em !important;
+    #connect-with-us a{
+        font-size: 0.8em !important;
     }
 }
 
