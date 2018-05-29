@@ -1,7 +1,7 @@
 <?php
 $errors = array();
 $submitted  = False;
-require(dirname(__DIR__).'/Stage 1 & 2/php/validate.php');
+require('php/validate.php');
 if(isset($_POST['first-name']) || isset($_POST['last-name'])){
     validateName($errors, $_POST, 'first-name', 'last-name');
     $submitted = True;
@@ -23,10 +23,12 @@ if(isset($_POST['gender'])){
 }
 
 if($submitted && !$errors){
-    require(dirname(__DIR__).'/Stage 1 & 2/php/sendDataToDatabase.php');
+    require('php/sendDataToDatabase.php');
     $birthday = $_POST["year"]."-".$_POST["month"]."-".$_POST["day"];
     insertUserInfomration($_POST['first-name'], $_POST['last-name'], $_POST['email'],$_POST['username'], $_POST['password'], $birthday, $_POST['gender']);
 }
+
+require('php/fields.php');
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -60,25 +62,30 @@ if($submitted && !$errors){
                 <div id="registation">
                     <?php
                      if($submitted && !$errors){
-                        echo ('<h1>form submitted successfully with no errors</h1>');
+                        echo ('<h1 class=\"center-vertically\">Signed Up successfully</h1>');
                     }
                     ?>
-                    <form id="create-account" action="Registration_Page.php" method="POST">
+                    <form id="create-account" action="<?php echo $_SERVER['PHP_SELF'];?>" method="POST">
                         <fieldset>
                             <legend>
                                 <Strong>Sign Up</Strong>
                             </legend>
                             <?php
                                 if($submitted && !$errors){
-                                    echo ('form submitted successfully with no errors');
-                                }
-                                require(dirname(__DIR__).'/Stage 1 & 2/php/fields.php');
-                                generateName($errors);
-                                generateDataField("Email:","email","email","email", "input-field","Email","hideError(this)",$errors);
-                                generateDataField("Username:","text","username","username","input-field","Username","hideError(this)",$errors);
-                                generatePassword($errors);
-                                birthdayField($errors);
-                                generateGender($errors);
+                                    generateName($errors,false);
+                                    generateDataField("Email:","email","email","email", "input-field","Email","hideError(this)",$errors,false);
+                                    generateDataField("Username:","text","username","username","input-field","Username","hideError(this)",$errors,false);
+                                    generatePassword($errors);
+                                    birthdayField($errors,false);
+                                    generateGender($errors,false);
+                                }else{
+                                    generateName($errors,true);
+                                    generateDataField("Email:","email","email","email", "input-field","Email","hideError(this)",$errors,true);
+                                    generateDataField("Username:","text","username","username","input-field","Username","hideError(this)",$errors,true);
+                                    generatePassword($errors);
+                                    birthdayField($errors,true);
+                                    generateGender($errors,true);
+                                }    
                             ?>
                             <input id="sign-up-btn" type="Submit" value="Sign up" onclick="return validate()"/>
                         </fieldset>

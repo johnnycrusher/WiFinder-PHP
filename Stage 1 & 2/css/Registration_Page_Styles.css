@@ -29,6 +29,10 @@ body{
     "logo header-text"
 }
 
+.center-vertically{
+    margin: 0 auto;
+}
+
 #header-fill-left{
     display:grid;
     background-color: #467F6E;

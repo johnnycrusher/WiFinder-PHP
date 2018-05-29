@@ -3,19 +3,18 @@
 </div>
 <div id="header-text" class="center-items">
 <?php
-$name = $_SERVER['PHP_SELF'];
-    if(strcmp($name,"/search_page.php")==0){
+$name = basename($_SERVER["SCRIPT_FILENAME"], '.php');
+    if(strcmp($name,"search_page")==0){
         echo("<h1>Advance Search Page</h1>");
-    } elseif(strcmp($name,"/Registration_Page.php")==0){
+    } elseif(strcmp($name,"Registration_Page")==0){
         echo("<h1>Registration Page</h1>");
-    } elseif(strcmp($name,"/Login_page.php")==0){
+    } elseif(strcmp($name,"Login_page")==0){
         echo("<h1>Login</h1>");
-    } elseif(strcmp($name,"/Individual_Result_Page.php")==0){
+    } elseif(strcmp($name,"Individual_Result_Page")==0){
         echo("<h1>WiFi Location</h1>");
-    } elseif(strcmp($name,"/search_results_page.php")==0){
+    } elseif(strcmp($name,"search_results_page")==0){
         echo("<h1>Results</h1>");
     }
-   
 ?>
     
 </div>

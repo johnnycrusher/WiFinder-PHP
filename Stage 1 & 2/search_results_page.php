@@ -1,6 +1,5 @@
 <?php 
 session_start();
-
 require("php/retreiveDataFromDatabase.php");
 if(isset($_GET['search'])){
   if($_GET['search'] === "name"){
@@ -21,7 +20,6 @@ if(isset($_GET['search'])){
     }
   }
 }
-
 ?>
 
 <!DOCTYPE html>
@@ -91,7 +89,7 @@ if(isset($_GET['search'])){
                 }
                   else{
                   echo("<h2 class=\"center-horizontally\">No search result found redirecting to Advance Search Page</h2>");
-                  header('Refresh: 5; URL=/search_page.php');
+                  header('Refresh: 5; URL=search_page.php');
                 } 
             ?>
          </div>

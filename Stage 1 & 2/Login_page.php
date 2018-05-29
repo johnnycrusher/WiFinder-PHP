@@ -1,7 +1,7 @@
 <?php 
 $loggedIn = false;
 $submitted = false;
-require(dirname(__DIR__).'/Stage 1 & 2/php/retreiveDataFromDatabase.php');
+require('php/retreiveDataFromDatabase.php');
 if(isset($_POST['username'])){
     $submitted = true;
     if(retreiveLoginToDatabase($_POST['username'], $_POST['password'])){
@@ -38,7 +38,7 @@ if(isset($_POST['username'])){
             </div>
             <div id="content">
                 <div id="Login">
-                    <form action="Login_page.php" method="POST">
+                    <form action="<?php echo $_SERVER['PHP_SELF'];?>" method="POST">
                         <fieldset id="Login-box">
                             <legend>
                                 <h2 id="form-header">Login:</h2>

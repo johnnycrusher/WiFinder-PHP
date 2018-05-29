@@ -171,7 +171,7 @@ function checkGenderSelection(){
     var OtherGen = document.getElementById("other-gender");
 
     if(!(FemaleGen.checked) && !(MaleGen.checked) && !(OtherGen.checked)){
-        document.getElementById("genderMissing").style.visibility = "visible";
+        document.getElementById("error-gender").style.visibility = "visible";
         return false;
     }
     return true;
