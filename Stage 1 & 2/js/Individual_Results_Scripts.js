@@ -159,9 +159,10 @@ function setRatingStars(){
 
 
 function startMaps(latitude,longitude,locationName,address){
+    locationNameFiltered = locationName.replace(/\+/g, '%20');
+    locationNameFiltered = decodeURIComponent(locationNameFiltered)
     setRatingStars();
     ratingStarsDisplay();
-    setCoordinates(latitude,longitude,locationName,address);
+    setCoordinates(latitude,longitude,locationNameFiltered,address);
     intialiseMaps();
-
 }

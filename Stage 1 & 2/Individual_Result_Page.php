@@ -25,7 +25,10 @@ if(isset($_GET['location'])){
     $locationData = retrieveLocationData($_GET['location']);
 }
 
-
+$latitude = $locationData[0]['Latitude'];
+$longitude = $locationData[0]['Longitude'];
+$locationName = urlencode($_GET['location']);
+$locationAddress = htmlspecialchars($locationData[0]['Address'].",".$locationData[0]['Suburb']);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -37,7 +40,7 @@ if(isset($_GET['location'])){
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <script src="js/Individual_Results_Scripts.js"></script>
     </head>
-    <body onload="startMaps(<?php echo($locationData[0]['Latitude'])?>,<?php echo($locationData[0]['Longitude'])?>,'<?php echo ($locationData[0]['WifiHotspotName'])?>','<?php echo($locationData[0]['Address'].",".$locationData[0]['Suburb'])?>')">
+    <body onload="startMaps(<?php echo($latitude)?>,<?php echo($longitude)?>,'<?php echo($locationName)?>','<?php echo($locationAddress)?>')">
         <div class="grid">
             <div id="header">
                 <?php include('php/header.inc');?>

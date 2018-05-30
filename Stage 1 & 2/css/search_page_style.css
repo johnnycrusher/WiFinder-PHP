@@ -204,6 +204,12 @@ body{
     grid-area: Connect-With-Us;
 }
 
+#error-msg{
+    display:block;
+    color:red;
+    visibility: hidden;
+}
+
 @media only screen and (max-width: 1263px){
     .grid{
         grid-template-columns: 1fr 25% 25% 25% 1fr;

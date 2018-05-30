@@ -6,7 +6,6 @@ function validate(){
     var Birthdate = checkBirthDate();
     var GenderSelection = checkGenderSelection();
     if(Name && Email && Username && Password && Birthdate && GenderSelection){
-        alert("Form Validated");
         return true;
     }
     if(!Name || !Email || !Username || !Password || !Birthdate || !GenderSelection){
@@ -37,7 +36,6 @@ function checkEmail(){
         document.getElementById("error-email").innerHTML="Email is a required field!";
         return false;
     }
-    //TODO: change to regex validation to check for @ and .
     if(!(emailValue.indexOf("@") > -1)){
         document.getElementById("error-email").style.visibility = "visible";
         document.getElementById("error-email").innerHTML="Email is not in a correct format missing @";
@@ -171,6 +169,7 @@ function checkGenderSelection(){
     var OtherGen = document.getElementById("other-gender");
 
     if(!(FemaleGen.checked) && !(MaleGen.checked) && !(OtherGen.checked)){
+        document.getElementById("error-gender").innerHTML = "Please select a gender";
         document.getElementById("error-gender").style.visibility = "visible";
         return false;
     }

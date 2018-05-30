@@ -7,7 +7,7 @@ if(ini_get("session.use_cookies")){
     setcookie(session_name(), '',time()-42000,$params["path"],$params["domain"],$params["secure"], $params["httponly"]);
 }
 session_destroy();
-//header('Refresh: 5; URL=search_page.php');?>
+header('Refresh: 5; URL=search_page.php');?>
 <!DOCTYPE html>
 <html lang="en">
 <head>

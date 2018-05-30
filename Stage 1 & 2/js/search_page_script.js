@@ -122,3 +122,24 @@ function determineRating(){
         }
     }
 }
+
+function validateItems(){
+    var searchBox = document.getElementById("search-box").value;
+    var rating = document.getElementById("rating").value;
+    if (searchBox.length == 0 &&  parseInt(rating) == 0){
+        document.getElementById("error-msg").style.visibility = "visible";
+        return false;
+    }else{
+        return true;
+    }
+}
+
+function validate(){
+    var value = validateItems();
+    if(value){
+        findLatLng();
+        return true;
+    }else{
+        return false;
+    }
+}

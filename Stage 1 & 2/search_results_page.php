@@ -9,7 +9,7 @@ if(isset($_GET['search'])){
       array_push($locationData, array('lat'=>floatval($data[$index]['Latitude']), 'lng' =>floatval($data[$index]['Longitude'])));
     }
     $locationDataJSON = json_encode($locationData);
-  }else if((int)$_GET['rating'] > 0 && $_GET['location'] == 0){
+  }else if((int)$_GET['rating'] > 0 && strlen($_GET['location']) == 0){
     $data = retireveSearchRatings();
     $locationData = array();
     for($index = 0; $index < sizeof($data); $index++){

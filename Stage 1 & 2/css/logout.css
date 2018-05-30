@@ -130,7 +130,7 @@ body{
     margin: 0 auto;
     margin-top: auto;
     margin-bottom: auto;
-    display: gird;
+    display: grid;
     grid-area: logout;
 }
 

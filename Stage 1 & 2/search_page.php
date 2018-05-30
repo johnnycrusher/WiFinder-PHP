@@ -57,20 +57,20 @@
                                     <option value="library">Library</option>
                                 </select>
                             </p>
-                            <p>With a minimum rating of
-                                <div>
-                                    <span onclick="ratingChoose(this)"><i id="one-star" class="fa fa-star-o"></i></span>
-                                    <span onclick="ratingChoose(this)"><i id="two-star" class="fa fa-star-o"></i></span>
-                                    <span onclick="ratingChoose(this)"><i id="three-star" class="fa fa-star-o"></i></span>
-                                    <span onclick="ratingChoose(this)"><i id="four-star" class="fa fa-star-o"></i></span>
-                                    <span onclick="ratingChoose(this)"><i id="five-star" class="fa fa-star-o"></i></span>
-                                    <span><input type="text" id="rating" name="rating" value="0"  readonly/>/5</span>
-                                </div>
-                            </p>
+                            <p>With a minimum rating of</p>
+                            <div>
+                                <span onclick="ratingChoose(this)"><i id="one-star" class="fa fa-star-o"></i></span>
+                                <span onclick="ratingChoose(this)"><i id="two-star" class="fa fa-star-o"></i></span>
+                                <span onclick="ratingChoose(this)"><i id="three-star" class="fa fa-star-o"></i></span>
+                                <span onclick="ratingChoose(this)"><i id="four-star" class="fa fa-star-o"></i></span>
+                                <span onclick="ratingChoose(this)"><i id="five-star" class="fa fa-star-o"></i></span>
+                                <span><input type="text" id="rating" name="rating" value="0"  readonly/>/5</span>
+                            </div>
                             <input type="hidden" id="sort" name="sort" value="distance">
+                            <span id="error-msg">Please enter a search value or rating</span>
                         </div>
                         <div id="search-btn-loc">
-                            <button type="button" onclick="findLatLng()">Search</button>
+                            <button type="button" onclick="return validate()">Search</button>
                         </div>
                     </fieldset>
                 </form>

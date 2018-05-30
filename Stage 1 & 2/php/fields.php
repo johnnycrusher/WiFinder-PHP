@@ -44,6 +44,7 @@ function generateBirthMonthField($id, $name, $onchange,$postDataBool){
         }
         echo("<option value=\"$monthValue[$month]\">$monthArray[$month]</option>");
     }
+    echo("</select>");
 }
 
 function generateDataField($labelName,$type,$id,$name,$class,$placeholder,$onchange,$error,$postDataBool){
