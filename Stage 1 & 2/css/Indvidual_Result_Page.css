@@ -137,6 +137,11 @@ body{
     background-color: #717F7B;
     pointer-events: none;
 }
+
+.error-msg{
+    display:block;
+    color:red;
+}
 /*Specific Page Styling*/
 
 #content h2 {

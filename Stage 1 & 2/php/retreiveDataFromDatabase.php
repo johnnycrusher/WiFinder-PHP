@@ -16,7 +16,7 @@ function retreiveSearchResulsByName(){
     }else if(strcmp($_GET['sort'],"alphabetical")==0){
         $search = 'WifiHotspotName ASC';
     }else{
-        $search = 'distance';
+        $search = 'WifiHotspotName ASC';
     }
 
     if(strcmp($_GET['WiFi-location-type'],"park")==0){
@@ -75,6 +75,38 @@ function retriveSearchResults($latitude, $longitude){
     $retreiveSearches -> execute();
     $searchResults = $retreiveSearches -> fetchAll(PDO::FETCH_ASSOC);
     return $searchResults;
+}
+function retireveSearchRatings(){
+    include('connectDB.inc');
+    $location = $_GET['location'];
+    if(strcmp($_GET['sort'],"rating")==0){
+        $search = 'AvgRating DESC';
+    }else if(strcmp($_GET['sort'],"alphabetical")==0){
+        $search = 'WifiHotspotName ASC';
+    }else{
+        $search = 'AvgRating DESC';
+    }
+
+    if(strcmp($_GET['WiFi-location-type'],"park")==0){
+        $Where = "LocationType = 'Park'";
+    }else if(strcmp($_GET['WiFi-location-type'],"library") == 0){
+        $Where = "LocationType = 'Library'";
+    }else{
+        $Where = "LocationType = 'Park' OR LocationType = 'Library'";
+    }
+
+    $retrieveSearchRating = $pdo -> prepare("SELECT w.WifiHotspotName,w.LocationType,w.Address,w.Suburb,w.Latitude,w.Longitude,".
+    "ifnull(round(avg(r.rating),1),0) AS AvgRating FROM `wifi-location` w ".
+    "LEFT JOIN reviews r ".
+    "ON w.WifiHotspotName = r.WifiHotspotName ".
+    "WHERE (".$Where .")".
+    "GROUP BY WifiHotspotName ".
+    "HAVING avgRating >= :rating ".
+    "ORDER BY ". $search ." LIMIT 0,20");
+    $retrieveSearchRating -> bindValue(':rating',$_GET['rating']);
+    $retrieveSearchRating -> execute();
+    $searchRatingData = $retrieveSearchRating -> fetchAll(PDO::FETCH_ASSOC);
+    return $searchRatingData;
 }
 
 function retrieveLocationResults($location){

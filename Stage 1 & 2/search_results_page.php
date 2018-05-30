@@ -2,24 +2,30 @@
 session_start();
 require("php/retreiveDataFromDatabase.php");
 if(isset($_GET['search'])){
-  if($_GET['search'] === "name"){
+  if($_GET['search'] === "name" && strlen($_GET['location']) > 0){
     $data = retreiveSearchResulsByName($_GET['location']);
     $locationData = array();
     for($index = 0; $index < sizeof($data); $index++){
       array_push($locationData, array('lat'=>floatval($data[$index]['Latitude']), 'lng' =>floatval($data[$index]['Longitude'])));
     }
     $locationDataJSON = json_encode($locationData);
-  }else{
-    if(isset($_GET['latitude']) && isset($_GET['longitude'])){
-      $data = retriveSearchResults($_GET['latitude'], $_GET['longitude']);
-      $locationData = array();
-      for($index = 0; $index < sizeof($data); $index++){
-        array_push($locationData, array('lat'=>floatval($data[$index]['Latitude']), 'lng' =>floatval($data[$index]['Longitude'])));
-      }
-     $locationDataJSON = json_encode($locationData);
+  }else if((int)$_GET['rating'] > 0 && $_GET['location'] == 0){
+    $data = retireveSearchRatings();
+    $locationData = array();
+    for($index = 0; $index < sizeof($data); $index++){
+      array_push($locationData, array('lat'=>floatval($data[$index]['Latitude']), 'lng' =>floatval($data[$index]['Longitude'])));
     }
+    $locationDataJSON = json_encode($locationData);
+  }else if(isset($_GET['latitude']) && isset($_GET['longitude'])){
+    $data = retriveSearchResults($_GET['latitude'], $_GET['longitude']);
+    $locationData = array();
+    for($index = 0; $index < sizeof($data); $index++){
+      array_push($locationData, array('lat'=>floatval($data[$index]['Latitude']), 'lng' =>floatval($data[$index]['Longitude'])));
+    }
+    $locationDataJSON = json_encode($locationData);
   }
 }
+
 ?>
 
 <!DOCTYPE html>
@@ -82,12 +88,14 @@ if(isset($_GET['search'])){
         <h2 id=location-text> WiFi Locations near <?php echo($_GET["location"]) ?></h2>
             <?php
                 require("php/searchTiles.php");
-                if(sizeof($data) > 0 && $_GET['search'] ==="address"){
+                if(sizeof($data) > 0 && $_GET['search'] ==="address" && strlen($_GET['location']) > 0){
                   echo(generateSearchTiles($data,true));
-                }else if(sizeof($data) > 0 && $_GET['search'] ==="name"){
+                }else if(sizeof($data) > 0 && $_GET['search'] ==="name" && strlen($_GET['location']) > 0){
+                  echo(generateSearchTiles($data,false));
+                }else if((int)$_GET['rating'] > 0 && strlen($_GET['location']) == 0){
                   echo(generateSearchTiles($data,false));
                 }
-                  else{
+                else{
                   echo("<h2 class=\"center-horizontally\">No search result found redirecting to Advance Search Page</h2>");
                   header('Refresh: 5; URL=search_page.php');
                 } 
