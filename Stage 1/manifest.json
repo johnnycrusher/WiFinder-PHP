@@ -38,6 +38,6 @@
         "sizes": "192x192",
         "density": 4.0
     }],
-    "start_url": "/search_page.html",
+    "start_url": "/search_page.php",
     "display": "standalone"
 }

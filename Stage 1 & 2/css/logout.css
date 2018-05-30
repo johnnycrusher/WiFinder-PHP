@@ -49,7 +49,7 @@ body{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-areas:
-    ". login .";
+    ". logout .";
 }
 #footer{
     background-color: #717F7B;
@@ -124,6 +124,14 @@ body{
 }
 #sign-up-menu{
     width: 90px;
+}
+
+#logout-text-container{
+    margin: 0 auto;
+    margin-top: auto;
+    margin-bottom: auto;
+    display: gird;
+    grid-area: logout;
 }
 
 /*Standard page stuff*/
@@ -211,7 +219,7 @@ body{
         margin: 0 auto;
         grid-template-columns: 1fr;
         grid-template-areas:
-        "login";
+        "logout";
     }
     
     #footer{
