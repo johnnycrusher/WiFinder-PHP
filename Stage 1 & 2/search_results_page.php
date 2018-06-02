@@ -1,4 +1,5 @@
 <?php 
+//retieve search results page
 session_start();
 require("php/retreiveDataFromDatabase.php");
 if(isset($_GET['search'])){
@@ -87,6 +88,7 @@ if(isset($_GET['search'])){
       <div id="results">
         <h2 id=location-text> WiFi Locations near <?php echo($_GET["location"]) ?></h2>
             <?php
+                //generate different data based search choice
                 require("php/searchTiles.php");
                 if(sizeof($data) > 0 && $_GET['search'] ==="address" && strlen($_GET['location']) > 0){
                   echo(generateSearchTiles($data,true));
@@ -96,6 +98,7 @@ if(isset($_GET['search'])){
                   echo(generateSearchTiles($data,false));
                 }
                 else{
+                  //if there is no search results then show this and redirect to search page
                   echo("<h2 class=\"center-horizontally\">No search result found redirecting to Advance Search Page</h2>");
                   header('Refresh: 5; URL=search_page.php');
                 } 

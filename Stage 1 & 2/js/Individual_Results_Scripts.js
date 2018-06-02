@@ -1,5 +1,5 @@
 var arrayOfNumber = ["one","two","three","four","five","six","seven","eight","nine","ten","eleven","twelve","thirteen"];
-
+//a function that allows the user to choose the rating by clicking on the stars
 function ratingChoose(item){
     var icons = item.firstChild;
     var itemId = icons.getAttribute("id");
@@ -39,7 +39,7 @@ function ratingChoose(item){
     rating.value = ratingCounter;
 
 }
-
+//A function that shows the star rating of current indivdual item
 function ratingStarsDisplay(){
     var ratingValue = document.getElementById("avgRating").innerText;
     var ratingFloat = parseFloat(ratingValue);
@@ -68,7 +68,7 @@ function ratingStarsDisplay(){
         }else{break;}
     }
 }
-
+//A function that sets the cordinates
 function setCoordinates(lat,lng,locationName,address){
     this.latt = lat;
     this.lngg = lng;
@@ -76,6 +76,7 @@ function setCoordinates(lat,lng,locationName,address){
     this.address = address;
 }
 
+//Intialise the google maps 
 function initMap() {
     var Location = {lat: latt, lng: lngg};
     var options = {
@@ -87,6 +88,7 @@ function initMap() {
     addMarker(Location,locationName, address, maps);
   }
 
+//adds a marker to the google maps screen
 function addMarker(coords,nameOfLocation, addressLocation, map){
     var marker = new google.maps.Marker({
         position: coords,
@@ -102,6 +104,7 @@ function addMarker(coords,nameOfLocation, addressLocation, map){
     });
 }
 
+//sets the rating of the the review box
 function setRatings(rating, reviewID ){
     var ratingTag = document.getElementById(reviewID);
     for (var i = 0; i<5 ; i++){
@@ -122,14 +125,14 @@ function setRatings(rating, reviewID ){
     ratingTag.childNodes[13].innerHTML = rating;
 }
 
-
+//initalise the google maps but attaching the api key to the document
 function intialiseMaps(){
     var mapScript = document.createElement('script');
     mapScript.type = "text/javascript";
     mapScript.src = "https://maps.googleapis.com/maps/api/js?key=AIzaSyD-_Zd52SX6xAHEI15-WJm3iFA8LdKwL54&callback=initMap";
     document.body.appendChild(mapScript);
 }
-
+//sets the rating star for the reivew box
 function setRatingStars(){
     var oneStar = document.getElementsByClassName("one-star");
     var twoStar = document.getElementsByClassName("two-star");

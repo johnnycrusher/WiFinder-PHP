@@ -1,4 +1,5 @@
 <?php
+//A function that generates search tiles based on the input data
 function generateSearchTiles($data,$distanceBoolean){
     $numberArray = array("one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten","eleven","twelve","thirteen","fourteen","fifteen","sixteen","seventeen","eighteen","nineteen","twenty");
     $html = "";

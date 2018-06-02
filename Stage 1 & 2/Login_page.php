@@ -1,4 +1,6 @@
 <?php 
+//if user is hits the login button it will contact the server to see if
+//the username and password is correct
 $loggedIn = false;
 $submitted = false;
 require('php/retreiveDataFromDatabase.php');
@@ -45,8 +47,9 @@ if(isset($_POST['username'])){
                             </legend>
                             <div>
                                 <?php
+                                //if username or password is incorrect then display this error
                                 if(!$loggedIn && $submitted){
-                                    echo("<p class=\"error-message\">Username or Password is Invalid</p>");
+                                    echo("<p class=\"error-message\">Username or Password is Incorrect</p>");
                                 }
                                 ?>
                                 <p><b>Username:</b></p>

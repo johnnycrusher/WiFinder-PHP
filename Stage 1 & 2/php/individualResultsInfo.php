@@ -1,5 +1,7 @@
 <?php
+//store data  by calling a function  required is already in the page it is imported in
 $data = retrieveLocationResults($_GET['location']);
+//echo all the data in the approirate locations
 ?>
 <div id="WiFi-location-info-box">
     <h2 itemprop="name"><?php echo($data[0]['WifiHotspotName'])?></h2>

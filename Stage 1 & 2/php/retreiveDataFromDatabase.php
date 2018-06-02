@@ -1,4 +1,5 @@
 <?php
+//retreieve login data from database
 function retreiveLoginToDatabase($username, $password){
     include('connectDB.inc');
 
@@ -8,6 +9,7 @@ function retreiveLoginToDatabase($username, $password){
     $retreiveUsername-> execute();
     return $retreiveUsername-> rowCount()>0;
 }
+//retreive search results when user search location by name
 function retreiveSearchResulsByName(){
     include('connectDB.inc');
     $location = $_GET['location'];
@@ -41,6 +43,8 @@ function retreiveSearchResulsByName(){
     $searchData = $retrieveSearch -> fetchAll(PDO::FETCH_ASSOC);
     return $searchData;
 }
+
+//retieve seach results if user is searching by location or coordinates
 function retriveSearchResults($latitude, $longitude){
     include('connectDB.inc');
 
@@ -76,6 +80,7 @@ function retriveSearchResults($latitude, $longitude){
     $searchResults = $retreiveSearches -> fetchAll(PDO::FETCH_ASSOC);
     return $searchResults;
 }
+//return search results if user is searching by rating
 function retireveSearchRatings(){
     include('connectDB.inc');
     $location = $_GET['location'];
@@ -109,6 +114,7 @@ function retireveSearchRatings(){
     return $searchRatingData;
 }
 
+//return location data on the selected location
 function retrieveLocationResults($location){
     include('connectDB.inc');
 
@@ -123,6 +129,7 @@ function retrieveLocationResults($location){
     return $locationResult;
 }
 
+//return review data for the selected location
 function retrieveReviewData($location){
     include('connectDB.inc');
 
@@ -133,6 +140,7 @@ function retrieveReviewData($location){
     return $reviewResults;
 }
 
+//return location data on the search location
 function retrieveLocationData($location){
     include('connectDB.inc');
 
@@ -142,7 +150,7 @@ function retrieveLocationData($location){
     $locationData = $retrieveLocationData -> fetchAll(PDO::FETCH_ASSOC);
     return $locationData;
 }
-
+//check if there is an exisisting username
 function checkExistingUsername($username){
     include('connectDB.inc');
 
@@ -152,6 +160,7 @@ function checkExistingUsername($username){
     $userExist = $findUsername -> rowCount()>0;
     return $userExist;
 }
+//check if there is an exisiting email
 function checkExistingEmail($email){
     include('connectDB.inc');
 

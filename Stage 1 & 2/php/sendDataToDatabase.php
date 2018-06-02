@@ -1,4 +1,5 @@
 <?php
+    //send user information to the server
     function insertUserInfomration($firstname, $lastname, $email, $username, $password, $birthday, $gender){
         $salt = uniqid();
         include('connectDB.inc');
@@ -14,7 +15,7 @@
         $dataEntry-> bindValue(':gender',$gender);
         $dataEntry-> execute();
     }
-
+    //send review data to the server
     function insertReviews(){
         $location = $_GET['location'];
         $username = $_SESSION['user'];

@@ -1,4 +1,5 @@
 <?php
+//destroy all session related to the website
 session_start();
 $_SESSION = session_unset();
 

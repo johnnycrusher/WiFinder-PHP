@@ -1,12 +1,13 @@
 <?php 
+// Generates a name field name
 function generateFieldName($name){
     echo("<p><strong>".$name."</strong></p>");
 }
-
+//generates input field 
 function generateInputField($type, $id,$name, $class,$value,$placeholder,$onchange){
     echo("<input type=\"$type\" id=\"$id\" name=\"$name\" class=\"$class\" value=\"$value\" placeholder=\"$placeholder\" onchange=\"$onchange\">");
 }
-
+//generates error
 function generateError($error, $id){
     $errorID = "error-".$id;
    
@@ -18,7 +19,7 @@ function generateError($error, $id){
     }
     echo("</span>");
 }
-
+//stores the post data
 function postData($name){
     if(isset($_POST[$name])){
         return htmlspecialchars($_POST[$name]);
@@ -27,7 +28,7 @@ function postData($name){
         return "";
     }
 }
-
+//generates the birth month
 function generateBirthMonthField($id, $name, $onchange,$postDataBool){
     if($postDataBool == true){
         $value = postData($name);
@@ -46,7 +47,7 @@ function generateBirthMonthField($id, $name, $onchange,$postDataBool){
     }
     echo("</select>");
 }
-
+//generates a data field(text field with approiate labels)
 function generateDataField($labelName,$type,$id,$name,$class,$placeholder,$onchange,$error,$postDataBool){
     generateFieldName($labelName);
     if($postDataBool == true){
@@ -58,6 +59,7 @@ function generateDataField($labelName,$type,$id,$name,$class,$placeholder,$oncha
     generateError($error,$id);
 }
 
+//generates birthday field with approriate labels
 function birthdayField($errors,$postDataBool){
     generateFieldName("Birthday:");
     $monthValue = postData("month");
@@ -73,7 +75,7 @@ function birthdayField($errors,$postDataBool){
     generateDateInputField("number","year","year",$yearValue,"year","hideError(this)");
     generateError($errors,"birthday");
 }
-
+//generates a name field with the appropriate labels
 function generateName($error,$postDataBool){
     generateFieldName("Name:");
     if($postDataBool == true){
@@ -88,6 +90,7 @@ function generateName($error,$postDataBool){
     generateError($error,"name");
 }
 
+//generates password with approriate labels
 function generatePassword($error){
     generateFieldName("Password:");
     $value = "";
@@ -97,10 +100,11 @@ function generatePassword($error){
     generateError($error, "password");
 }
 
+//generates a date input field
 function generateDateInputField($type, $id,$name,$value,$placeholder,$onchange){
     echo("<input type=\"$type\" id=\"$id\" name=\"$name\" value=\"$value\" placeholder=\"$placeholder\" onchange=\"$onchange\">");
 }
-
+//generates a radio box
 function generateRadioBox($id, $class, $name, $value, $onchange, $checked){
     if(strcmp($checked,"false")==0){
         echo("<input type=\"radio\" id=\"$id\" class=\"$class\" name=\"$name\" value=\"$value\" onchange=\"$onchange\"> $value ");
@@ -109,7 +113,7 @@ function generateRadioBox($id, $class, $name, $value, $onchange, $checked){
     }
     
 }
-
+//generate a gender field with 3 options
 function generateGender($error,$postDataBool){
     generateFieldName("Gender:");
     echo("<input type=\"hidden\" name=\"gender\" value=\"no-selection\" />");

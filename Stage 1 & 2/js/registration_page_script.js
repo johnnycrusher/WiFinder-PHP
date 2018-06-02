@@ -1,3 +1,4 @@
+//A function to validate the whole registration
 function validate(){  
     var Name = checkName();
     var Email = checkEmail();
@@ -12,6 +13,7 @@ function validate(){
         return false;
     }
 }
+//A validation method to check if name is correct format
 function checkName(){
     var firstName = document.getElementById("firstName");
     var firstNameValue = firstName.value;
@@ -27,7 +29,7 @@ function checkName(){
     }
     return true;
 }
-
+//A validation method to check if email is in the correct format
 function checkEmail(){
     var email = document.getElementById("email");
     var emailValue = email.value;
@@ -44,6 +46,7 @@ function checkEmail(){
     return true;
 }
 
+//A validation method to check if the username is present and in correct format
 function checkUsername(){
     var username = document.getElementById("username");
     var usernameValue = username.value;
@@ -54,6 +57,7 @@ function checkUsername(){
     }
     return true;
 }
+//A function to check if the passwords match 
 function checkPassword(){
     var password = document.getElementById("password");
     var passwordValue = password.value;
@@ -73,7 +77,7 @@ function checkPassword(){
     }
     return true;
 }
-
+//A function to check if the birthday is a valid date (doesn't check the future tho)
 function checkBirthDate(){
     var month = document.getElementById("month");
     var monthValue = month.options[month.selectedIndex].text;
@@ -147,6 +151,7 @@ function checkBirthDate(){
     return true;
 }
 
+//heaper method to check if the specified year is a leap year
 function checkLeapYear(year){
     var yearDivBy4 = year % 4;
     var yearDivBy100 = year % 100;
@@ -163,6 +168,7 @@ function checkLeapYear(year){
     }
 }
 
+//a validation method to check if a gender selection is made
 function checkGenderSelection(){
     var FemaleGen = document.getElementById("female-gender");
     var MaleGen = document.getElementById("male-gender");
@@ -176,6 +182,7 @@ function checkGenderSelection(){
     return true;
 }
 
+//a function that hides error messages if the user has changed it
 function hideError(x){
     if(("firstName" == x.id) || ("lastName" == x.id)){
         document.getElementById("error-name").style.visibility = "hidden";

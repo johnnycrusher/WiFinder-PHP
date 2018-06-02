@@ -1,4 +1,5 @@
 <?php
+//validate the name
 function validateName(&$error, $field_list, $field_name, $field_lastName){
     if((strlen($field_list[$field_name]) == 0) && !($field_list[$field_lastName] == 0)){
         $error["name"] = 'First Name is required field';
@@ -20,7 +21,7 @@ function validateName(&$error, $field_list, $field_name, $field_lastName){
         $error["name"] = 'First and Last name should only contains letters and whitespace';
     }
 }
-
+//validate the email
 function validateEmail(&$error, $field_list, $field_name) {
     $pattern = '/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/';
     if (!isset($field_list[$field_name])|| empty($field_list[$field_name])) {
@@ -33,7 +34,7 @@ function validateEmail(&$error, $field_list, $field_name) {
         $error[$field_name] = "Email already exist in database";
     }
 }
-
+//validate the password
 function validatePassword(&$error,$field_list, $field_name, $field_name_confirm){
     if( strlen($field_list[$field_name]) == 0){
         $error[$field_name] = 'Password is a required field';
@@ -43,7 +44,7 @@ function validatePassword(&$error,$field_list, $field_name, $field_name_confirm)
         $error[$field_name] = "Passwords do not match";
     }
 }
-
+//validate the username
 function validateUsername(&$error, $field_list,$field_name){
     if(strlen($field_list[$field_name]) == 0){
         $error[$field_name] = "Username is a required field";
@@ -52,7 +53,7 @@ function validateUsername(&$error, $field_list,$field_name){
         $error[$field_name] = "Username already exist in database";
     }
 }
-
+//validate the birthday
 function validateBirthday(&$error, $field_list, $field_month,$field_day, $field_year){
     
     $day = (int)$field_list[$field_day];
@@ -92,7 +93,7 @@ function validateBirthday(&$error, $field_list, $field_month,$field_day, $field_
             $error["birthday"] = "Please select a month";
     }        
 }
-
+//helper function to check leap year
 function checkLeapYear($year){
     $yearDivBy4 = $year % 4;
     $yearDivBy100 = $year % 100;
@@ -106,18 +107,19 @@ function checkLeapYear($year){
         return false;
     }
 }
-
+//validate if the gender is selected
 function validateGender(&$error, $field_list, $field_name){
     if(strcmp($field_list[$field_name],"no-selection") == 0){
         $error[$field_name] = "Please select a gender";
     }
 }
-
+//validate if there is any text inputed in the review description
 function validateReviewDescription(&$error,$field_list,$field_name){
     if(strlen($field_list[$field_name]) == 0){
         $error[$field_name] = "Review Description cannot be empty";
     }
 }
+//validate if any rating has been selected
 function validateRating(&$error,$field_list,$field_name){
     if($field_list[$field_name] == 0){
         $error[$field_name] = "Please Select a rating";

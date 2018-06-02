@@ -1,4 +1,5 @@
 <?php
+//validation code for the rgistration page
 $errors = array();
 $submitted  = False;
 require('php/validate.php');
@@ -21,7 +22,7 @@ if(isset($_POST['month'])){
 if(isset($_POST['gender'])){
     validateGender($errors,$_POST,'gender');
 }
-
+//if no errors and user has submitted input the data into db
 if($submitted && !$errors){
     require('php/sendDataToDatabase.php');
     $birthday = $_POST["year"]."-".$_POST["month"]."-".$_POST["day"];
@@ -71,6 +72,7 @@ require('php/fields.php');
                                 <Strong>Sign Up</Strong>
                             </legend>
                             <?php
+                                //if submitted and no errors display fields with empty values
                                 if($submitted && !$errors){
                                     generateName($errors,false);
                                     generateDataField("Email:","email","email","email", "input-field","Email","hideError(this)",$errors,false);
@@ -79,6 +81,7 @@ require('php/fields.php');
                                     birthdayField($errors,false);
                                     generateGender($errors,false);
                                 }else{
+                                    //else display field with posted data
                                     generateName($errors,true);
                                     generateDataField("Email:","email","email","email", "input-field","Email","hideError(this)",$errors,true);
                                     generateDataField("Username:","text","username","username","input-field","Username","hideError(this)",$errors,true);

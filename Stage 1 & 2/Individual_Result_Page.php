@@ -1,6 +1,6 @@
 <?php
 session_start();
-
+//validation code 
 $errors = array();
 $submitted  = False;
 require('php/validate.php');
@@ -18,7 +18,7 @@ if($submitted && !$errors){
     insertReviews();
 }
 
-
+//get data from database
 require('php/retreiveDataFromDatabase.php');
 if(isset($_GET['location'])){
     $reviewData = retrieveReviewData($_GET['location']);

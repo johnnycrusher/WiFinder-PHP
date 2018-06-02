@@ -1,5 +1,6 @@
 <div id="button-loc">
 <?php 
+//generate dynamic menus base on current session/page
 $name = $_SERVER['PHP_SELF'];
 if(strcmp($name,"/search_page.php")==0 && !isset($_SESSION['user'])){
     echo('<a href="search_page.php" id="search-menu" class="current-page">Search <i class="fa fa-search"></i></a>');

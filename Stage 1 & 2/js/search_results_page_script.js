@@ -6,15 +6,14 @@ var arrayOfNumber = ["one","two","three","four","five","six","seven","eight","ni
                      "eleven","twelve","thirteen","fourteen","fifteen","sixteen","seventeen","eighteen","nineteen", "twenty"];
 var location;
 var locationLength = 0;
+//intialise google maps
 function intialiseMaps(){
     var mapScript = document.createElement('script');
     mapScript.type = "text/javascript";
     mapScript.src = "https://maps.googleapis.com/maps/api/js?key=AIzaSyD-_Zd52SX6xAHEI15-WJm3iFA8LdKwL54&callback=initMap";
     document.body.appendChild(mapScript);
 }
-
-
-
+//set the currrent location for all the location JSON Objects
 function setLocation(locationPlace){
     for(var i = 0; i< locationPlace.length; i++){
         this.location[i] = locationPlace[i];
@@ -22,7 +21,7 @@ function setLocation(locationPlace){
     this.locationLength = locationPlace.length;
 
 }
-
+//determine the star rating for all the objects
 function setRatingStars(){
     var oneStar = document.getElementsByClassName("one-star");
     var twoStar = document.getElementsByClassName("two-star");
@@ -57,7 +56,7 @@ function setRatingStars(){
     }
 }
 
-
+//intialise google maps for all the maps
 function initMap() {
 
     var options = [];
@@ -73,22 +72,26 @@ function initMap() {
         addMarker(location[i], maps[i]);
     }
 }
+//add a marker to all the maps
 function addMarker(coords , map){
     var marker = new google.maps.Marker({
         position: coords,
         map: map
     });
 }
+
+//open the site when clicked
 function opensite(location){
     window.open("Individual_Result_Page.php?location=" + location,"_self",false)
 }
 
+//start google maps function
 function startMaps(location){
     setRatingStars();
     setLocation(location);
     intialiseMaps();
 }
-
+//change sorting query and redirect to new page
 function changeSortingOption(button){
     var urlLink = document.URL;
     var newURL;
@@ -103,6 +106,7 @@ function changeSortingOption(button){
     }
     window.location = newURL;
 }
+//change location type and redirect to new page
 function changeLocationType(){
     var urlLink = document.URL;
     var newURL;
@@ -118,4 +122,3 @@ function changeLocationType(){
     }
     window.location = newURL;
 }
-

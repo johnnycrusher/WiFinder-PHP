@@ -1,13 +1,13 @@
 var myCoords;
 var geocoder;
 var LatLngGeocoder;
-
+//sets up the geo location
 function getLocation(){
     if(navigator.geolocation){
         navigator.geolocation.getCurrentPosition(storeLocation);
     }
 }
-
+//stores the location of the geolocation
 function storeLocation(position){
     myCoords={"lat": position.coords.latitude , "lng": position.coords.longitude};
     document.getElementById("latitude").value = myCoords.lat;
@@ -15,19 +15,22 @@ function storeLocation(position){
     findAddress();
 }
 
+//intialise the geocoder objects
 function initMap(){
     geocoder = new google.maps.Geocoder();
     LatLngGeocoder = new google.maps.Geocoder();
 }
 
+//find the address using the geocoder to reverse cordinates to address
 function findAddress(){
     geocoder.geocode({'location': myCoords}, function(results, status){
         if (status === 'OK'){
-            document.getElementById("search-box").value = results[0].address_components[0].long_name + " " + results[0].address_components[1].long_name + ", " + results[0].address_components[2].long_name;
+            document.getElementById("search-box").value = results[0].address_components[0].long_name + " " + 
+            results[0].address_components[1].long_name + ", " + results[0].address_components[2].long_name;
         }
     });
 }
-
+//find latitude and longitude from an address using the geocoder
 function findLatLng(){
     var address = document.getElementById("search-box").value;
     var longatude = document.getElementById('longitude');
@@ -55,7 +58,7 @@ function findLatLng(){
     }
     
 }
-
+//intialise the google maps API
 function intialiseMaps(){
     var mapScript = document.createElement('script');
     mapScript.type = "text/javascript";
@@ -64,7 +67,7 @@ function intialiseMaps(){
     mapsIntailised = true;
 
 }
-
+//function for the rating chooser
 function ratingChoose(item){
     var icons = item.firstChild;
     var itemId = icons.getAttribute("id");
@@ -104,6 +107,7 @@ function ratingChoose(item){
     rating.value = ratingCounter;
 
 }
+//determines the choosen rating and displays it
 function determineRating(){
     rating = document.getElementById("rating");
 
@@ -122,7 +126,7 @@ function determineRating(){
         }
     }
 }
-
+//validate search box and rating
 function validateItems(){
     var searchBox = document.getElementById("search-box").value;
     var rating = document.getElementById("rating").value;
@@ -133,7 +137,7 @@ function validateItems(){
         return true;
     }
 }
-
+//client side validation for search page
 function validate(){
     var value = validateItems();
     if(value){

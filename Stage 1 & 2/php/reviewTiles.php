@@ -1,4 +1,5 @@
 <?php
+//a function that generates reviews based on the input data
 function generateReviews($data){
     $numberArray = array("one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten","eleven","twelve","thirteen","fourteen","fiftheen","sixteen","seventeen","eighteen","nineteen","twenty");
     $review = "";
